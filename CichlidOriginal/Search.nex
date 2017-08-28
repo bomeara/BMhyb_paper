@@ -1,0 +1,26 @@
+#nexus
+begin paup;
+log file=CichlidClock.log replace=yes;
+exe Cichlid.aln.nex;
+set criterion=like;
+set warnroot=no outroot=paraphyl;
+lset clock=yes;
+loadconstr file=Cichlid.Constraint.nex.phy.nex asbackbone=yes;
+set criterion=parsimony;
+outgroup 6;
+[constraints k (monophyly) = (((24,25,27,26),((28,(14,13)),12)),(61,63,62),((58,59,60),(41,51,50,42,43,(((39,40),(8,9)),(29,30,31))),((55,56),((44,45,46),(16,17,15)),(18,19,20),((35,(36,((37,38),((57,(54,53)),((47,48),(34,32,33)))))),((23,21,22),((1,5,4,3,2),((52,49),((11,7,10),(64,65)))))))),66,67,6);]
+hs addseq=random nreps=100 limitperrep=yes enforce=yes;
+root;
+savetree root=yes file=CichlidParsimony.tre format=altnex brlen=yes;
+filter best=yes;
+set criterion=like;
+lset nst=6 rmatrix=estimate rates=gamma shape=estimate clock=yes;
+lsco 1;
+lset nst=6 rmatrix=prev rates=gamma shape=prev clock=yes;
+filter best=yes permdel=yes;
+savetree root=yes file=CichlidClockUnresolved.tre format=altnex brlen=yes;
+hs addseq=random nreps=10 timelimit=36000 enforce=yes;
+savetree root=yes file=CichlidClockResolved.tre format=altnex brlen=yes;
+log stop;
+quit;
+end;

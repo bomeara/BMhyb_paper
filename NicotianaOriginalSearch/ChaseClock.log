@@ -1,0 +1,214 @@
+
+P A U P *
+Portable version 4.0b10 for Unix
+Wed Jul 30 11:02:23 2014
+
+      -----------------------------NOTICE-----------------------------
+        This is a beta-test version.  Please report any crashes,
+        apparent calculation errors, or other anomalous results.
+        There are no restrictions on publication of results obtained
+        with this version, but you should check the WWW site
+        frequently for bug announcements and/or updated versions.  
+        See the README file on the distribution media for details.
+      ----------------------------------------------------------------
+
+Processing of file "~/Dropbox/CollabJhwuengOMeara/NewEmpiricalExample/ChaseEtAl.aln.renamed.nex" begins...
+
+Data read in DNA format
+
+Data matrix has 77 taxa, 697 characters
+Valid character-state symbols: ACGT
+Missing data identified by '?'
+Gaps identified by '-'
+"Equate" macros in effect:
+   R,r ==> {AG}
+   Y,y ==> {CT}
+   M,m ==> {AC}
+   K,k ==> {GT}
+   S,s ==> {CG}
+   W,w ==> {AT}
+   H,h ==> {ACT}
+   B,b ==> {CGT}
+   V,v ==> {ACG}
+   D,d ==> {AGT}
+   N,n ==> {ACGT}
+
+NOTE: PAUP* does not support the "CodeSet" command.  It has been skipped.
+
+*** Skipping "MESQUITECHARMODELS" block
+
+*** Skipping "MESQUITE" block
+
+Processing of file "~/Dropbox/CollabJhwuengOMeara/NewEmpiricalExample/ChaseEtAl.aln.renamed.nex" completed.
+
+Outgroup status changed:
+  6 taxa transferred to outgroup
+  Total number of taxa now in outgroup = 6
+  Number of ingroup taxa = 71
+
+Heuristic search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 697 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        387 characters are constant
+        119 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 191
+    Gaps are treated as "missing"
+    Multistate taxa interpreted as uncertainty
+  Starting tree(s) obtained via stepwise addition
+  Addition sequence: random
+    Number of replicates = 100
+    Starting seed = 809996966
+  Number of trees held at each step during stepwise addition = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR)
+  Steepest descent option not in effect
+  Initial 'MaxTrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  Topological constraints not enforced
+  Trees are unrooted
+
+The limit of 100 trees (= 'MaxTrees') has been reached.
+Do you want to increase 'MaxTrees'? (y/N) n
+    'MaxTrees' limit (100) hit while swapping on tree #73 (score=833)
+    'MaxTrees' limit (100) hit while swapping on tree #74 (score=835)
+    'MaxTrees' limit (100) hit while swapping on tree #74 (score=834)
+    'MaxTrees' limit (100) hit while swapping on tree #73 (score=833)
+    'MaxTrees' limit (100) hit while swapping on tree #75 (score=834)
+    'MaxTrees' limit (100) hit while swapping on tree #74 (score=833)
+    'MaxTrees' limit (100) hit while swapping on tree #74 (score=833)
+    'MaxTrees' limit (100) hit while swapping on tree #73 (score=837)
+    'MaxTrees' limit (100) hit while swapping on tree #73 (score=835)
+    'MaxTrees' limit (100) hit while swapping on tree #74 (score=834)
+    'MaxTrees' limit (100) hit while swapping on tree #75 (score=834)
+    'MaxTrees' limit (100) hit while swapping on tree #73 (score=835)
+    'MaxTrees' limit (100) hit while swapping on tree #74 (score=833)
+    'MaxTrees' limit (100) hit while swapping on tree #74 (score=836)
+
+Heuristic search completed
+   Total number of rearrangements tried = 30150229
+   Score of best tree(s) found = 832
+   Number of trees retained = 72
+   Note: Effectiveness of search may have been diminished due to tree-buffer overflow.
+   Time used = 5 sec (CPU time = 4.61 sec)
+
+Tree-island profile:
+                     First      Last                     First   Times
+Island      Size      tree      tree        Score    replicate     hit
+----------------------------------------------------------------------
+     1        72         1        72          832            1     100
+
+72 trees converted from unrooted to rooted.
+
+Tree filter retaining trees that satisfy all of the following criteria:
+   Best score according to current optimality criterion
+
+   Results:
+     Number of trees originally in memory = 72
+     Number of trees retained by filter   = 72
+   All trees satisfied the filtering criteria.
+
+Optimality criterion set to likelihood.
+
+Likelihood scores of tree(s) in memory:
+  Likelihood settings:
+    Number of substitution types  = 6
+    Substitution rate-matrix parameters estimated via ML
+    Assumed nucleotide frequencies (empirical frequencies):
+      A=0.19345  C=0.31200  G=0.30241  T=0.19214
+    Among-site rate variation:
+      Assumed proportion of invariable sites  = none
+      Distribution of rates at variable sites = gamma (discrete approximation)
+        Shape parameter (alpha)   = estimated
+        Number of rate categories = 4
+        Representation of average rate for each category = mean
+    These settings correspond to the GTR+G model
+    Number of distinct data patterns under this model = 351
+    Molecular clock enforced
+    Starting branch lengths obtained using UPGMA-style averaging
+    Parameterization for clock optimization = "Rambaut (multidimensional)"
+    -ln L (unconstrained) = unavailable due to missing-data and/or ambiguities
+
+Tree             1
+------------------
+-ln L   5743.00914
+Rate matrix R:
+  AC       1.96648
+  AG       2.64169
+  AT       1.58026
+  CG       0.62717
+  CT       5.80365
+  GT       1.00000
+Shape     0.405738
+
+Time used to compute likelihoods = 40 sec (CPU time = 40.01 sec)
+
+Tree filter retaining trees that satisfy all of the following criteria:
+   Best score according to current optimality criterion
+
+   Results:
+     Number of trees originally in memory = 72
+     Number of trees retained by filter   = 1
+     Trees not retained by filter have been permanently deleted.
+
+1 tree saved to file "~/Dropbox/CollabJhwuengOMeara/NewEmpiricalExample/ChaseClockUnresolved.tre"
+
+Heuristic search settings:
+  Optimality criterion = likelihood
+    Likelihood settings:
+      Number of substitution types  = 6
+      User-specified substitution rate matrix =
+                  -   1.966483   2.641694   1.580258
+           1.966483          -   0.627169   5.803645
+           2.641694   0.627169          -   1.000000
+           1.580258   5.803645   1.000000          -
+      Assumed nucleotide frequencies (empirical frequencies):
+        A=0.19345  C=0.31200  G=0.30241  T=0.19214
+      Among-site rate variation:
+        Assumed proportion of invariable sites  = none
+        Distribution of rates at variable sites = gamma (discrete approximation)
+          Shape parameter (alpha)   = 0.405738
+          Number of rate categories = 4
+          Representation of average rate for each category = mean
+      These settings correspond to the GTR+G model
+      Number of distinct data patterns under this model = 351
+      Molecular clock enforced
+      Starting branch lengths obtained using UPGMA-style averaging
+      Trees with approximate likelihoods 5% or further from the target score are rejected without additional iteration
+      Parameterization for clock optimization = "Rambaut"
+      -ln L (unconstrained) = unavailable due to missing-data and/or ambiguities
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR)
+  Initial swapping on 1 tree already in memory
+  Steepest descent option not in effect
+  Time limit of 600 seconds (per addition-sequence replicate) imposed
+  Initial 'MaxTrees' setting = 100
+  Zero-length branches not collapsed
+  'MulTrees' option in effect
+  Topological constraints not enforced
+  Trees are rooted
+
+1 non-binary starting tree arbitrarily dichotomized before branch swapping
+
+    Elapsed   Taxa      Rearr.   -- Number of trees --      Best
+       time  added      tried    saved    left-to-swap   tree(s)
+  --------------------------------------------------------------
+    0:01:02      -          29       1          1      5725.6903
+    0:02:03      -          55       2          2      5725.6011
+    0:03:03      -          90       2          2      5725.6011
+    0:04:04      -         117       3          3      5725.6011
+    0:05:04      -         157       1          1      5724.2658
+    0:06:05      -         195       1          1      5723.9698
+    0:07:05      -         229       4          4      5723.6279
+    0:08:05      -         266       5          5      5723.6279
+    0:09:06      -         308       7          7      5723.6279
+    0:10:02      -         342       3          0      5721.1971
+
+Heuristic search terminated by time limit (while swapping on tree #1)
+   Total number of rearrangements tried = 342
+   Score of best tree(s) found = 5721.19707
+   Number of trees retained = 3
+   Time used = 00:10:05 (CPU time = 00:10:02.1)
+
+3 trees saved to file "~/Dropbox/CollabJhwuengOMeara/NewEmpiricalExample/ChaseClockResolved.tre"

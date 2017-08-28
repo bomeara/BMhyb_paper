@@ -1,0 +1,67 @@
+124
+      Table 1. The germination rate under the control medium and the relative germination rate (% of control) under varied types
+      and concentrations of osmotica in the Nicotiana species
+
+       Subgenus        Section            Species             Habitat∗     Control    NaCl (mM)                     Mannitol
+                                                                                       75   150      225     300    225 mM
+
+       Rustica         Paniculatae        glauca              SA (D,S)     99         101     100       2      0           98
+                                          paniculata          SA (D,S)     100        100     100      99      1          100
+                                          knightiana          SA (D,S)     99          98      89      49      1          100
+                                          solanifolia         SA (D,S)     100         97      53       0      0           99
+                                          benavidesii         SA (D)       99         100       3       0      0           94
+                                          cordifolia          SA (S)       92          97      92       4      0           88
+                                          raimondii           SA (D)       99         101      98      96      4          100
+                       Rusticae           rustica             SA (D)       99         101     100      83      8          101
+       Tabacum         Tomentosae         tomentosa           SA           82          90      29       0      0           73
+                                          tomentosiformis     SA           98          95      99      56      0           96
+                                          otophora            SA           98         101      93       1      0           99
+                                          kawakamii           SA           100         98      97      94     43           98
+                                          setchellii          SA           90         108     100       6      0          106
+                                          glutinosa           SA (D,S)     99          96     101      99      0           99
+                       Genuinae           tabacum ‘BY4’                    97          96      81      64      1          100
+       Petunioides     Undulatae          undulata            SA           96          95      58       2      0           99
+                                          arentsii            SA           99         101      10       1      0           85
+                                          wigandioides        SA           95          94      69      22      1           96
+                       Trigonophyllae     trigonophylla       NA (D,S)     100        100      95       0      0          100
+                       Alatae             sylvestris          SA           99         101      99      65      1          100
+                                          langsdorffii        SA (D)       100         91      75      10      0           92
+                                          alata               SA (S)       100        100     100      96     49          100
+                                          forgetiana          SA (S)       100        100     100      86     22          100
+                                          bonariensis         SA (S)       100         94       1       0      0           58
+                                          longiflora          SA (D,S)     99          94     100      92      0          101
+                                          plumbaginifolia     SA (S)       100         99      92      23      0           53
+                       Repandae           repanda             NA (S)       99         100      38       0      0           92
+                                          stocktonii          NA (S)       99          52       0       0      0            0
+                                          nesophila           NA (S)       100         75       0       0      0           33
+                       Noctiflorae        petunioides         SA (D,S)     37          27       0       3      0           19
+                       Acuminatae         acuminata           SA           100        100     100      42      0          100
+                                          pauciflora          SA (D)       93          57      10       0      0           18
+                                          attenuata           NA (D)       100         99      74       1      0           99
+                                          miersii             SA           100         98       9       0      0           53
+                                          spegazzinii         SA           83           7       1       0      0            0
+                       Bigelovianae       bigelovii           NA (D,S)     88          80      33       3      0           61
+                                          clevelandii         NA (D,S)     99         100      52       0      0           95
+                       Nudicaulis         nudicaulis          NA (D)       100         99      99       0      0           99
+                       Suaveolentes       benthamiana         AU           99         100      98      92      2          101
+                                          umbratica           AU           99         100     100      67      5          101
+                                          cavicola            AU           100         89       5       0      0           42
+                                          debneyi             AU (S)       100        100     100      20      0           99
+                                          gossei              AU           99          99      24       0      0           30
+                                          amplexicaulis       AU           100        100      79       0      0          100
+                                          maritima            AU (S)       96          99      88      40      0          101
+                                          velutina            AU (S)       22          36       0       0      0           27
+                                          occidentalis        AU (D,S)     98         101      92       0      0           96
+                                          simulans            AU (D)       84         101      31       0      0           86
+                                          megalosiphon        AU           100        100     100      52      0           99
+                                          excelsior           AU           96          92      72      25      0           66
+                                          suaveolens          AU (S)       97          88       8       0      0           25
+                                          ingulba             AU           99         101      93      40      0           96
+                                          exigua              AU           99          99       0       0      0           41
+                                          goodspeedii         AU (D,S)     100        100     100      79      0          100
+                                          rosulata            AU           97          80      34       0      0           71
+                                          fragrans            AU (S)       97          97      55       9      0           63
+                                          africana            AF (D)       87           8       0       0      0            3
+      ∗ Native habitats are indicated. SA, South America; NA, North America; AU, Australia; AF, Africa
+      D and S (in parentheses) mean that the species is distributed in desert and seashore, respectively.
+

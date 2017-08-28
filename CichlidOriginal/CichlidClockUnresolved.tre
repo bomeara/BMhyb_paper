@@ -1,0 +1,37 @@
+#NEXUS 
+
+Begin trees;  [Treefile saved Fri Jul 17 12:59:55 2015]
+[!
+>Data file = /Users/bomeara/Dropbox/CollabJhwuengOMeara/CichlidExampleRevision/Cichlid.aln.nex
+>Heuristic search settings:
+>  Optimality criterion = parsimony
+>    Character-status summary:
+>      Of 1047 total characters:
+>        All characters are of type 'unord'
+>        All characters have equal weight
+>        661 characters are constant
+>        89 variable characters are parsimony-uninformative
+>        Number of parsimony-informative characters = 297
+>    Gaps are treated as "missing"
+>    Multistate taxa interpreted as uncertainty
+>  Starting tree(s) obtained via stepwise addition
+>  Addition sequence: random
+>    Number of replicates = 100
+>    Starting seed = 1839995215
+>  Number of trees held at each step during stepwise addition = 1
+>  Branch-swapping algorithm: tree-bisection-reconnection (TBR)
+>  Steepest descent option not in effect
+>  Initial 'MaxTrees' setting = 100
+>  Branches collapsed (creating polytomies) if maximum branch length is zero
+>  'MulTrees' option in effect
+>  Keeping only trees compatible with constraint-tree "Constraint"
+>  Trees are unrooted
+>
+>Heuristic search completed
+>   Total number of rearrangements tried = 41935
+>   Score of best tree(s) found = 990
+>   Number of trees retained = 3
+>   Time used = 1 sec (CPU time = 0.75 sec)
+]
+tree PAUP_1 = [&R] ((((((((((('Altolamprologus_calvus':0.004243,('Altolamprologus_compressiceps':0.003192,('Altolamprologus_compressiceps2':0.001461,('Altolamprologus_compressiceps3':0,'Altolamprologus_sp._''shell''':0):0.001461):0.001731):0.001051):0.026454,('Lamprologus_callipterus':0.008571,('Lamprologus_callipterus2':0.003215,'Lamprologus_callipterus3':0.003215):0.005356):0.022126):0.010737,(((('Lamprologus_meleagris':0.004607,'Lamprologus_meleagris2':0.004607):0.006516,'Lamprologus_meleagris3':0.011123):0.029655,('Lamprologus_ocellatus':0.009894,('Lamprologus_ocellatus2':0.001255,'Lamprologus_ocellatus3':0.001255):0.008639):0.030884):0.000657,((('Lamprologus_speciosus':0,'Lamprologus_speciosus2':0):0.003443,'Lamprologus_speciosus3':0.003443):0.037992,('Neolamprologus_wauthioni':0.002853,'Neolamprologus_wauthioni2':0.002853):0.038582):0):0):0.002258,((((((('Lepidiolamprologus_attenuatus':0.001232,'Lepidiolamprologus_attenuatus2':0.001232):0.001403,'Lepidiolamprologus_attenuatus3':0.002634):0.000754,('Neolamprologus_cf._meeli/boulengeri':0.003388,'Neolamprologus_cf._meeli/boulengeri2':0.003388):0):0.004236,(('Neolamprologus_hecqui':0,'Neolamprologus_hecqui2':0):0.005158,'Neolamprologus_meeli':0.005158):0.002466):0,('Neolamprologus_boulengeri':0.000633,'Neolamprologus_boulengeri2':0.000633):0.006992):0.004936,'Lepidiolamprologus_profundicola':0.012561):0.006633,'Lepidiolamprologus_elongatus':0.019194):0.024499):0.006897,(((('Lamprologus_lemairii':0.003262,'Lamprologus_lemairii2':0.003262):0.002751,'Lamprologus_lemairii3':0.006012):0.021144,('Neolamprologus_caudopunctatus':0.023264,('Neolamprologus_caudopunctatus2':0.007674,'Neolamprologus_caudopunctatus3':0.007674):0.015590):0.003892):0.020892,('Neolamprologus_leloupi':0,'Neolamprologus_leloupi2':0):0.048048):0.002542):0.003852,(('Neolamprologus_fasciatus':0.001134,'Neolamprologus_fasciatus2':0.001134):0.053309,(('Neolamprologus_multifasciatus':0.010976,('Neolamprologus_multifasciatus2':0.002474,'Neolamprologus_multifasciatus3':0.002474):0.008501):0.043467,(('Neolamprologus_similis':0,'Neolamprologus_similis2':0):0.033053,'Neolamprologus_similis3':0.033053):0.021389):0):0):0.001925,((((('Lamprologus_callipterus_x_Neolamprologus_calliurus':0.002466,'Lamprologus_callipterus_x_Neolamprologus_calliurus2':0.002466):0,('Neolamprologus_brevis':0.002466,'Neolamprologus_brevis2':0.002466):0):0,'Neolamprologus_calliurus3':0.002466,'Neolamprologus_fasciatus_x_Neolamprologus_calliurus':0.002466,'Neolamprologus_fasciatus_x_Neolamprologus_calliurus2':0.002466):0.002882,'Neolamprologus_calliurus':0.005348):0.001646,'Neolamprologus_calliurus2':0.006994):0.049373):0.004931,(('Lamprologus_kungweensis':0.019368,(('Lamprologus_laparogramma':0.001942,'Lamprologus_laparogramma2':0.001942):0,'Lamprologus_signatus':0.001942):0.017425):0.004563,(('Lamprologus_ornatipinnis':0.005184,'Lamprologus_ornatipinnis2':0.005184):0.015047,('Lamprologus_ornatipinnis3':0.000652,'Lamprologus_ornatipinnis4':0.000652):0.019579):0.003700):0.037367):0.010041,'Variabilichromis_moorii':0.071339):0.004235,'Telmatochromis_vittatus':0.075573):0,'Julidochromis_ornatus':0.075573):0;
+End;

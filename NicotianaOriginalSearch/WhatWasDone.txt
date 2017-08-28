@@ -1,0 +1,14 @@
+Look for example with reticulation and trait data
+Found example in Nicotiana, using tree of Chase et al.
+Chase et al data NOT on treebase, but raw seqs are on genbank
+Downloaded the ITS seqs, use mafft for alignment, using -auto option
+In Mesquite, inspected alignment, trimmed ends that had seqs for only a small subset of taxa
+Also truncated names and removed two redundant sequences
+In paup, did parsimony tree search, took best trees, rooted, then set to likelihood gtr+gamma with clock, filtered for best under this model, did quick tree search to resolve branches, saved treefile (ChaseClockResolved.tre)
+Opened treefile in R, took first tree (all equal likelihood due to identical seqs), rescaled based on 15.3 MY stem group age for Nicotiana from Clarkson et al. 2005, renamed based on iplant TNRS
+Used pdftotext from xpdf with -layout option to convert empirical table 2 from pdf to text, then hand edited in Excel, saved as csv
+Loaded table into R, used Mannitol seedling growth data.
+Used iPlant TNRS on the trait taxon names
+used treedata() in geiger to get overlapping set of taxa from tree and traits, saved as Nicotiana.phy and Nicotiana.csv
+Got list of hybrids and parents from info in Chase et al.: HybridsFromChase.xlsx
+Tony handcrafted enewick tree from this and the saved Nicotiana.phy

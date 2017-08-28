@@ -1,0 +1,20 @@
+#nexus
+begin paup;
+log file=ChaseClock.log replace=yes;
+exe ChaseEtAl.aln.renamed.nex;
+set criterion=parsimony;
+outgroup 72 73 74 75 76 77;		
+hs addseq=random nreps=100 limitperrep=yes;
+root;
+filter best=yes;
+set criterion=like;
+lset nst=6 rmatrix=estimate rates=gamma shape=estimate clock=yes;
+lsco 1;
+lset nst=6 rmatrix=prev rates=gamma shape=prev clock=yes;
+filter best=yes permdel=yes;
+savetree root=yes file=ChaseClockUnresolved.tre format=altnex brlen=yes;
+hs start=current timelimit=600;
+savetree root=yes file=ChaseClockResolved.tre format=altnex brlen=yes;
+log stop;
+quit;
+end;

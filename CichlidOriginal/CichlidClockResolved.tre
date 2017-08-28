@@ -1,0 +1,50 @@
+#NEXUS 
+
+Begin trees;  [Treefile saved Fri Jul 17 14:03:21 2015]
+[!
+>Data file = /Users/bomeara/Dropbox/CollabJhwuengOMeara/CichlidExampleRevision/Cichlid.aln.nex
+>Heuristic search settings:
+>  Optimality criterion = likelihood
+>    Likelihood settings:
+>      User-specified substitution rate matrix =
+>                  -   0.663522   9.697062   0.371670
+>           0.663522          -   1.175232   3.328870
+>           9.697062   1.175232          -   1.000000
+>           0.371670   3.328870   1.000000          -
+>      Assumed nucleotide frequencies (empirical frequencies):
+>        A=0.25820  C=0.35727  G=0.11667  T=0.26786
+>      Among-site rate variation:
+>        Assumed proportion of invariable sites  = none
+>        Distribution of rates at variable sites = gamma (discrete approximation)
+>          Shape parameter (alpha)   = 0.266381
+>          Number of rate categories = 4
+>          Representation of average rate for each category = mean
+>      These settings correspond to the GTR+G model
+>      Number of distinct data patterns under this model = 377
+>      Molecular clock enforced
+>      Starting branch lengths obtained using UPGMA-style averaging
+>      Trees with approximate likelihoods 5% or further from the target score are rejected without additional iteration
+>      Parameterization for clock optimization = "Rambaut"
+>      -ln L (unconstrained) = unavailable due to missing-data and/or ambiguities
+>  Starting tree(s) obtained via stepwise addition
+>  Addition sequence: random
+>    Number of replicates = 10
+>    Starting seed = 360154911
+>  Number of trees held at each step during stepwise addition = 1
+>  Branch-swapping algorithm: tree-bisection-reconnection (TBR)
+>  Steepest descent option not in effect
+>  Time limit of 36000 seconds (per addition-sequence replicate) imposed
+>  Initial 'MaxTrees' setting = 100
+>  Zero-length branches not collapsed
+>  'MulTrees' option in effect
+>  Keeping only trees compatible with constraint-tree "Constraint"
+>  Trees are rooted
+>
+>Heuristic search completed
+>   Total number of rearrangements tried = 924
+>   Score of best tree(s) found = 6750.68359
+>   Number of trees retained = 1
+>   Time used = 01:03:22 (CPU time = 00:59:19.2)
+]
+tree PAUP_1 = [&R] ((((((((((('Altolamprologus_calvus':0.004239,('Altolamprologus_compressiceps':0.003189,('Altolamprologus_compressiceps2':0.001459,('Altolamprologus_compressiceps3':0,'Altolamprologus_sp._''shell''':0):0.001459):0.001730):0.001050):0.026426,('Lamprologus_callipterus':0.008563,('Lamprologus_callipterus2':0.003212,'Lamprologus_callipterus3':0.003212):0.005350):0.022103):0.010728,(((('Lamprologus_meleagris':0.004603,'Lamprologus_meleagris2':0.004603):0.006509,'Lamprologus_meleagris3':0.011112):0.029623,('Lamprologus_ocellatus':0.009884,('Lamprologus_ocellatus2':0.001254,'Lamprologus_ocellatus3':0.001254):0.008630):0.030850):0.000658,((('Lamprologus_speciosus':0,'Lamprologus_speciosus2':0):0.003439,'Lamprologus_speciosus3':0.003439):0.037954,('Neolamprologus_wauthioni':0.002850,'Neolamprologus_wauthioni2':0.002850):0.038543):0):0):0.002257,((((((('Lepidiolamprologus_attenuatus':0.001231,'Lepidiolamprologus_attenuatus2':0.001231):0.001401,'Lepidiolamprologus_attenuatus3':0.002632):0.000753,('Neolamprologus_cf._meeli/boulengeri':0.003385,'Neolamprologus_cf._meeli/boulengeri2':0.003385):0):0.004232,(('Neolamprologus_hecqui':0,'Neolamprologus_hecqui2':0):0.005153,'Neolamprologus_meeli':0.005153):0.002464):0,('Neolamprologus_boulengeri':0.000632,'Neolamprologus_boulengeri2':0.000632):0.006985):0.004931,'Lepidiolamprologus_profundicola':0.012548):0.006627,'Lepidiolamprologus_elongatus':0.019175):0.024475):0.006892,(((('Lamprologus_lemairii':0.003259,'Lamprologus_lemairii2':0.003259):0.002748,'Lamprologus_lemairii3':0.006007):0.021123,('Neolamprologus_caudopunctatus':0.023239,('Neolamprologus_caudopunctatus2':0.007666,'Neolamprologus_caudopunctatus3':0.007666):0.015574):0.003891):0.020872,('Neolamprologus_leloupi':0,'Neolamprologus_leloupi2':0):0.048002):0.002540):0.003851,(('Neolamprologus_fasciatus':0.001133,'Neolamprologus_fasciatus2':0.001133):0.053260,(('Neolamprologus_multifasciatus':0.010965,('Neolamprologus_multifasciatus2':0.002472,'Neolamprologus_multifasciatus3':0.002472):0.008493):0.043428,(('Neolamprologus_similis':0,'Neolamprologus_similis2':0):0.033021,'Neolamprologus_similis3':0.033021):0.021372):0):0):0.001930,((((('Lamprologus_callipterus_x_Neolamprologus_calliurus':0.002792,'Lamprologus_callipterus_x_Neolamprologus_calliurus2':0.002792):0,('Neolamprologus_brevis':0.002792,'Neolamprologus_brevis2':0.002792):0):0,('Neolamprologus_calliurus3':0.002178,('Neolamprologus_fasciatus_x_Neolamprologus_calliurus':0,'Neolamprologus_fasciatus_x_Neolamprologus_calliurus2':0):0.002178):0.000614):0.002757,'Neolamprologus_calliurus':0.005549):0.001587,'Neolamprologus_calliurus2':0.007136):0.049186):0.004921,(('Lamprologus_kungweensis':0.019348,(('Lamprologus_laparogramma':0.001940,'Lamprologus_laparogramma2':0.001940):0,'Lamprologus_signatus':0.001940):0.017408):0.004559,(('Lamprologus_ornatipinnis':0.005179,'Lamprologus_ornatipinnis2':0.005179):0.015032,('Lamprologus_ornatipinnis3':0.000651,'Lamprologus_ornatipinnis4':0.000651):0.019559):0.003697):0.037336):0.010027,'Variabilichromis_moorii':0.071271):0.004226,'Telmatochromis_vittatus':0.075497):0,'Julidochromis_ornatus':0.075497):0;
+End;

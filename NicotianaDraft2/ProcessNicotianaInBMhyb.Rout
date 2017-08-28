@@ -1,0 +1,2109 @@
+
+R version 3.2.3 (2015-12-10) -- "Wooden Christmas-Tree"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> rm(list=ls())
+> library(BMhyb)
+> library(geiger)
+Loading required package: ape
+Warning message:
+package ‘ape’ was built under R version 3.2.5 
+> library(ape)
+> #library(optimx)
+> library(corpcor)
+> library(phylobase)
+
+Attaching package: ‘phylobase’
+
+The following object is masked from ‘package:ape’:
+
+    edges
+
+> phy <- read.tree("nicotiana.phy")
+> data.raw <- read.csv("nicotiana.csv", stringsAsFactors=FALSE)
+> data.vector.raw <- as.numeric(data.raw[,2])
+> names(data.vector.raw) <- gsub(" ", "_", data.raw[,1])
+> flow<-data.frame(donor=c("Nicotiana_sylvestris"), recipient=c("Nicotiana_tabacum"), m=c(0.5), time.from.root.donor=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_tabacum"))], time.from.root.recipient=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_tabacum"))], stringsAsFactors=FALSE)
+> 
+> 
+> flow<-rbind(flow, data.frame(donor=c("Nicotiana_undulata"), recipient=c("Nicotiana_rustica"), m=c(0.5), time.from.root.donor=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_rustica"))], time.from.root.recipient=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_rustica"))], stringsAsFactors=FALSE))
+> flow<-rbind(flow,data.frame(donor=c("Nicotiana_arentsii"), recipient=c("Nicotiana_rustica"), m=c(0.5), time.from.root.donor=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_rustica"))], time.from.root.recipient=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_rustica"))], stringsAsFactors=FALSE))
+> 
+> 
+> flow<-rbind(flow, data.frame(donor=c("Nicotiana_wigandioides"), recipient=c("Nicotiana_arentsii"), m=c(0.5), time.from.root.donor=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_arentsii"))], time.from.root.recipient=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Nicotiana_arentsii"))],stringsAsFactors=FALSE))
+> 
+> pdf(file="NicotianaNetwork.pdf")
+> PlotNetwork(phy, flow)
+> dev.off()
+null device 
+          1 
+> 
+> system("echo 'Making nicotiana tree done' | terminal-notifier -sound default")
+/Library/Ruby/Gems/2.0.0/gems/terminal-notifier-1.6.3/bin/terminal-notifier:13: warning: Insecure world writable dir /condor/condor-installed in PATH, mode 040777
+> 
+> options(error = utils::recover)
+> n.points=20000
+> results.nicotiana.no.measurement.error <- BMhyb(data.vector.raw, phy, flow, store.sims=TRUE, measurement.error=0, n.points=n.points)
+[1] "Getting starting values from Geiger"
+[1] "Done getting starting values"
+[1] "Starting model 1 of 4"
+      step  negloglik   sigma.sq         mu         vh 
+ 0.0000000 85.9923909  0.3015104  2.5836703  0.3002789 
+                     step steps.without.improvement                 negloglik 
+                1.0000000                 1.0000000                85.9923909 
+                 sigma.sq                        mu                        vh 
+                0.3015104                 2.5836703                 0.3002789 
+                     step steps.without.improvement                 negloglik 
+                2.0000000                 2.0000000                85.9923909 
+                 sigma.sq                        mu                        vh 
+                0.3015104                 2.5836703                 0.3002789 
+                     step steps.without.improvement                 negloglik 
+                3.0000000                 3.0000000                85.9923909 
+                 sigma.sq                        mu                        vh 
+                0.3015104                 2.5836703                 0.3002789 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+                4.0000000                 0.0000000                75.8778125 
+                 sigma.sq                        mu                        vh 
+                0.1672831                 2.8062488                 0.2321230 
+                     step steps.without.improvement                 negloglik 
+                5.0000000                 1.0000000                75.8778125 
+                 sigma.sq                        mu                        vh 
+                0.1672831                 2.8062488                 0.2321230 
+                     step steps.without.improvement                 negloglik 
+                6.0000000                 2.0000000                75.8778125 
+                 sigma.sq                        mu                        vh 
+                0.1672831                 2.8062488                 0.2321230 
+                     step steps.without.improvement                 negloglik 
+                7.0000000                 3.0000000                75.8778125 
+                 sigma.sq                        mu                        vh 
+                0.1672831                 2.8062488                 0.2321230 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+               8.00000000                0.00000000               71.01010294 
+                 sigma.sq                        mu                        vh 
+               0.08783804                2.94075433                0.18601854 
+                     step steps.without.improvement                 negloglik 
+               9.00000000                1.00000000               71.01010294 
+                 sigma.sq                        mu                        vh 
+               0.08783804                2.94075433                0.18601854 
+                     step steps.without.improvement                 negloglik 
+              10.00000000                2.00000000               71.01010294 
+                 sigma.sq                        mu                        vh 
+               0.08783804                2.94075433                0.18601854 
+                     step steps.without.improvement                 negloglik 
+              11.00000000                3.00000000               71.01010294 
+                 sigma.sq                        mu                        vh 
+               0.08783804                2.94075433                0.18601854 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+              12.00000000                0.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              13.00000000                1.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              14.00000000                2.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              15.00000000                3.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              16.00000000                4.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              17.00000000                5.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              18.00000000                6.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              19.00000000                7.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              20.00000000                8.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              21.00000000                9.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+                     step steps.without.improvement                 negloglik 
+              22.00000000               10.00000000               70.78541193 
+                 sigma.sq                        mu                        vh 
+               0.08786332                2.71964065                0.18607207 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 20000 done"
+[1] "200 of 20000 done"
+[1] "300 of 20000 done"
+[1] "400 of 20000 done"
+[1] "500 of 20000 done"
+[1] "600 of 20000 done"
+[1] "700 of 20000 done"
+[1] "800 of 20000 done"
+[1] "900 of 20000 done"
+[1] "1000 of 20000 done"
+[1] "1100 of 20000 done"
+[1] "1200 of 20000 done"
+[1] "1300 of 20000 done"
+[1] "1400 of 20000 done"
+[1] "1500 of 20000 done"
+[1] "1600 of 20000 done"
+[1] "1700 of 20000 done"
+[1] "1800 of 20000 done"
+[1] "1900 of 20000 done"
+[1] "2000 of 20000 done"
+[1] "2100 of 20000 done"
+[1] "2200 of 20000 done"
+[1] "2300 of 20000 done"
+[1] "2400 of 20000 done"
+[1] "2500 of 20000 done"
+[1] "2600 of 20000 done"
+[1] "2700 of 20000 done"
+[1] "2800 of 20000 done"
+[1] "2900 of 20000 done"
+[1] "3000 of 20000 done"
+[1] "3100 of 20000 done"
+[1] "3200 of 20000 done"
+[1] "3300 of 20000 done"
+[1] "3400 of 20000 done"
+[1] "3500 of 20000 done"
+[1] "3600 of 20000 done"
+[1] "3700 of 20000 done"
+[1] "3800 of 20000 done"
+[1] "3900 of 20000 done"
+[1] "4000 of 20000 done"
+[1] "4100 of 20000 done"
+[1] "4200 of 20000 done"
+[1] "4300 of 20000 done"
+[1] "4400 of 20000 done"
+[1] "4500 of 20000 done"
+[1] "4600 of 20000 done"
+[1] "4700 of 20000 done"
+[1] "4800 of 20000 done"
+[1] "4900 of 20000 done"
+[1] "5000 of 20000 done"
+[1] "5100 of 20000 done"
+[1] "5200 of 20000 done"
+[1] "5300 of 20000 done"
+[1] "5400 of 20000 done"
+[1] "5500 of 20000 done"
+[1] "5600 of 20000 done"
+[1] "5700 of 20000 done"
+[1] "5800 of 20000 done"
+[1] "5900 of 20000 done"
+[1] "6000 of 20000 done"
+[1] "6100 of 20000 done"
+[1] "6200 of 20000 done"
+[1] "6300 of 20000 done"
+[1] "6400 of 20000 done"
+[1] "6500 of 20000 done"
+[1] "6600 of 20000 done"
+[1] "6700 of 20000 done"
+[1] "6800 of 20000 done"
+[1] "6900 of 20000 done"
+[1] "7000 of 20000 done"
+[1] "7100 of 20000 done"
+[1] "7200 of 20000 done"
+[1] "7300 of 20000 done"
+[1] "7400 of 20000 done"
+[1] "7500 of 20000 done"
+[1] "7600 of 20000 done"
+[1] "7700 of 20000 done"
+[1] "7800 of 20000 done"
+[1] "7900 of 20000 done"
+[1] "8000 of 20000 done"
+[1] "8100 of 20000 done"
+[1] "8200 of 20000 done"
+[1] "8300 of 20000 done"
+[1] "8400 of 20000 done"
+[1] "8500 of 20000 done"
+[1] "8600 of 20000 done"
+[1] "8700 of 20000 done"
+[1] "8800 of 20000 done"
+[1] "8900 of 20000 done"
+[1] "9000 of 20000 done"
+[1] "9100 of 20000 done"
+[1] "9200 of 20000 done"
+[1] "9300 of 20000 done"
+[1] "9400 of 20000 done"
+[1] "9500 of 20000 done"
+[1] "9600 of 20000 done"
+[1] "9700 of 20000 done"
+[1] "9800 of 20000 done"
+[1] "9900 of 20000 done"
+[1] "10000 of 20000 done"
+[1] "10100 of 20000 done"
+[1] "10200 of 20000 done"
+[1] "10300 of 20000 done"
+[1] "10400 of 20000 done"
+[1] "10500 of 20000 done"
+[1] "10600 of 20000 done"
+[1] "10700 of 20000 done"
+[1] "10800 of 20000 done"
+[1] "10900 of 20000 done"
+[1] "11000 of 20000 done"
+[1] "11100 of 20000 done"
+[1] "11200 of 20000 done"
+[1] "11300 of 20000 done"
+[1] "11400 of 20000 done"
+[1] "11500 of 20000 done"
+[1] "11600 of 20000 done"
+[1] "11700 of 20000 done"
+[1] "11800 of 20000 done"
+[1] "11900 of 20000 done"
+[1] "12000 of 20000 done"
+[1] "12100 of 20000 done"
+[1] "12200 of 20000 done"
+[1] "12300 of 20000 done"
+[1] "12400 of 20000 done"
+[1] "12500 of 20000 done"
+[1] "12600 of 20000 done"
+[1] "12700 of 20000 done"
+[1] "12800 of 20000 done"
+[1] "12900 of 20000 done"
+[1] "13000 of 20000 done"
+[1] "13100 of 20000 done"
+[1] "13200 of 20000 done"
+[1] "13300 of 20000 done"
+[1] "13400 of 20000 done"
+[1] "13500 of 20000 done"
+[1] "13600 of 20000 done"
+[1] "13700 of 20000 done"
+[1] "13800 of 20000 done"
+[1] "13900 of 20000 done"
+[1] "14000 of 20000 done"
+[1] "14100 of 20000 done"
+[1] "14200 of 20000 done"
+[1] "14300 of 20000 done"
+[1] "14400 of 20000 done"
+[1] "14500 of 20000 done"
+[1] "14600 of 20000 done"
+[1] "14700 of 20000 done"
+[1] "14800 of 20000 done"
+[1] "14900 of 20000 done"
+[1] "15000 of 20000 done"
+[1] "15100 of 20000 done"
+[1] "15200 of 20000 done"
+[1] "15300 of 20000 done"
+[1] "15400 of 20000 done"
+[1] "15500 of 20000 done"
+[1] "15600 of 20000 done"
+[1] "15700 of 20000 done"
+[1] "15800 of 20000 done"
+[1] "15900 of 20000 done"
+[1] "16000 of 20000 done"
+[1] "16100 of 20000 done"
+[1] "16200 of 20000 done"
+[1] "16300 of 20000 done"
+[1] "16400 of 20000 done"
+[1] "16500 of 20000 done"
+[1] "16600 of 20000 done"
+[1] "16700 of 20000 done"
+[1] "16800 of 20000 done"
+[1] "16900 of 20000 done"
+[1] "17000 of 20000 done"
+[1] "17100 of 20000 done"
+[1] "17200 of 20000 done"
+[1] "17300 of 20000 done"
+[1] "17400 of 20000 done"
+[1] "17500 of 20000 done"
+[1] "17600 of 20000 done"
+[1] "17700 of 20000 done"
+[1] "17800 of 20000 done"
+[1] "17900 of 20000 done"
+[1] "18000 of 20000 done"
+[1] "18100 of 20000 done"
+[1] "18200 of 20000 done"
+[1] "18300 of 20000 done"
+[1] "18400 of 20000 done"
+[1] "18500 of 20000 done"
+[1] "18600 of 20000 done"
+[1] "18700 of 20000 done"
+[1] "18800 of 20000 done"
+[1] "18900 of 20000 done"
+[1] "19000 of 20000 done"
+[1] "19100 of 20000 done"
+[1] "19200 of 20000 done"
+[1] "19300 of 20000 done"
+[1] "19400 of 20000 done"
+[1] "19500 of 20000 done"
+[1] "19600 of 20000 done"
+[1] "19700 of 20000 done"
+[1] "19800 of 20000 done"
+[1] "19900 of 20000 done"
+[1] "20000 of 20000 done"
+[1] "Uncertainty plot has been saved in Model1_uncertainty_plot.pdf in /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana"
+  Model   sigma.sq       mu bt        vh SE     AICc  NegLogL K sigma.sq.lower
+1     1 0.08786332 2.719641  1 0.1860721  0 148.0237 70.78541 3     0.06773216
+  sigma.sq.upper mu.lower mu.upper bt.lower bt.upper  vh.lower  vh.upper
+1      0.1306723   2.0067  3.48037        1        1 0.1626794 0.3218525
+  SE.lower SE.upper
+1        0        0
+[1] "Starting model 2 of 4"
+         step     negloglik      sigma.sq            mu            bt 
+ 0.000000e+00 8.988466e+307  3.095717e-01  2.579640e+00  1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+00              1.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             2.000000e+00              2.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             3.000000e+00              3.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              4.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              5.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              6.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              7.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              8.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              9.000000e+00             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              1.000000e+01             8.988466e+307 
+                 sigma.sq                        mu                        bt 
+             3.095717e-01              2.579640e+00              1.000000e+00 
+[1] "It seems your likelihood for this run 8.98846567431158e+307 is invalid. This probably reflects a problem with numerical optimization for your tree. Your parameter estimates and AIC weights are likely meaningless. We will not calculate confidence: the confidence intervals for all parameters should be taken as c(-Inf, Inf) [unless the parameter is bounded by zero, in which case it is c(0, Inf)]. You could try a transformation of your branch lengths (and make sure to change the time of the flow matrix, too) -- note that parameter values (rate of evolution) will be based on this new timescale. Alternatively, you might allow SE for tip values to be estimated by setting measurement.error=NULL."
+  Model  sigma.sq      mu bt vh SE          AICc       NegLogL K sigma.sq.lower
+1     2 0.3095717 2.57964  1  0  0 1.797693e+308 8.988466e+307 3             NA
+  sigma.sq.upper mu.lower mu.upper bt.lower bt.upper vh.lower vh.upper SE.lower
+1             NA       NA       NA       NA       NA       NA       NA       NA
+  SE.upper
+1       NA
+[1] "Starting model 3 of 4"
+         step     negloglik      sigma.sq            mu 
+ 0.000000e+00 8.988466e+307  3.095717e-01  2.579640e+00 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+                1.0000000                 0.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                2.0000000                 1.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                3.0000000                 2.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                4.0000000                 3.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                5.0000000                 4.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                6.0000000                 5.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                7.0000000                 6.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                8.0000000                 7.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+                9.0000000                 8.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+               10.0000000                 9.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+                     step steps.without.improvement                 negloglik 
+               11.0000000                10.0000000               112.1583871 
+                 sigma.sq                        mu 
+                0.9050275                 2.6059682 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 20000 done"
+[1] "200 of 20000 done"
+[1] "300 of 20000 done"
+[1] "400 of 20000 done"
+[1] "500 of 20000 done"
+[1] "600 of 20000 done"
+[1] "700 of 20000 done"
+[1] "800 of 20000 done"
+[1] "900 of 20000 done"
+[1] "1000 of 20000 done"
+[1] "1100 of 20000 done"
+[1] "1200 of 20000 done"
+[1] "1300 of 20000 done"
+[1] "1400 of 20000 done"
+[1] "1500 of 20000 done"
+[1] "1600 of 20000 done"
+[1] "1700 of 20000 done"
+[1] "1800 of 20000 done"
+[1] "1900 of 20000 done"
+[1] "2000 of 20000 done"
+[1] "2100 of 20000 done"
+[1] "2200 of 20000 done"
+[1] "2300 of 20000 done"
+[1] "2400 of 20000 done"
+[1] "2500 of 20000 done"
+[1] "2600 of 20000 done"
+[1] "2700 of 20000 done"
+[1] "2800 of 20000 done"
+[1] "2900 of 20000 done"
+[1] "3000 of 20000 done"
+[1] "3100 of 20000 done"
+[1] "3200 of 20000 done"
+[1] "3300 of 20000 done"
+[1] "3400 of 20000 done"
+[1] "3500 of 20000 done"
+[1] "3600 of 20000 done"
+[1] "3700 of 20000 done"
+[1] "3800 of 20000 done"
+[1] "3900 of 20000 done"
+[1] "4000 of 20000 done"
+[1] "4100 of 20000 done"
+[1] "4200 of 20000 done"
+[1] "4300 of 20000 done"
+[1] "4400 of 20000 done"
+[1] "4500 of 20000 done"
+[1] "4600 of 20000 done"
+[1] "4700 of 20000 done"
+[1] "4800 of 20000 done"
+[1] "4900 of 20000 done"
+[1] "5000 of 20000 done"
+[1] "5100 of 20000 done"
+[1] "5200 of 20000 done"
+[1] "5300 of 20000 done"
+[1] "5400 of 20000 done"
+[1] "5500 of 20000 done"
+[1] "5600 of 20000 done"
+[1] "5700 of 20000 done"
+[1] "5800 of 20000 done"
+[1] "5900 of 20000 done"
+[1] "6000 of 20000 done"
+[1] "6100 of 20000 done"
+[1] "6200 of 20000 done"
+[1] "6300 of 20000 done"
+[1] "6400 of 20000 done"
+[1] "6500 of 20000 done"
+[1] "6600 of 20000 done"
+[1] "6700 of 20000 done"
+[1] "6800 of 20000 done"
+[1] "6900 of 20000 done"
+[1] "7000 of 20000 done"
+[1] "7100 of 20000 done"
+[1] "7200 of 20000 done"
+[1] "7300 of 20000 done"
+[1] "7400 of 20000 done"
+[1] "7500 of 20000 done"
+[1] "7600 of 20000 done"
+[1] "7700 of 20000 done"
+[1] "7800 of 20000 done"
+[1] "7900 of 20000 done"
+[1] "8000 of 20000 done"
+[1] "8100 of 20000 done"
+[1] "8200 of 20000 done"
+[1] "8300 of 20000 done"
+[1] "8400 of 20000 done"
+[1] "8500 of 20000 done"
+[1] "8600 of 20000 done"
+[1] "8700 of 20000 done"
+[1] "8800 of 20000 done"
+[1] "8900 of 20000 done"
+[1] "9000 of 20000 done"
+[1] "9100 of 20000 done"
+[1] "9200 of 20000 done"
+[1] "9300 of 20000 done"
+[1] "9400 of 20000 done"
+[1] "9500 of 20000 done"
+[1] "9600 of 20000 done"
+[1] "9700 of 20000 done"
+[1] "9800 of 20000 done"
+[1] "9900 of 20000 done"
+[1] "10000 of 20000 done"
+[1] "10100 of 20000 done"
+[1] "10200 of 20000 done"
+[1] "10300 of 20000 done"
+[1] "10400 of 20000 done"
+[1] "10500 of 20000 done"
+[1] "10600 of 20000 done"
+[1] "10700 of 20000 done"
+[1] "10800 of 20000 done"
+[1] "10900 of 20000 done"
+[1] "11000 of 20000 done"
+[1] "11100 of 20000 done"
+[1] "11200 of 20000 done"
+[1] "11300 of 20000 done"
+[1] "11400 of 20000 done"
+[1] "11500 of 20000 done"
+[1] "11600 of 20000 done"
+[1] "11700 of 20000 done"
+[1] "11800 of 20000 done"
+[1] "11900 of 20000 done"
+[1] "12000 of 20000 done"
+[1] "12100 of 20000 done"
+[1] "12200 of 20000 done"
+[1] "12300 of 20000 done"
+[1] "12400 of 20000 done"
+[1] "12500 of 20000 done"
+[1] "12600 of 20000 done"
+[1] "12700 of 20000 done"
+[1] "12800 of 20000 done"
+[1] "12900 of 20000 done"
+[1] "13000 of 20000 done"
+[1] "13100 of 20000 done"
+[1] "13200 of 20000 done"
+[1] "13300 of 20000 done"
+[1] "13400 of 20000 done"
+[1] "13500 of 20000 done"
+[1] "13600 of 20000 done"
+[1] "13700 of 20000 done"
+[1] "13800 of 20000 done"
+[1] "13900 of 20000 done"
+[1] "14000 of 20000 done"
+[1] "14100 of 20000 done"
+[1] "14200 of 20000 done"
+[1] "14300 of 20000 done"
+[1] "14400 of 20000 done"
+[1] "14500 of 20000 done"
+[1] "14600 of 20000 done"
+[1] "14700 of 20000 done"
+[1] "14800 of 20000 done"
+[1] "14900 of 20000 done"
+[1] "15000 of 20000 done"
+[1] "15100 of 20000 done"
+[1] "15200 of 20000 done"
+[1] "15300 of 20000 done"
+[1] "15400 of 20000 done"
+[1] "15500 of 20000 done"
+[1] "15600 of 20000 done"
+[1] "15700 of 20000 done"
+[1] "15800 of 20000 done"
+[1] "15900 of 20000 done"
+[1] "16000 of 20000 done"
+[1] "16100 of 20000 done"
+[1] "16200 of 20000 done"
+[1] "16300 of 20000 done"
+[1] "16400 of 20000 done"
+[1] "16500 of 20000 done"
+[1] "16600 of 20000 done"
+[1] "16700 of 20000 done"
+[1] "16800 of 20000 done"
+[1] "16900 of 20000 done"
+[1] "17000 of 20000 done"
+[1] "17100 of 20000 done"
+[1] "17200 of 20000 done"
+[1] "17300 of 20000 done"
+[1] "17400 of 20000 done"
+[1] "17500 of 20000 done"
+[1] "17600 of 20000 done"
+[1] "17700 of 20000 done"
+[1] "17800 of 20000 done"
+[1] "17900 of 20000 done"
+[1] "18000 of 20000 done"
+[1] "18100 of 20000 done"
+[1] "18200 of 20000 done"
+[1] "18300 of 20000 done"
+[1] "18400 of 20000 done"
+[1] "18500 of 20000 done"
+[1] "18600 of 20000 done"
+[1] "18700 of 20000 done"
+[1] "18800 of 20000 done"
+[1] "18900 of 20000 done"
+[1] "19000 of 20000 done"
+[1] "19100 of 20000 done"
+[1] "19200 of 20000 done"
+[1] "19300 of 20000 done"
+[1] "19400 of 20000 done"
+[1] "19500 of 20000 done"
+[1] "19600 of 20000 done"
+[1] "19700 of 20000 done"
+[1] "19800 of 20000 done"
+[1] "19900 of 20000 done"
+[1] "20000 of 20000 done"
+[1] "Uncertainty plot has been saved in Model3_uncertainty_plot.pdf in /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana"
+  Model  sigma.sq       mu bt vh SE    AICc  NegLogL K sigma.sq.lower
+1     3 0.9050275 2.605968  1  0  0 228.539 112.1584 2      0.9055949
+  sigma.sq.upper mu.lower mu.upper bt.lower bt.upper vh.lower vh.upper SE.lower
+1      0.9776908  1.39296 3.813378        1        1        0        0        0
+  SE.upper
+1        0
+[1] "Starting model 4 of 4"
+      step  negloglik   sigma.sq         mu         bt         vh 
+ 0.0000000 86.0016542  0.3015104  2.5826627  1.0030230  0.2992712 
+                     step steps.without.improvement                 negloglik 
+                1.0000000                 1.0000000                86.0016542 
+                 sigma.sq                        mu                        bt 
+                0.3015104                 2.5826627                 1.0030230 
+                       vh 
+                0.2992712 
+                     step steps.without.improvement                 negloglik 
+                2.0000000                 2.0000000                86.0016542 
+                 sigma.sq                        mu                        bt 
+                0.3015104                 2.5826627                 1.0030230 
+                       vh 
+                0.2992712 
+                     step steps.without.improvement                 negloglik 
+                3.0000000                 3.0000000                86.0016542 
+                 sigma.sq                        mu                        bt 
+                0.3015104                 2.5826627                 1.0030230 
+                       vh 
+                0.2992712 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+                4.0000000                 0.0000000                76.5370169 
+                 sigma.sq                        mu                        bt 
+                0.1723772                 2.6472292                 1.0675896 
+                       vh 
+                0.3638378 
+                     step steps.without.improvement                 negloglik 
+                5.0000000                 1.0000000                76.5370169 
+                 sigma.sq                        mu                        bt 
+                0.1723772                 2.6472292                 1.0675896 
+                       vh 
+                0.3638378 
+                     step steps.without.improvement                 negloglik 
+                6.0000000                 2.0000000                76.5370169 
+                 sigma.sq                        mu                        bt 
+                0.1723772                 2.6472292                 1.0675896 
+                       vh 
+                0.3638378 
+                     step steps.without.improvement                 negloglik 
+                7.0000000                 3.0000000                76.5370169 
+                 sigma.sq                        mu                        bt 
+                0.1723772                 2.6472292                 1.0675896 
+                       vh 
+                0.3638378 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+               8.00000000                0.00000000               72.56018194 
+                 sigma.sq                        mu                        bt 
+               0.09058343                2.63766706                1.03793412 
+                       vh 
+               0.30934381 
+                     step steps.without.improvement                 negloglik 
+               9.00000000                1.00000000               72.56018194 
+                 sigma.sq                        mu                        bt 
+               0.09058343                2.63766706                1.03793412 
+                       vh 
+               0.30934381 
+                     step steps.without.improvement                 negloglik 
+              10.00000000                2.00000000               72.56018194 
+                 sigma.sq                        mu                        bt 
+               0.09058343                2.63766706                1.03793412 
+                       vh 
+               0.30934381 
+                     step steps.without.improvement                 negloglik 
+              11.00000000                3.00000000               72.56018194 
+                 sigma.sq                        mu                        bt 
+               0.09058343                2.63766706                1.03793412 
+                       vh 
+               0.30934381 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+              12.00000000                4.00000000               72.55987208 
+                 sigma.sq                        mu                        bt 
+               0.09026305                2.63879517                1.03739311 
+                       vh 
+               0.30825149 
+                     step steps.without.improvement                 negloglik 
+              13.00000000                5.00000000               72.55987208 
+                 sigma.sq                        mu                        bt 
+               0.09026305                2.63879517                1.03739311 
+                       vh 
+               0.30825149 
+                     step steps.without.improvement                 negloglik 
+              14.00000000                6.00000000               72.55987208 
+                 sigma.sq                        mu                        bt 
+               0.09026305                2.63879517                1.03739311 
+                       vh 
+               0.30825149 
+                     step steps.without.improvement                 negloglik 
+              15.00000000                7.00000000               72.55987208 
+                 sigma.sq                        mu                        bt 
+               0.09026305                2.63879517                1.03739311 
+                       vh 
+               0.30825149 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+              16.00000000                8.00000000               72.55987099 
+                 sigma.sq                        mu                        bt 
+               0.09027093                2.63876677                1.03740442 
+                       vh 
+               0.30827842 
+                     step steps.without.improvement                 negloglik 
+              17.00000000                9.00000000               72.55987099 
+                 sigma.sq                        mu                        bt 
+               0.09027093                2.63876677                1.03740442 
+                       vh 
+               0.30827842 
+                     step steps.without.improvement                 negloglik 
+              18.00000000               10.00000000               72.55987099 
+                 sigma.sq                        mu                        bt 
+               0.09027093                2.63876677                1.03740442 
+                       vh 
+               0.30827842 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 20000 done"
+[1] "200 of 20000 done"
+[1] "300 of 20000 done"
+[1] "400 of 20000 done"
+[1] "500 of 20000 done"
+[1] "600 of 20000 done"
+[1] "700 of 20000 done"
+[1] "800 of 20000 done"
+[1] "900 of 20000 done"
+[1] "1000 of 20000 done"
+[1] "1100 of 20000 done"
+[1] "1200 of 20000 done"
+[1] "1300 of 20000 done"
+[1] "1400 of 20000 done"
+[1] "1500 of 20000 done"
+[1] "1600 of 20000 done"
+[1] "1700 of 20000 done"
+[1] "1800 of 20000 done"
+[1] "1900 of 20000 done"
+[1] "2000 of 20000 done"
+[1] "2100 of 20000 done"
+[1] "2200 of 20000 done"
+[1] "2300 of 20000 done"
+[1] "2400 of 20000 done"
+[1] "2500 of 20000 done"
+[1] "2600 of 20000 done"
+[1] "2700 of 20000 done"
+[1] "2800 of 20000 done"
+[1] "2900 of 20000 done"
+[1] "3000 of 20000 done"
+[1] "3100 of 20000 done"
+[1] "3200 of 20000 done"
+[1] "3300 of 20000 done"
+[1] "3400 of 20000 done"
+[1] "3500 of 20000 done"
+[1] "3600 of 20000 done"
+[1] "3700 of 20000 done"
+[1] "3800 of 20000 done"
+[1] "3900 of 20000 done"
+[1] "4000 of 20000 done"
+[1] "4100 of 20000 done"
+[1] "4200 of 20000 done"
+[1] "4300 of 20000 done"
+[1] "4400 of 20000 done"
+[1] "4500 of 20000 done"
+[1] "4600 of 20000 done"
+[1] "4700 of 20000 done"
+[1] "4800 of 20000 done"
+[1] "4900 of 20000 done"
+[1] "5000 of 20000 done"
+[1] "5100 of 20000 done"
+[1] "5200 of 20000 done"
+[1] "5300 of 20000 done"
+[1] "5400 of 20000 done"
+[1] "5500 of 20000 done"
+[1] "5600 of 20000 done"
+[1] "5700 of 20000 done"
+[1] "5800 of 20000 done"
+[1] "5900 of 20000 done"
+[1] "6000 of 20000 done"
+[1] "6100 of 20000 done"
+[1] "6200 of 20000 done"
+[1] "6300 of 20000 done"
+[1] "6400 of 20000 done"
+[1] "6500 of 20000 done"
+[1] "6600 of 20000 done"
+[1] "6700 of 20000 done"
+[1] "6800 of 20000 done"
+[1] "6900 of 20000 done"
+[1] "7000 of 20000 done"
+[1] "7100 of 20000 done"
+[1] "7200 of 20000 done"
+[1] "7300 of 20000 done"
+[1] "7400 of 20000 done"
+[1] "7500 of 20000 done"
+[1] "7600 of 20000 done"
+[1] "7700 of 20000 done"
+[1] "7800 of 20000 done"
+[1] "7900 of 20000 done"
+[1] "8000 of 20000 done"
+[1] "8100 of 20000 done"
+[1] "8200 of 20000 done"
+[1] "8300 of 20000 done"
+[1] "8400 of 20000 done"
+[1] "8500 of 20000 done"
+[1] "8600 of 20000 done"
+[1] "8700 of 20000 done"
+[1] "8800 of 20000 done"
+[1] "8900 of 20000 done"
+[1] "9000 of 20000 done"
+[1] "9100 of 20000 done"
+[1] "9200 of 20000 done"
+[1] "9300 of 20000 done"
+[1] "9400 of 20000 done"
+[1] "9500 of 20000 done"
+[1] "9600 of 20000 done"
+[1] "9700 of 20000 done"
+[1] "9800 of 20000 done"
+[1] "9900 of 20000 done"
+[1] "10000 of 20000 done"
+[1] "10100 of 20000 done"
+[1] "10200 of 20000 done"
+[1] "10300 of 20000 done"
+[1] "10400 of 20000 done"
+[1] "10500 of 20000 done"
+[1] "10600 of 20000 done"
+[1] "10700 of 20000 done"
+[1] "10800 of 20000 done"
+[1] "10900 of 20000 done"
+[1] "11000 of 20000 done"
+[1] "11100 of 20000 done"
+[1] "11200 of 20000 done"
+[1] "11300 of 20000 done"
+[1] "11400 of 20000 done"
+[1] "11500 of 20000 done"
+[1] "11600 of 20000 done"
+[1] "11700 of 20000 done"
+[1] "11800 of 20000 done"
+[1] "11900 of 20000 done"
+[1] "12000 of 20000 done"
+[1] "12100 of 20000 done"
+[1] "12200 of 20000 done"
+[1] "12300 of 20000 done"
+[1] "12400 of 20000 done"
+[1] "12500 of 20000 done"
+[1] "12600 of 20000 done"
+[1] "12700 of 20000 done"
+[1] "12800 of 20000 done"
+[1] "12900 of 20000 done"
+[1] "13000 of 20000 done"
+[1] "13100 of 20000 done"
+[1] "13200 of 20000 done"
+[1] "13300 of 20000 done"
+[1] "13400 of 20000 done"
+[1] "13500 of 20000 done"
+[1] "13600 of 20000 done"
+[1] "13700 of 20000 done"
+[1] "13800 of 20000 done"
+[1] "13900 of 20000 done"
+[1] "14000 of 20000 done"
+[1] "14100 of 20000 done"
+[1] "14200 of 20000 done"
+[1] "14300 of 20000 done"
+[1] "14400 of 20000 done"
+[1] "14500 of 20000 done"
+[1] "14600 of 20000 done"
+[1] "14700 of 20000 done"
+[1] "14800 of 20000 done"
+[1] "14900 of 20000 done"
+[1] "15000 of 20000 done"
+[1] "15100 of 20000 done"
+[1] "15200 of 20000 done"
+[1] "15300 of 20000 done"
+[1] "15400 of 20000 done"
+[1] "15500 of 20000 done"
+[1] "15600 of 20000 done"
+[1] "15700 of 20000 done"
+[1] "15800 of 20000 done"
+[1] "15900 of 20000 done"
+[1] "16000 of 20000 done"
+[1] "16100 of 20000 done"
+[1] "16200 of 20000 done"
+[1] "16300 of 20000 done"
+[1] "16400 of 20000 done"
+[1] "16500 of 20000 done"
+[1] "16600 of 20000 done"
+[1] "16700 of 20000 done"
+[1] "16800 of 20000 done"
+[1] "16900 of 20000 done"
+[1] "17000 of 20000 done"
+[1] "17100 of 20000 done"
+[1] "17200 of 20000 done"
+[1] "17300 of 20000 done"
+[1] "17400 of 20000 done"
+[1] "17500 of 20000 done"
+[1] "17600 of 20000 done"
+[1] "17700 of 20000 done"
+[1] "17800 of 20000 done"
+[1] "17900 of 20000 done"
+[1] "18000 of 20000 done"
+[1] "18100 of 20000 done"
+[1] "18200 of 20000 done"
+[1] "18300 of 20000 done"
+[1] "18400 of 20000 done"
+[1] "18500 of 20000 done"
+[1] "18600 of 20000 done"
+[1] "18700 of 20000 done"
+[1] "18800 of 20000 done"
+[1] "18900 of 20000 done"
+[1] "19000 of 20000 done"
+[1] "19100 of 20000 done"
+[1] "19200 of 20000 done"
+[1] "19300 of 20000 done"
+[1] "19400 of 20000 done"
+[1] "19500 of 20000 done"
+[1] "19600 of 20000 done"
+[1] "19700 of 20000 done"
+[1] "19800 of 20000 done"
+[1] "19900 of 20000 done"
+[1] "20000 of 20000 done"
+[1] "Uncertainty plot has been saved in Model4_uncertainty_plot.pdf in /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana"
+  Model   sigma.sq       mu       bt        vh SE    AICc  NegLogL K
+1     4 0.09027093 2.638767 1.037404 0.3082784  0 153.889 72.55987 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper  bt.lower  bt.upper
+1     0.02409874      0.0458948 2.127891 3.224223 0.2693017 0.2906156
+     vh.lower   vh.upper SE.lower SE.upper
+1 0.008604808 0.01658453        0        0
+There were 50 or more warnings (use warnings() to see the first 50)
+> save(list=ls(), file="Nicotiana.results.RData")
+> system("echo 'Measurement error nicotiana done' | terminal-notifier -sound default")
+/Library/Ruby/Gems/2.0.0/gems/terminal-notifier-1.6.3/bin/terminal-notifier:13: warning: Insecure world writable dir /condor/condor-installed in PATH, mode 040777
+> system("mv *.pdf WithFixedZeroError")
+> results.nicotiana <- BMhyb(data.vector.raw, phy, flow, store.sims=TRUE, n.points=n.points)
+[1] "Getting starting values from Geiger"
+[1] "Done getting starting values"
+[1] "Starting model 1 of 4"
+      step  negloglik   sigma.sq         mu         vh         SE 
+ 0.0000000 70.7218861  0.0284861  2.5280133  0.5110963  0.6260255 
+                     step steps.without.improvement                 negloglik 
+                1.0000000                 1.0000000                70.7218861 
+                 sigma.sq                        mu                        vh 
+                0.0284861                 2.5280133                 0.5110963 
+                       SE 
+                0.6260255 
+                     step steps.without.improvement                 negloglik 
+                2.0000000                 2.0000000                70.7218861 
+                 sigma.sq                        mu                        vh 
+                0.0284861                 2.5280133                 0.5110963 
+                       SE 
+                0.6260255 
+                     step steps.without.improvement                 negloglik 
+                3.0000000                 3.0000000                70.7218861 
+                 sigma.sq                        mu                        vh 
+                0.0284861                 2.5280133                 0.5110963 
+                       SE 
+                0.6260255 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+                4.0000000                 4.0000000                70.7218832 
+                 sigma.sq                        mu                        vh 
+                0.0284749                 2.5286745                 0.5089880 
+                       SE 
+                0.6263314 
+                     step steps.without.improvement                 negloglik 
+                5.0000000                 5.0000000                70.7218832 
+                 sigma.sq                        mu                        vh 
+                0.0284749                 2.5286745                 0.5089880 
+                       SE 
+                0.6263314 
+                     step steps.without.improvement                 negloglik 
+                6.0000000                 6.0000000                70.7218832 
+                 sigma.sq                        mu                        vh 
+                0.0284749                 2.5286745                 0.5089880 
+                       SE 
+                0.6263314 
+                     step steps.without.improvement                 negloglik 
+                7.0000000                 7.0000000                70.7218832 
+                 sigma.sq                        mu                        vh 
+                0.0284749                 2.5286745                 0.5089880 
+                       SE 
+                0.6263314 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+               8.00000000                8.00000000               70.72188210 
+                 sigma.sq                        mu                        vh 
+               0.02847331                2.52869951                0.50901223 
+                       SE 
+               0.62634971 
+                     step steps.without.improvement                 negloglik 
+               9.00000000                9.00000000               70.72188210 
+                 sigma.sq                        mu                        vh 
+               0.02847331                2.52869951                0.50901223 
+                       SE 
+               0.62634971 
+                     step steps.without.improvement                 negloglik 
+              10.00000000               10.00000000               70.72188210 
+                 sigma.sq                        mu                        vh 
+               0.02847331                2.52869951                0.50901223 
+                       SE 
+               0.62634971 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 20000 done"
+[1] "200 of 20000 done"
+[1] "300 of 20000 done"
+[1] "400 of 20000 done"
+[1] "500 of 20000 done"
+[1] "600 of 20000 done"
+[1] "700 of 20000 done"
+[1] "800 of 20000 done"
+[1] "900 of 20000 done"
+[1] "1000 of 20000 done"
+[1] "1100 of 20000 done"
+[1] "1200 of 20000 done"
+[1] "1300 of 20000 done"
+[1] "1400 of 20000 done"
+[1] "1500 of 20000 done"
+[1] "1600 of 20000 done"
+[1] "1700 of 20000 done"
+[1] "1800 of 20000 done"
+[1] "1900 of 20000 done"
+[1] "2000 of 20000 done"
+[1] "2100 of 20000 done"
+[1] "2200 of 20000 done"
+[1] "2300 of 20000 done"
+[1] "2400 of 20000 done"
+[1] "2500 of 20000 done"
+[1] "2600 of 20000 done"
+[1] "2700 of 20000 done"
+[1] "2800 of 20000 done"
+[1] "2900 of 20000 done"
+[1] "3000 of 20000 done"
+[1] "3100 of 20000 done"
+[1] "3200 of 20000 done"
+[1] "3300 of 20000 done"
+[1] "3400 of 20000 done"
+[1] "3500 of 20000 done"
+[1] "3600 of 20000 done"
+[1] "3700 of 20000 done"
+[1] "3800 of 20000 done"
+[1] "3900 of 20000 done"
+[1] "4000 of 20000 done"
+[1] "4100 of 20000 done"
+[1] "4200 of 20000 done"
+[1] "4300 of 20000 done"
+[1] "4400 of 20000 done"
+[1] "4500 of 20000 done"
+[1] "4600 of 20000 done"
+[1] "4700 of 20000 done"
+[1] "4800 of 20000 done"
+[1] "4900 of 20000 done"
+[1] "5000 of 20000 done"
+[1] "5100 of 20000 done"
+[1] "5200 of 20000 done"
+[1] "5300 of 20000 done"
+[1] "5400 of 20000 done"
+[1] "5500 of 20000 done"
+[1] "5600 of 20000 done"
+[1] "5700 of 20000 done"
+[1] "5800 of 20000 done"
+[1] "5900 of 20000 done"
+[1] "6000 of 20000 done"
+[1] "6100 of 20000 done"
+[1] "6200 of 20000 done"
+[1] "6300 of 20000 done"
+[1] "6400 of 20000 done"
+[1] "6500 of 20000 done"
+[1] "6600 of 20000 done"
+[1] "6700 of 20000 done"
+[1] "6800 of 20000 done"
+[1] "6900 of 20000 done"
+[1] "7000 of 20000 done"
+[1] "7100 of 20000 done"
+[1] "7200 of 20000 done"
+[1] "7300 of 20000 done"
+[1] "7400 of 20000 done"
+[1] "7500 of 20000 done"
+[1] "7600 of 20000 done"
+[1] "7700 of 20000 done"
+[1] "7800 of 20000 done"
+[1] "7900 of 20000 done"
+[1] "8000 of 20000 done"
+[1] "8100 of 20000 done"
+[1] "8200 of 20000 done"
+[1] "8300 of 20000 done"
+[1] "8400 of 20000 done"
+[1] "8500 of 20000 done"
+[1] "8600 of 20000 done"
+[1] "8700 of 20000 done"
+[1] "8800 of 20000 done"
+[1] "8900 of 20000 done"
+[1] "9000 of 20000 done"
+[1] "9100 of 20000 done"
+[1] "9200 of 20000 done"
+[1] "9300 of 20000 done"
+[1] "9400 of 20000 done"
+[1] "9500 of 20000 done"
+[1] "9600 of 20000 done"
+[1] "9700 of 20000 done"
+[1] "9800 of 20000 done"
+[1] "9900 of 20000 done"
+[1] "10000 of 20000 done"
+[1] "10100 of 20000 done"
+[1] "10200 of 20000 done"
+[1] "10300 of 20000 done"
+[1] "10400 of 20000 done"
+[1] "10500 of 20000 done"
+[1] "10600 of 20000 done"
+[1] "10700 of 20000 done"
+[1] "10800 of 20000 done"
+[1] "10900 of 20000 done"
+[1] "11000 of 20000 done"
+[1] "11100 of 20000 done"
+[1] "11200 of 20000 done"
+[1] "11300 of 20000 done"
+[1] "11400 of 20000 done"
+[1] "11500 of 20000 done"
+[1] "11600 of 20000 done"
+[1] "11700 of 20000 done"
+[1] "11800 of 20000 done"
+[1] "11900 of 20000 done"
+[1] "12000 of 20000 done"
+[1] "12100 of 20000 done"
+[1] "12200 of 20000 done"
+[1] "12300 of 20000 done"
+[1] "12400 of 20000 done"
+[1] "12500 of 20000 done"
+[1] "12600 of 20000 done"
+[1] "12700 of 20000 done"
+[1] "12800 of 20000 done"
+[1] "12900 of 20000 done"
+[1] "13000 of 20000 done"
+[1] "13100 of 20000 done"
+[1] "13200 of 20000 done"
+[1] "13300 of 20000 done"
+[1] "13400 of 20000 done"
+[1] "13500 of 20000 done"
+[1] "13600 of 20000 done"
+[1] "13700 of 20000 done"
+[1] "13800 of 20000 done"
+[1] "13900 of 20000 done"
+[1] "14000 of 20000 done"
+[1] "14100 of 20000 done"
+[1] "14200 of 20000 done"
+[1] "14300 of 20000 done"
+[1] "14400 of 20000 done"
+[1] "14500 of 20000 done"
+[1] "14600 of 20000 done"
+[1] "14700 of 20000 done"
+[1] "14800 of 20000 done"
+[1] "14900 of 20000 done"
+[1] "15000 of 20000 done"
+[1] "15100 of 20000 done"
+[1] "15200 of 20000 done"
+[1] "15300 of 20000 done"
+[1] "15400 of 20000 done"
+[1] "15500 of 20000 done"
+[1] "15600 of 20000 done"
+[1] "15700 of 20000 done"
+[1] "15800 of 20000 done"
+[1] "15900 of 20000 done"
+[1] "16000 of 20000 done"
+[1] "16100 of 20000 done"
+[1] "16200 of 20000 done"
+[1] "16300 of 20000 done"
+[1] "16400 of 20000 done"
+[1] "16500 of 20000 done"
+[1] "16600 of 20000 done"
+[1] "16700 of 20000 done"
+[1] "16800 of 20000 done"
+[1] "16900 of 20000 done"
+[1] "17000 of 20000 done"
+[1] "17100 of 20000 done"
+[1] "17200 of 20000 done"
+[1] "17300 of 20000 done"
+[1] "17400 of 20000 done"
+[1] "17500 of 20000 done"
+[1] "17600 of 20000 done"
+[1] "17700 of 20000 done"
+[1] "17800 of 20000 done"
+[1] "17900 of 20000 done"
+[1] "18000 of 20000 done"
+[1] "18100 of 20000 done"
+[1] "18200 of 20000 done"
+[1] "18300 of 20000 done"
+[1] "18400 of 20000 done"
+[1] "18500 of 20000 done"
+[1] "18600 of 20000 done"
+[1] "18700 of 20000 done"
+[1] "18800 of 20000 done"
+[1] "18900 of 20000 done"
+[1] "19000 of 20000 done"
+[1] "19100 of 20000 done"
+[1] "19200 of 20000 done"
+[1] "19300 of 20000 done"
+[1] "19400 of 20000 done"
+[1] "19500 of 20000 done"
+[1] "19600 of 20000 done"
+[1] "19700 of 20000 done"
+[1] "19800 of 20000 done"
+[1] "19900 of 20000 done"
+[1] "20000 of 20000 done"
+[1] "Uncertainty plot has been saved in Model1_uncertainty_plot.pdf in /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana"
+  Model   sigma.sq     mu bt        vh        SE    AICc  NegLogL K
+1     1 0.02847331 2.5287  1 0.5090122 0.6263497 150.213 70.72188 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper bt.lower bt.upper  vh.lower
+1    0.009272178     0.06044465 2.045579 2.995635        1        1 0.1990214
+  vh.upper  SE.lower  SE.upper
+1 7.958981 0.5309864 0.8764121
+[1] "Starting model 2 of 4"
+       step   negloglik    sigma.sq          mu          bt          SE 
+ 0.00000000 68.11776684  0.04686604  2.50630052  2.70467981  0.47824232 
+                     step steps.without.improvement                 negloglik 
+               1.00000000                1.00000000               68.11776684 
+                 sigma.sq                        mu                        bt 
+               0.04686604                2.50630052                2.70467981 
+                       SE 
+               0.47824232 
+                     step steps.without.improvement                 negloglik 
+               2.00000000                2.00000000               68.11776684 
+                 sigma.sq                        mu                        bt 
+               0.04686604                2.50630052                2.70467981 
+                       SE 
+               0.47824232 
+                     step steps.without.improvement                 negloglik 
+               3.00000000                3.00000000               68.11776684 
+                 sigma.sq                        mu                        bt 
+               0.04686604                2.50630052                2.70467981 
+                       SE 
+               0.47824232 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+               4.00000000                4.00000000               68.11776638 
+                 sigma.sq                        mu                        bt 
+               0.04686501                2.50654008                2.70464645 
+                       SE 
+               0.47823318 
+                     step steps.without.improvement                 negloglik 
+               5.00000000                5.00000000               68.11776638 
+                 sigma.sq                        mu                        bt 
+               0.04686501                2.50654008                2.70464645 
+                       SE 
+               0.47823318 
+                     step steps.without.improvement                 negloglik 
+               6.00000000                6.00000000               68.11776638 
+                 sigma.sq                        mu                        bt 
+               0.04686501                2.50654008                2.70464645 
+                       SE 
+               0.47823318 
+                     step steps.without.improvement                 negloglik 
+               7.00000000                7.00000000               68.11776638 
+                 sigma.sq                        mu                        bt 
+               0.04686501                2.50654008                2.70464645 
+                       SE 
+               0.47823318 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+               8.00000000                8.00000000               68.11776626 
+                 sigma.sq                        mu                        bt 
+               0.04686384                2.50646064                2.70434662 
+                       SE 
+               0.47821755 
+                     step steps.without.improvement                 negloglik 
+               9.00000000                9.00000000               68.11776626 
+                 sigma.sq                        mu                        bt 
+               0.04686384                2.50646064                2.70434662 
+                       SE 
+               0.47821755 
+                     step steps.without.improvement                 negloglik 
+              10.00000000               10.00000000               68.11776626 
+                 sigma.sq                        mu                        bt 
+               0.04686384                2.50646064                2.70434662 
+                       SE 
+               0.47821755 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 20000 done"
+[1] "200 of 20000 done"
+[1] "300 of 20000 done"
+[1] "400 of 20000 done"
+[1] "500 of 20000 done"
+[1] "600 of 20000 done"
+[1] "700 of 20000 done"
+[1] "800 of 20000 done"
+[1] "900 of 20000 done"
+[1] "1000 of 20000 done"
+[1] "1100 of 20000 done"
+[1] "1200 of 20000 done"
+[1] "1300 of 20000 done"
+[1] "1400 of 20000 done"
+[1] "1500 of 20000 done"
+[1] "1600 of 20000 done"
+[1] "1700 of 20000 done"
+[1] "1800 of 20000 done"
+[1] "1900 of 20000 done"
+[1] "2000 of 20000 done"
+[1] "2100 of 20000 done"
+[1] "2200 of 20000 done"
+[1] "2300 of 20000 done"
+[1] "2400 of 20000 done"
+[1] "2500 of 20000 done"
+[1] "2600 of 20000 done"
+[1] "2700 of 20000 done"
+[1] "2800 of 20000 done"
+[1] "2900 of 20000 done"
+[1] "3000 of 20000 done"
+[1] "3100 of 20000 done"
+[1] "3200 of 20000 done"
+[1] "3300 of 20000 done"
+[1] "3400 of 20000 done"
+[1] "3500 of 20000 done"
+[1] "3600 of 20000 done"
+[1] "3700 of 20000 done"
+[1] "3800 of 20000 done"
+[1] "3900 of 20000 done"
+[1] "4000 of 20000 done"
+[1] "4100 of 20000 done"
+[1] "4200 of 20000 done"
+[1] "4300 of 20000 done"
+[1] "4400 of 20000 done"
+[1] "4500 of 20000 done"
+[1] "4600 of 20000 done"
+[1] "4700 of 20000 done"
+[1] "4800 of 20000 done"
+[1] "4900 of 20000 done"
+[1] "5000 of 20000 done"
+[1] "5100 of 20000 done"
+[1] "5200 of 20000 done"
+[1] "5300 of 20000 done"
+[1] "5400 of 20000 done"
+[1] "5500 of 20000 done"
+[1] "5600 of 20000 done"
+[1] "5700 of 20000 done"
+[1] "5800 of 20000 done"
+[1] "5900 of 20000 done"
+[1] "6000 of 20000 done"
+[1] "6100 of 20000 done"
+[1] "6200 of 20000 done"
+[1] "6300 of 20000 done"
+[1] "6400 of 20000 done"
+[1] "6500 of 20000 done"
+[1] "6600 of 20000 done"
+[1] "6700 of 20000 done"
+[1] "6800 of 20000 done"
+[1] "6900 of 20000 done"
+[1] "7000 of 20000 done"
+[1] "7100 of 20000 done"
+[1] "7200 of 20000 done"
+[1] "7300 of 20000 done"
+[1] "7400 of 20000 done"
+[1] "7500 of 20000 done"
+[1] "7600 of 20000 done"
+[1] "7700 of 20000 done"
+[1] "7800 of 20000 done"
+[1] "7900 of 20000 done"
+[1] "8000 of 20000 done"
+[1] "8100 of 20000 done"
+[1] "8200 of 20000 done"
+[1] "8300 of 20000 done"
+[1] "8400 of 20000 done"
+[1] "8500 of 20000 done"
+[1] "8600 of 20000 done"
+[1] "8700 of 20000 done"
+[1] "8800 of 20000 done"
+[1] "8900 of 20000 done"
+[1] "9000 of 20000 done"
+[1] "9100 of 20000 done"
+[1] "9200 of 20000 done"
+[1] "9300 of 20000 done"
+[1] "9400 of 20000 done"
+[1] "9500 of 20000 done"
+[1] "9600 of 20000 done"
+[1] "9700 of 20000 done"
+[1] "9800 of 20000 done"
+[1] "9900 of 20000 done"
+[1] "10000 of 20000 done"
+[1] "10100 of 20000 done"
+[1] "10200 of 20000 done"
+[1] "10300 of 20000 done"
+[1] "10400 of 20000 done"
+[1] "10500 of 20000 done"
+[1] "10600 of 20000 done"
+[1] "10700 of 20000 done"
+[1] "10800 of 20000 done"
+[1] "10900 of 20000 done"
+[1] "11000 of 20000 done"
+[1] "11100 of 20000 done"
+[1] "11200 of 20000 done"
+[1] "11300 of 20000 done"
+[1] "11400 of 20000 done"
+[1] "11500 of 20000 done"
+[1] "11600 of 20000 done"
+[1] "11700 of 20000 done"
+[1] "11800 of 20000 done"
+[1] "11900 of 20000 done"
+[1] "12000 of 20000 done"
+[1] "12100 of 20000 done"
+[1] "12200 of 20000 done"
+[1] "12300 of 20000 done"
+[1] "12400 of 20000 done"
+[1] "12500 of 20000 done"
+[1] "12600 of 20000 done"
+[1] "12700 of 20000 done"
+[1] "12800 of 20000 done"
+[1] "12900 of 20000 done"
+[1] "13000 of 20000 done"
+[1] "13100 of 20000 done"
+[1] "13200 of 20000 done"
+[1] "13300 of 20000 done"
+[1] "13400 of 20000 done"
+[1] "13500 of 20000 done"
+[1] "13600 of 20000 done"
+[1] "13700 of 20000 done"
+[1] "13800 of 20000 done"
+[1] "13900 of 20000 done"
+[1] "14000 of 20000 done"
+[1] "14100 of 20000 done"
+[1] "14200 of 20000 done"
+[1] "14300 of 20000 done"
+[1] "14400 of 20000 done"
+[1] "14500 of 20000 done"
+[1] "14600 of 20000 done"
+[1] "14700 of 20000 done"
+[1] "14800 of 20000 done"
+[1] "14900 of 20000 done"
+[1] "15000 of 20000 done"
+[1] "15100 of 20000 done"
+[1] "15200 of 20000 done"
+[1] "15300 of 20000 done"
+[1] "15400 of 20000 done"
+[1] "15500 of 20000 done"
+[1] "15600 of 20000 done"
+[1] "15700 of 20000 done"
+[1] "15800 of 20000 done"
+[1] "15900 of 20000 done"
+[1] "16000 of 20000 done"
+[1] "16100 of 20000 done"
+[1] "16200 of 20000 done"
+[1] "16300 of 20000 done"
+[1] "16400 of 20000 done"
+[1] "16500 of 20000 done"
+[1] "16600 of 20000 done"
+[1] "16700 of 20000 done"
+[1] "16800 of 20000 done"
+[1] "16900 of 20000 done"
+[1] "17000 of 20000 done"
+[1] "17100 of 20000 done"
+[1] "17200 of 20000 done"
+[1] "17300 of 20000 done"
+[1] "17400 of 20000 done"
+[1] "17500 of 20000 done"
+[1] "17600 of 20000 done"
+[1] "17700 of 20000 done"
+[1] "17800 of 20000 done"
+[1] "17900 of 20000 done"
+[1] "18000 of 20000 done"
+[1] "18100 of 20000 done"
+[1] "18200 of 20000 done"
+[1] "18300 of 20000 done"
+[1] "18400 of 20000 done"
+[1] "18500 of 20000 done"
+[1] "18600 of 20000 done"
+[1] "18700 of 20000 done"
+[1] "18800 of 20000 done"
+[1] "18900 of 20000 done"
+[1] "19000 of 20000 done"
+[1] "19100 of 20000 done"
+[1] "19200 of 20000 done"
+[1] "19300 of 20000 done"
+[1] "19400 of 20000 done"
+[1] "19500 of 20000 done"
+[1] "19600 of 20000 done"
+[1] "19700 of 20000 done"
+[1] "19800 of 20000 done"
+[1] "19900 of 20000 done"
+[1] "20000 of 20000 done"
+[1] "Uncertainty plot has been saved in Model2_uncertainty_plot.pdf in /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana"
+  Model   sigma.sq       mu       bt vh        SE     AICc  NegLogL K
+1     2 0.04686384 2.506461 2.704347  0 0.4782175 145.0048 68.11777 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper bt.lower bt.upper vh.lower
+1     0.01844147     0.08324021 1.964571  3.10126 1.215916 5.114764        0
+  vh.upper  SE.lower  SE.upper
+1        0 0.2609523 0.7142949
+[1] "Starting model 3 of 4"
+       step   negloglik    sigma.sq          mu          SE 
+ 0.00000000 71.00397629  0.01983302  2.55786685  0.70566789 
+                     step steps.without.improvement                 negloglik 
+               1.00000000                1.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               2.00000000                2.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               3.00000000                3.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               4.00000000                4.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               5.00000000                5.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               6.00000000                6.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               7.00000000                7.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               8.00000000                8.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+               9.00000000                9.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+                     step steps.without.improvement                 negloglik 
+              10.00000000               10.00000000               71.00397629 
+                 sigma.sq                        mu                        SE 
+               0.01983302                2.55786685                0.70566789 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 20000 done"
+[1] "200 of 20000 done"
+[1] "300 of 20000 done"
+[1] "400 of 20000 done"
+[1] "500 of 20000 done"
+[1] "600 of 20000 done"
+[1] "700 of 20000 done"
+[1] "800 of 20000 done"
+[1] "900 of 20000 done"
+[1] "1000 of 20000 done"
+[1] "1100 of 20000 done"
+[1] "1200 of 20000 done"
+[1] "1300 of 20000 done"
+[1] "1400 of 20000 done"
+[1] "1500 of 20000 done"
+[1] "1600 of 20000 done"
+[1] "1700 of 20000 done"
+[1] "1800 of 20000 done"
+[1] "1900 of 20000 done"
+[1] "2000 of 20000 done"
+[1] "2100 of 20000 done"
+[1] "2200 of 20000 done"
+[1] "2300 of 20000 done"
+[1] "2400 of 20000 done"
+[1] "2500 of 20000 done"
+[1] "2600 of 20000 done"
+[1] "2700 of 20000 done"
+[1] "2800 of 20000 done"
+[1] "2900 of 20000 done"
+[1] "3000 of 20000 done"
+[1] "3100 of 20000 done"
+[1] "3200 of 20000 done"
+[1] "3300 of 20000 done"
+[1] "3400 of 20000 done"
+[1] "3500 of 20000 done"
+[1] "3600 of 20000 done"
+[1] "3700 of 20000 done"
+[1] "3800 of 20000 done"
+[1] "3900 of 20000 done"
+[1] "4000 of 20000 done"
+[1] "4100 of 20000 done"
+[1] "4200 of 20000 done"
+[1] "4300 of 20000 done"
+[1] "4400 of 20000 done"
+[1] "4500 of 20000 done"
+[1] "4600 of 20000 done"
+[1] "4700 of 20000 done"
+[1] "4800 of 20000 done"
+[1] "4900 of 20000 done"
+[1] "5000 of 20000 done"
+[1] "5100 of 20000 done"
+[1] "5200 of 20000 done"
+[1] "5300 of 20000 done"
+[1] "5400 of 20000 done"
+[1] "5500 of 20000 done"
+[1] "5600 of 20000 done"
+[1] "5700 of 20000 done"
+[1] "5800 of 20000 done"
+[1] "5900 of 20000 done"
+[1] "6000 of 20000 done"
+[1] "6100 of 20000 done"
+[1] "6200 of 20000 done"
+[1] "6300 of 20000 done"
+[1] "6400 of 20000 done"
+[1] "6500 of 20000 done"
+[1] "6600 of 20000 done"
+[1] "6700 of 20000 done"
+[1] "6800 of 20000 done"
+[1] "6900 of 20000 done"
+[1] "7000 of 20000 done"
+[1] "7100 of 20000 done"
+[1] "7200 of 20000 done"
+[1] "7300 of 20000 done"
+[1] "7400 of 20000 done"
+[1] "7500 of 20000 done"
+[1] "7600 of 20000 done"
+[1] "7700 of 20000 done"
+[1] "7800 of 20000 done"
+[1] "7900 of 20000 done"
+[1] "8000 of 20000 done"
+[1] "8100 of 20000 done"
+[1] "8200 of 20000 done"
+[1] "8300 of 20000 done"
+[1] "8400 of 20000 done"
+[1] "8500 of 20000 done"
+[1] "8600 of 20000 done"
+[1] "8700 of 20000 done"
+[1] "8800 of 20000 done"
+[1] "8900 of 20000 done"
+[1] "9000 of 20000 done"
+[1] "9100 of 20000 done"
+[1] "9200 of 20000 done"
+[1] "9300 of 20000 done"
+[1] "9400 of 20000 done"
+[1] "9500 of 20000 done"
+[1] "9600 of 20000 done"
+[1] "9700 of 20000 done"
+[1] "9800 of 20000 done"
+[1] "9900 of 20000 done"
+[1] "10000 of 20000 done"
+[1] "10100 of 20000 done"
+[1] "10200 of 20000 done"
+[1] "10300 of 20000 done"
+[1] "10400 of 20000 done"
+[1] "10500 of 20000 done"
+[1] "10600 of 20000 done"
+[1] "10700 of 20000 done"
+[1] "10800 of 20000 done"
+[1] "10900 of 20000 done"
+[1] "11000 of 20000 done"
+[1] "11100 of 20000 done"
+[1] "11200 of 20000 done"
+[1] "11300 of 20000 done"
+[1] "11400 of 20000 done"
+[1] "11500 of 20000 done"
+[1] "11600 of 20000 done"
+[1] "11700 of 20000 done"
+[1] "11800 of 20000 done"
+[1] "11900 of 20000 done"
+[1] "12000 of 20000 done"
+[1] "12100 of 20000 done"
+[1] "12200 of 20000 done"
+[1] "12300 of 20000 done"
+[1] "12400 of 20000 done"
+[1] "12500 of 20000 done"
+[1] "12600 of 20000 done"
+[1] "12700 of 20000 done"
+[1] "12800 of 20000 done"
+[1] "12900 of 20000 done"
+[1] "13000 of 20000 done"
+[1] "13100 of 20000 done"
+[1] "13200 of 20000 done"
+[1] "13300 of 20000 done"
+[1] "13400 of 20000 done"
+[1] "13500 of 20000 done"
+[1] "13600 of 20000 done"
+[1] "13700 of 20000 done"
+[1] "13800 of 20000 done"
+[1] "13900 of 20000 done"
+[1] "14000 of 20000 done"
+[1] "14100 of 20000 done"
+[1] "14200 of 20000 done"
+[1] "14300 of 20000 done"
+[1] "14400 of 20000 done"
+[1] "14500 of 20000 done"
+[1] "14600 of 20000 done"
+[1] "14700 of 20000 done"
+[1] "14800 of 20000 done"
+[1] "14900 of 20000 done"
+[1] "15000 of 20000 done"
+[1] "15100 of 20000 done"
+[1] "15200 of 20000 done"
+[1] "15300 of 20000 done"
+[1] "15400 of 20000 done"
+[1] "15500 of 20000 done"
+[1] "15600 of 20000 done"
+[1] "15700 of 20000 done"
+[1] "15800 of 20000 done"
+[1] "15900 of 20000 done"
+[1] "16000 of 20000 done"
+[1] "16100 of 20000 done"
+[1] "16200 of 20000 done"
+[1] "16300 of 20000 done"
+[1] "16400 of 20000 done"
+[1] "16500 of 20000 done"
+[1] "16600 of 20000 done"
+[1] "16700 of 20000 done"
+[1] "16800 of 20000 done"
+[1] "16900 of 20000 done"
+[1] "17000 of 20000 done"
+[1] "17100 of 20000 done"
+[1] "17200 of 20000 done"
+[1] "17300 of 20000 done"
+[1] "17400 of 20000 done"
+[1] "17500 of 20000 done"
+[1] "17600 of 20000 done"
+[1] "17700 of 20000 done"
+[1] "17800 of 20000 done"
+[1] "17900 of 20000 done"
+[1] "18000 of 20000 done"
+[1] "18100 of 20000 done"
+[1] "18200 of 20000 done"
+[1] "18300 of 20000 done"
+[1] "18400 of 20000 done"
+[1] "18500 of 20000 done"
+[1] "18600 of 20000 done"
+[1] "18700 of 20000 done"
+[1] "18800 of 20000 done"
+[1] "18900 of 20000 done"
+[1] "19000 of 20000 done"
+[1] "19100 of 20000 done"
+[1] "19200 of 20000 done"
+[1] "19300 of 20000 done"
+[1] "19400 of 20000 done"
+[1] "19500 of 20000 done"
+[1] "19600 of 20000 done"
+[1] "19700 of 20000 done"
+[1] "19800 of 20000 done"
+[1] "19900 of 20000 done"
+[1] "20000 of 20000 done"
+[1] "Uncertainty plot has been saved in Model3_uncertainty_plot.pdf in /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana"
+  Model   sigma.sq       mu bt vh        SE     AICc  NegLogL K sigma.sq.lower
+1     3 0.01983302 2.557867  1  0 0.7056679 148.4608 71.00398 3    0.002644307
+  sigma.sq.upper mu.lower mu.upper bt.lower bt.upper vh.lower vh.upper
+1     0.04593214 2.104743 3.012324        1        1        0        0
+   SE.lower  SE.upper
+1 0.5856347 0.9496923
+[1] "Starting model 4 of 4"
+        step    negloglik     sigma.sq           mu           bt           vh 
+ 0.000000000 68.328693955  0.049360402  2.580002779  2.901498177  0.003970639 
+          SE 
+ 0.507777518 
+                     step steps.without.improvement                 negloglik 
+              1.000000000               1.000000000              68.328693955 
+                 sigma.sq                        mu                        bt 
+              0.049360402               2.580002779               2.901498177 
+                       vh                        SE 
+              0.003970639               0.507777518 
+                     step steps.without.improvement                 negloglik 
+              2.000000000               2.000000000              68.328693955 
+                 sigma.sq                        mu                        bt 
+              0.049360402               2.580002779               2.901498177 
+                       vh                        SE 
+              0.003970639               0.507777518 
+                     step steps.without.improvement                 negloglik 
+              3.000000000               3.000000000              68.328693955 
+                 sigma.sq                        mu                        bt 
+              0.049360402               2.580002779               2.901498177 
+                       vh                        SE 
+              0.003970639               0.507777518 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              0.000000e+00              6.811789e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.501987e+00              2.708324e+00 
+                       vh                        SE 
+             9.184368e-09              4.781047e-01 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              1.000000e+00              6.811789e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.501987e+00              2.708324e+00 
+                       vh                        SE 
+             9.184368e-09              4.781047e-01 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              2.000000e+00              6.811789e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.501987e+00              2.708324e+00 
+                       vh                        SE 
+             9.184368e-09              4.781047e-01 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              3.000000e+00              6.811789e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.501987e+00              2.708324e+00 
+                       vh                        SE 
+             9.184368e-09              4.781047e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              4.000000e+00              6.811778e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.506640e+00              2.708106e+00 
+                       vh                        SE 
+             2.291066e-08              4.781048e-01 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              5.000000e+00              6.811778e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.506640e+00              2.708106e+00 
+                       vh                        SE 
+             2.291066e-08              4.781048e-01 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              6.000000e+00              6.811778e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.506640e+00              2.708106e+00 
+                       vh                        SE 
+             2.291066e-08              4.781048e-01 
+                     step steps.without.improvement                 negloglik 
+             1.100000e+01              7.000000e+00              6.811778e+01 
+                 sigma.sq                        mu                        bt 
+             4.685590e-02              2.506640e+00              2.708106e+00 
+                       vh                        SE 
+             2.291066e-08              4.781048e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.200000e+01              8.000000e+00              6.811777e+01 
+                 sigma.sq                        mu                        bt 
+             4.685543e-02              2.506651e+00              2.705263e+00 
+                       vh                        SE 
+             1.290723e-07              4.781067e-01 
+                     step steps.without.improvement                 negloglik 
+             1.300000e+01              9.000000e+00              6.811777e+01 
+                 sigma.sq                        mu                        bt 
+             4.685543e-02              2.506651e+00              2.705263e+00 
+                       vh                        SE 
+             1.290723e-07              4.781067e-01 
+                     step steps.without.improvement                 negloglik 
+             1.400000e+01              1.000000e+01              6.811777e+01 
+                 sigma.sq                        mu                        bt 
+             4.685543e-02              2.506651e+00              2.705263e+00 
+                       vh                        SE 
+             1.290723e-07              4.781067e-01 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 20000 done"
+[1] "200 of 20000 done"
+[1] "300 of 20000 done"
+[1] "400 of 20000 done"
+[1] "500 of 20000 done"
+[1] "600 of 20000 done"
+[1] "700 of 20000 done"
+[1] "800 of 20000 done"
+[1] "900 of 20000 done"
+[1] "1000 of 20000 done"
+[1] "1100 of 20000 done"
+[1] "1200 of 20000 done"
+[1] "1300 of 20000 done"
+[1] "1400 of 20000 done"
+[1] "1500 of 20000 done"
+[1] "1600 of 20000 done"
+[1] "1700 of 20000 done"
+[1] "1800 of 20000 done"
+[1] "1900 of 20000 done"
+[1] "2000 of 20000 done"
+[1] "2100 of 20000 done"
+[1] "2200 of 20000 done"
+[1] "2300 of 20000 done"
+[1] "2400 of 20000 done"
+[1] "2500 of 20000 done"
+[1] "2600 of 20000 done"
+[1] "2700 of 20000 done"
+[1] "2800 of 20000 done"
+[1] "2900 of 20000 done"
+[1] "3000 of 20000 done"
+[1] "3100 of 20000 done"
+[1] "3200 of 20000 done"
+[1] "3300 of 20000 done"
+[1] "3400 of 20000 done"
+[1] "3500 of 20000 done"
+[1] "3600 of 20000 done"
+[1] "3700 of 20000 done"
+[1] "3800 of 20000 done"
+[1] "3900 of 20000 done"
+[1] "4000 of 20000 done"
+[1] "4100 of 20000 done"
+[1] "4200 of 20000 done"
+[1] "4300 of 20000 done"
+[1] "4400 of 20000 done"
+[1] "4500 of 20000 done"
+[1] "4600 of 20000 done"
+[1] "4700 of 20000 done"
+[1] "4800 of 20000 done"
+[1] "4900 of 20000 done"
+[1] "5000 of 20000 done"
+[1] "5100 of 20000 done"
+[1] "5200 of 20000 done"
+[1] "5300 of 20000 done"
+[1] "5400 of 20000 done"
+[1] "5500 of 20000 done"
+[1] "5600 of 20000 done"
+[1] "5700 of 20000 done"
+[1] "5800 of 20000 done"
+[1] "5900 of 20000 done"
+[1] "6000 of 20000 done"
+[1] "6100 of 20000 done"
+[1] "6200 of 20000 done"
+[1] "6300 of 20000 done"
+[1] "6400 of 20000 done"
+[1] "6500 of 20000 done"
+[1] "6600 of 20000 done"
+[1] "6700 of 20000 done"
+[1] "6800 of 20000 done"
+[1] "6900 of 20000 done"
+[1] "7000 of 20000 done"
+[1] "7100 of 20000 done"
+[1] "7200 of 20000 done"
+[1] "7300 of 20000 done"
+[1] "7400 of 20000 done"
+[1] "7500 of 20000 done"
+[1] "7600 of 20000 done"
+[1] "7700 of 20000 done"
+[1] "7800 of 20000 done"
+[1] "7900 of 20000 done"
+[1] "8000 of 20000 done"
+[1] "8100 of 20000 done"
+[1] "8200 of 20000 done"
+[1] "8300 of 20000 done"
+[1] "8400 of 20000 done"
+[1] "8500 of 20000 done"
+[1] "8600 of 20000 done"
+[1] "8700 of 20000 done"
+[1] "8800 of 20000 done"
+[1] "8900 of 20000 done"
+[1] "9000 of 20000 done"
+[1] "9100 of 20000 done"
+[1] "9200 of 20000 done"
+[1] "9300 of 20000 done"
+[1] "9400 of 20000 done"
+[1] "9500 of 20000 done"
+[1] "9600 of 20000 done"
+[1] "9700 of 20000 done"
+[1] "9800 of 20000 done"
+[1] "9900 of 20000 done"
+[1] "10000 of 20000 done"
+[1] "10100 of 20000 done"
+[1] "10200 of 20000 done"
+[1] "10300 of 20000 done"
+[1] "10400 of 20000 done"
+[1] "10500 of 20000 done"
+[1] "10600 of 20000 done"
+[1] "10700 of 20000 done"
+[1] "10800 of 20000 done"
+[1] "10900 of 20000 done"
+[1] "11000 of 20000 done"
+[1] "11100 of 20000 done"
+[1] "11200 of 20000 done"
+[1] "11300 of 20000 done"
+[1] "11400 of 20000 done"
+[1] "11500 of 20000 done"
+[1] "11600 of 20000 done"
+[1] "11700 of 20000 done"
+[1] "11800 of 20000 done"
+[1] "11900 of 20000 done"
+[1] "12000 of 20000 done"
+[1] "12100 of 20000 done"
+[1] "12200 of 20000 done"
+[1] "12300 of 20000 done"
+[1] "12400 of 20000 done"
+[1] "12500 of 20000 done"
+[1] "12600 of 20000 done"
+[1] "12700 of 20000 done"
+[1] "12800 of 20000 done"
+[1] "12900 of 20000 done"
+[1] "13000 of 20000 done"
+[1] "13100 of 20000 done"
+[1] "13200 of 20000 done"
+[1] "13300 of 20000 done"
+[1] "13400 of 20000 done"
+[1] "13500 of 20000 done"
+[1] "13600 of 20000 done"
+[1] "13700 of 20000 done"
+[1] "13800 of 20000 done"
+[1] "13900 of 20000 done"
+[1] "14000 of 20000 done"
+[1] "14100 of 20000 done"
+[1] "14200 of 20000 done"
+[1] "14300 of 20000 done"
+[1] "14400 of 20000 done"
+[1] "14500 of 20000 done"
+[1] "14600 of 20000 done"
+[1] "14700 of 20000 done"
+[1] "14800 of 20000 done"
+[1] "14900 of 20000 done"
+[1] "15000 of 20000 done"
+[1] "15100 of 20000 done"
+[1] "15200 of 20000 done"
+[1] "15300 of 20000 done"
+[1] "15400 of 20000 done"
+[1] "15500 of 20000 done"
+[1] "15600 of 20000 done"
+[1] "15700 of 20000 done"
+[1] "15800 of 20000 done"
+[1] "15900 of 20000 done"
+[1] "16000 of 20000 done"
+[1] "16100 of 20000 done"
+[1] "16200 of 20000 done"
+[1] "16300 of 20000 done"
+[1] "16400 of 20000 done"
+[1] "16500 of 20000 done"
+[1] "16600 of 20000 done"
+[1] "16700 of 20000 done"
+[1] "16800 of 20000 done"
+[1] "16900 of 20000 done"
+[1] "17000 of 20000 done"
+[1] "17100 of 20000 done"
+[1] "17200 of 20000 done"
+[1] "17300 of 20000 done"
+[1] "17400 of 20000 done"
+[1] "17500 of 20000 done"
+[1] "17600 of 20000 done"
+[1] "17700 of 20000 done"
+[1] "17800 of 20000 done"
+[1] "17900 of 20000 done"
+[1] "18000 of 20000 done"
+[1] "18100 of 20000 done"
+[1] "18200 of 20000 done"
+[1] "18300 of 20000 done"
+[1] "18400 of 20000 done"
+[1] "18500 of 20000 done"
+[1] "18600 of 20000 done"
+[1] "18700 of 20000 done"
+[1] "18800 of 20000 done"
+[1] "18900 of 20000 done"
+[1] "19000 of 20000 done"
+[1] "19100 of 20000 done"
+[1] "19200 of 20000 done"
+[1] "19300 of 20000 done"
+[1] "19400 of 20000 done"
+[1] "19500 of 20000 done"
+[1] "19600 of 20000 done"
+[1] "19700 of 20000 done"
+[1] "19800 of 20000 done"
+[1] "19900 of 20000 done"
+[1] "20000 of 20000 done"
+[1] "Uncertainty plot has been saved in Model4_uncertainty_plot.pdf in /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana"
+  Model   sigma.sq       mu       bt           vh        SE    AICc  NegLogL K
+1     4 0.04685543 2.506651 2.705263 1.290723e-07 0.4781067 147.412 68.11777 5
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper bt.lower bt.upper
+1      0.0191003     0.09459285 2.074828 3.054617 1.221562 4.869173
+      vh.lower  vh.upper  SE.lower  SE.upper
+1 1.290723e-07 0.5106393 0.2645339 0.7355263
+There were 50 or more warnings (use warnings() to see the first 50)
+> system("echo 'Estimating SE nicotiana done' | terminal-notifier -sound default")
+/Library/Ruby/Gems/2.0.0/gems/terminal-notifier-1.6.3/bin/terminal-notifier:13: warning: Insecure world writable dir /condor/condor-installed in PATH, mode 040777
+> save(list=ls(), file="Nicotiana.results.RData")
+> 
+> proc.time()
+     user    system   elapsed 
+37802.057   497.742 38573.504 

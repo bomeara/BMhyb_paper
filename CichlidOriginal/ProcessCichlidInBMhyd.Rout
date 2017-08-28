@@ -1,0 +1,76 @@
+
+R version 3.2.3 (2015-12-10) -- "Wooden Christmas-Tree"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> rm(list=ls())
+> library(BMhyb)
+> library(geiger)
+Loading required package: ape
+Warning message:
+package ‘ape’ was built under R version 3.2.5 
+> library(ape)
+> #library(optimx)
+> library(corpcor)
+> library(phylobase)
+
+Attaching package: ‘phylobase’
+
+The following object is masked from ‘package:ape’:
+
+    edges
+
+> library(phytools)
+Loading required package: maps
+Warning messages:
+1: package ‘phytools’ was built under R version 3.2.5 
+2: package ‘maps’ was built under R version 3.2.5 
+> phy <- read.tree("Cichlid.phy")
+> data.raw <- read.csv("Cichlid.csv", stringsAsFactors=FALSE)
+> data.vector.raw <- as.numeric(data.raw[,2])
+> names(data.vector.raw) <- gsub(" ", "_", data.raw[,1])
+> data.log <- log(data.vector.raw)
+> flow<-data.frame(donor=c("Lamprologus_callipterus", "Lamprologus_meleagris", "Lamprologus_ocellatus", "Neolamprologus_wauthioni", "Lamprologus_speciosus"), recipient=rep("Lamprologus_meleagris", 5), m=rep(0.5,5), time.from.root.donor=rep(nodeheight(phy, node=findMRCA(phy, tips=c("Lamprologus_callipterus", "Lamprologus_meleagris", "Lamprologus_ocellatus", "Neolamprologus_wauthioni", "Lamprologus_speciosus"), type="node")), 5), time.from.root.recipient=rep(max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Lamprologus_meleagris"))], 5), stringsAsFactors=FALSE)
+> flow<-rbind(flow, data.frame(donor=c("Lamprologus_callipterus"), recipient="Neolamprologus_wauthioni", m=0.5, time.from.root.donor=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Neolamprologus_wauthioni"))], time.from.root.recipient=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Neolamprologus_wauthioni"))], stringsAsFactors=FALSE))
+> flow<-rbind(flow, data.frame(donor=c("Neolamprologus_brevis"), recipient="Lamprologus_speciosus", m=0.5, time.from.root.donor=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Lamprologus_speciosus"))],time.from.root.recipient=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Lamprologus_speciosus"))], stringsAsFactors=FALSE))
+> flow<-rbind(flow, data.frame(donor=c("Lamprologus_callipterus"), recipient="Neolamprologus_fasciatus", m=0.5, time.from.root.donor=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Neolamprologus_fasciatus"))],time.from.root.recipient=max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Neolamprologus_fasciatus"))], stringsAsFactors=FALSE))
+> 
+> ingroup<-phy$tip.label[-(match(c("Julidochromis_ornatus", "Telmatochromis_vittatus", "Variabilichromis_moorii"), phy$tip.label))]
+> 
+> #repeat ingroup as with L. melaeagris
+> flow<-rbind(flow, data.frame(donor=ingroup, recipient=rep("Neolamprologus_multifasciatus", length(ingroup)), m=rep(0.5, length(ingroup)), time.from.root.donor=rep(nodeheight(phy, node=findMRCA(phy, ingroup, type="node")), length(ingroup)), time.from.root.recipient=rep(max(branching.times(phy)) - phy$edge.length[which(phy$edge[,2]==which(phy$tip.label=="Neolamprologus_multifasciatus"))], length(ingroup)), stringsAsFactors=FALSE))
+> pdf(file="CichlidNetwork.pdf")
+> PlotNetwork(phy, flow)
+Warning messages:
+1: In arrows(x0 = flow$time.from.root.donor[i]/max(branching.times(phy)),  :
+  zero-length arrow is of indeterminate angle and so skipped
+2: In arrows(x0 = flow$time.from.root.donor[i]/max(branching.times(phy)),  :
+  zero-length arrow is of indeterminate angle and so skipped
+> dev.off()
+null device 
+          1 
+> 
+> results.cichlid <- BMhyb(data.log, phy, flow, store.sims=TRUE)
+[1] "Getting starting values from Geiger"
+[1] "Done getting starting values"
+[1] "Starting model 1 of 4"
+Error in V.modified[recipient.index, recipient.index] <- (V.original[recipient.index,  : 
+  replacement has length zero
+Calls: BMhyb -> optim -> <Anonymous> -> fn -> GetVModified
+Execution halted

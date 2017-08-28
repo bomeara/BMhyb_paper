@@ -1,0 +1,275 @@
+
+P A U P *
+Portable version 4.0b10 for Unix
+Fri Jul 17 12:59:00 2015
+
+      -----------------------------NOTICE-----------------------------
+        This is a beta-test version.  Please report any crashes,
+        apparent calculation errors, or other anomalous results.
+        There are no restrictions on publication of results obtained
+        with this version, but you should check the WWW site
+        frequently for bug announcements and/or updated versions.  
+        See the README file on the distribution media for details.
+      ----------------------------------------------------------------
+
+Processing of file "~/Dropbox/CollabJhwuengOMeara/CichlidExampleRevision/Cichlid.aln.nex" begins...
+
+Data read in DNA format
+
+Data matrix has 67 taxa, 1047 characters
+Valid character-state symbols: ACGT
+Missing data identified by '?'
+Gaps identified by '-'
+"Equate" macros in effect:
+   R,r ==> {AG}
+   Y,y ==> {CT}
+   M,m ==> {AC}
+   K,k ==> {GT}
+   S,s ==> {CG}
+   W,w ==> {AT}
+   H,h ==> {ACT}
+   B,b ==> {CGT}
+   V,v ==> {ACG}
+   D,d ==> {AGT}
+   N,n ==> {ACGT}
+
+NOTE: PAUP* does not support the "CodeSet" command.  It has been skipped.
+
+*** Skipping "MESQUITECHARMODELS" block
+
+1 tree read from TREES block
+   Time used = <1 sec (CPU time = 0.00 sec)
+
+Rooted tree(s) input but current criterion and/or option settings would specify unrooted trees.  Do you want to "deroot" the tree(s)? (Y/n) y
+
+1 tree converted from rooted to unrooted.
+
+*** Skipping "MESQUITE" block
+
+Processing of file "~/Dropbox/CollabJhwuengOMeara/CichlidExampleRevision/Cichlid.aln.nex" completed.
+
+Optimality criterion set to likelihood.
+
+1 constraint-tree definition(s) loaded from file "Cichlid.Constraint.nex.phy.nex"
+
+Optimality criterion set to parsimony.
+
+Outgroup status changed:
+  1 taxon transferred to outgroup
+  Total number of taxa now in outgroup = 1
+  Number of ingroup taxa = 66
+
+Heuristic search settings:
+  Optimality criterion = parsimony
+    Character-status summary:
+      Of 1047 total characters:
+        All characters are of type 'unord'
+        All characters have equal weight
+        661 characters are constant
+        89 variable characters are parsimony-uninformative
+        Number of parsimony-informative characters = 297
+    Gaps are treated as "missing"
+    Multistate taxa interpreted as uncertainty
+  Starting tree(s) obtained via stepwise addition
+  Addition sequence: random
+    Number of replicates = 100
+    Starting seed = 1839995215
+  Number of trees held at each step during stepwise addition = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR)
+  Steepest descent option not in effect
+  Initial 'MaxTrees' setting = 100
+  Branches collapsed (creating polytomies) if maximum branch length is zero
+  'MulTrees' option in effect
+  Keeping only trees compatible with constraint-tree "Constraint"
+  Trees are unrooted
+
+Heuristic search completed
+   Total number of rearrangements tried = 41935
+   Score of best tree(s) found = 990
+   Number of trees retained = 3
+   Time used = 1 sec (CPU time = 0.75 sec)
+
+Tree-island profile:
+                     First      Last                     First   Times
+Island      Size      tree      tree        Score    replicate     hit
+----------------------------------------------------------------------
+     1         3         1         3          990            1      95
+     2         1         -         -          991           30       1
+     3         0         -         -          991            7       4*
+
+Note(s):
+    * Multiple hits on islands of unsaved trees may in fact represent different islands
+
+3 trees converted from unrooted to rooted.
+
+3 trees saved to file "~/Dropbox/CollabJhwuengOMeara/CichlidExampleRevision/CichlidParsimony.tre"
+
+Tree filter retaining trees that satisfy all of the following criteria:
+   Best score according to current optimality criterion
+
+   Results:
+     Number of trees originally in memory = 3
+     Number of trees retained by filter   = 3
+   All trees satisfied the filtering criteria.
+
+Optimality criterion set to likelihood.
+
+Likelihood scores of tree(s) in memory:
+  Likelihood settings:
+    Number of substitution types  = 6
+    Substitution rate-matrix parameters estimated via ML
+    Assumed nucleotide frequencies (empirical frequencies):
+      A=0.25820  C=0.35727  G=0.11667  T=0.26786
+    Among-site rate variation:
+      Assumed proportion of invariable sites  = none
+      Distribution of rates at variable sites = gamma (discrete approximation)
+        Shape parameter (alpha)   = estimated
+        Number of rate categories = 4
+        Representation of average rate for each category = mean
+    These settings correspond to the GTR+G model
+    Number of distinct data patterns under this model = 377
+    Molecular clock enforced
+    Starting branch lengths obtained using UPGMA-style averaging
+    Parameterization for clock optimization = "Rambaut (multidimensional)"
+    -ln L (unconstrained) = unavailable due to missing-data and/or ambiguities
+
+Tree             1
+------------------
+-ln L   6753.60921
+Rate matrix R:
+  AC       0.66352
+  AG       9.69706
+  AT       0.37167
+  CG       1.17523
+  CT       3.32887
+  GT       1.00000
+Shape     0.266381
+
+Time used to compute likelihoods = 44 sec (CPU time = 42.13 sec)
+
+Tree filter retaining trees that satisfy all of the following criteria:
+   Best score according to current optimality criterion
+
+   Results:
+     Number of trees originally in memory = 3
+     Number of trees retained by filter   = 1
+     Trees not retained by filter have been permanently deleted.
+
+1 tree saved to file "~/Dropbox/CollabJhwuengOMeara/CichlidExampleRevision/CichlidClockUnresolved.tre"
+
+Heuristic search settings:
+  Optimality criterion = likelihood
+    Likelihood settings:
+      Number of substitution types  = 6
+      User-specified substitution rate matrix =
+                  -   0.663522   9.697062   0.371670
+           0.663522          -   1.175232   3.328870
+           9.697062   1.175232          -   1.000000
+           0.371670   3.328870   1.000000          -
+      Assumed nucleotide frequencies (empirical frequencies):
+        A=0.25820  C=0.35727  G=0.11667  T=0.26786
+      Among-site rate variation:
+        Assumed proportion of invariable sites  = none
+        Distribution of rates at variable sites = gamma (discrete approximation)
+          Shape parameter (alpha)   = 0.266381
+          Number of rate categories = 4
+          Representation of average rate for each category = mean
+      These settings correspond to the GTR+G model
+      Number of distinct data patterns under this model = 377
+      Molecular clock enforced
+      Starting branch lengths obtained using UPGMA-style averaging
+      Trees with approximate likelihoods 5% or further from the target score are rejected without additional iteration
+      Parameterization for clock optimization = "Rambaut"
+      -ln L (unconstrained) = unavailable due to missing-data and/or ambiguities
+  Starting tree(s) obtained via stepwise addition
+  Addition sequence: random
+    Number of replicates = 10
+    Starting seed = 360154911
+  Number of trees held at each step during stepwise addition = 1
+  Branch-swapping algorithm: tree-bisection-reconnection (TBR)
+  Steepest descent option not in effect
+  Time limit of 36000 seconds (per addition-sequence replicate) imposed
+  Initial 'MaxTrees' setting = 100
+  Zero-length branches not collapsed
+  'MulTrees' option in effect
+  Keeping only trees compatible with constraint-tree "Constraint"
+  Trees are rooted
+
+    Elapsed  Random   Taxa      Rearr.  -- No. of trees --  --- Best trees ---
+       time     rep  added      tried   saved left-to-swap  this rep   overall
+  ----------------------------------------------------------------------------
+    0:01:04       1     50           0      -        -           -           -
+    0:02:08       1     59           0      -        -           -           -
+    0:03:08       1     67           0      -        -           -           -
+    0:04:10       1      -          41      1        1   6751.5507   6751.5507
+    0:05:11       1      -          69      1        1   6750.8083   6750.8083
+    0:06:11       1      -          92      1        1   6750.6836   6750.6836
+    0:07:12       1      -         121      1        1   6750.6836   6750.6836
+    0:08:12       1      -         147      1        1   6750.6836   6750.6836
+    0:09:13       1      -         171      1        1   6750.6836   6750.6836
+    0:10:13       1      -         208      1        1   6750.6836   6750.6836
+    0:11:14       1      -         249      1        1   6750.6836   6750.6836
+    0:12:16       1      -         276      1        1   6750.6836   6750.6836
+    0:13:17       1      -         302      1        1   6750.6836   6750.6836
+    0:14:18       1      -         346      1        1   6750.6836   6750.6836
+    0:15:19       1      -         384      1        1   6750.6836   6750.6836
+    0:16:19       1      -         429      1        1   6750.6836   6750.6836
+    0:17:20       1      -         481      1        1   6750.6836   6750.6836
+    0:18:20       2     42         489      -        -           -   6750.6836
+    0:19:25       2     57         489      -        -           -   6750.6836
+    0:20:27       2     65         489      -        -           -   6750.6836
+    0:21:28       2      -         510      2        1   6765.9190   6750.6836
+    0:22:30       2      -         540      2        1   6751.4305   6750.6836
+    0:23:31       3     43         544      -        -           -   6750.6836
+    0:24:31       3     55         544      -        -           -   6750.6836
+    0:25:53       3     67         544      -        -           -   6750.6836
+    0:26:55       3      -         578      2        1   6753.1340   6750.6836
+    0:27:57       3      -         606      2        1   6750.8083   6750.6836
+    0:28:58       4     32         623      -        -           -   6750.6836
+    0:30:00       4     51         623      -        -           -   6750.6836
+    0:31:07       4     62         623      -        -           -   6750.6836
+    0:32:12       4     67         623      -        -           -   6750.6836
+    0:33:13       4      -         652      2        1   6761.5849   6750.6836
+    0:34:16       5     28         670      -        -           -   6750.6836
+    0:35:18       5     49         670      -        -           -   6750.6836
+    0:36:24       5     63         670      -        -           -   6750.6836
+    0:37:24       5      -         678      2        1   6772.7871   6750.6836
+    0:38:25       5      -         700      2        1   6751.4535   6750.6836
+    0:39:26       6     49         701      -        -           -   6750.6836
+    0:40:30       6     57         701      -        -           -   6750.6836
+    0:41:31       6     64         701      -        -           -   6750.6836
+    0:42:32       6      -         714      2        1   6755.4893   6750.6836
+    0:43:33       6      -         740      2        1   6754.6037   6750.6836
+    0:44:38       7     41         742      -        -           -   6750.6836
+    0:45:41       7     55         742      -        -           -   6750.6836
+    0:46:42       7     67         742      -        -           -   6750.6836
+    0:47:42       7      -         772      2        1   6762.5898   6750.6836
+    0:48:45       7      -         794      1        0   6750.6836   6750.6836
+    0:49:46       8     45         794      -        -           -   6750.6836
+    0:50:51       8     55         794      -        -           -   6750.6836
+    0:52:15       8     65         794      -        -           -   6750.6836
+    0:53:19       9     44         794      -        -           -   6750.6836
+    0:54:20       9     58         794      -        -           -   6750.6836
+    0:55:22       9      -         797      2        1   6783.4850   6750.6836
+    0:56:25       9      -         830      2        1   6783.4850   6750.6836
+    0:57:26       9      -         858      2        1   6751.4305   6750.6836
+    0:58:30      10     44         861      -        -           -   6750.6836
+    0:59:32      10     59         861      -        -           -   6750.6836
+    1:00:41      10     66         861      -        -           -   6750.6836
+    1:01:41      10      -         891      2        1   6767.7843   6750.6836
+    1:02:43      10      -         914      2        1   6765.2183   6750.6836
+    1:03:22      10      -         924      1        0   6750.6836   6750.6836
+
+Heuristic search completed
+   Total number of rearrangements tried = 924
+   Score of best tree(s) found = 6750.68359
+   Number of trees retained = 1
+   Time used = 01:03:22 (CPU time = 00:59:19.2)
+
+Tree-island profile:
+                     First      Last                     First   Times
+Island      Size      tree      tree        Score    replicate     hit
+----------------------------------------------------------------------
+     1         1         1         1   6750.68359            1      10
+
+1 tree saved to file "~/Dropbox/CollabJhwuengOMeara/CichlidExampleRevision/CichlidClockResolved.tre"

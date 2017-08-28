@@ -1,0 +1,232 @@
+#NEXUS
+[written Fri Jul 17 12:10:39 EDT 2015 by Mesquite  version 2.74 (build 550) at omearalab18.ee.utk.edu/160.36.155.225 (Brian O'Meara)]
+
+BEGIN TAXA;
+	TITLE Taxa;
+	DIMENSIONS NTAX=67;
+	TAXLABELS
+		'Altolamprologus_calvus' 'Altolamprologus_compressiceps' 'Altolamprologus_compressiceps2' 'Altolamprologus_compressiceps3' 'Altolamprologus_sp._''shell''' 'Julidochromis_ornatus' 'Lamprologus_callipterus' 'Lamprologus_callipterus_x_Neolamprologus_calliurus' 'Lamprologus_callipterus_x_Neolamprologus_calliurus2' 'Lamprologus_callipterus2' 'Lamprologus_callipterus3' 'Lamprologus_kungweensis' 'Lamprologus_laparogramma' 'Lamprologus_laparogramma2' 'Lamprologus_lemairii' 'Lamprologus_lemairii2' 'Lamprologus_lemairii3' 'Lamprologus_meleagris' 'Lamprologus_meleagris2' 'Lamprologus_meleagris3' 'Lamprologus_ocellatus' 'Lamprologus_ocellatus2' 'Lamprologus_ocellatus3' 'Lamprologus_ornatipinnis' 'Lamprologus_ornatipinnis2' 'Lamprologus_ornatipinnis3' 'Lamprologus_ornatipinnis4' 'Lamprologus_signatus' 'Lamprologus_speciosus' 'Lamprologus_speciosus2' 'Lamprologus_speciosus3' 'Lepidiolamprologus_attenuatus' 'Lepidiolamprologus_attenuatus2' 'Lepidiolamprologus_attenuatus3' 'Lepidiolamprologus_elongatus' 'Lepidiolamprologus_profundicola' 'Neolamprologus_boulengeri' 'Neolamprologus_boulengeri2' 'Neolamprologus_brevis' 'Neolamprologus_brevis2' 'Neolamprologus_calliurus' 'Neolamprologus_calliurus2' 'Neolamprologus_calliurus3' 'Neolamprologus_caudopunctatus' 'Neolamprologus_caudopunctatus2' 'Neolamprologus_caudopunctatus3' 'Neolamprologus_cf._meeli/boulengeri' 'Neolamprologus_cf._meeli/boulengeri2' 'Neolamprologus_fasciatus' 'Neolamprologus_fasciatus_x_Neolamprologus_calliurus' 'Neolamprologus_fasciatus_x_Neolamprologus_calliurus2' 'Neolamprologus_fasciatus2' 'Neolamprologus_hecqui' 'Neolamprologus_hecqui2' 'Neolamprologus_leloupi' 'Neolamprologus_leloupi2' 'Neolamprologus_meeli' 'Neolamprologus_multifasciatus' 'Neolamprologus_multifasciatus2' 'Neolamprologus_multifasciatus3' 'Neolamprologus_similis' 'Neolamprologus_similis2' 'Neolamprologus_similis3' 'Neolamprologus_wauthioni' 'Neolamprologus_wauthioni2' 'Telmatochromis_vittatus' 'Variabilichromis_moorii' 
+	;
+
+END;
+
+
+BEGIN TREES;
+	Title Trees;
+	LINK Taxa = Taxa;
+	TRANSLATE
+		1 'Altolamprologus_calvus',
+		2 'Altolamprologus_compressiceps',
+		3 'Altolamprologus_compressiceps2',
+		4 'Altolamprologus_compressiceps3',
+		5 'Altolamprologus_sp._''shell''',
+		6 'Julidochromis_ornatus',
+		7 'Lamprologus_callipterus',
+		8 'Lamprologus_callipterus_x_Neolamprologus_calliurus',
+		9 'Lamprologus_callipterus_x_Neolamprologus_calliurus2',
+		10 'Lamprologus_callipterus2',
+		11 'Lamprologus_callipterus3',
+		12 'Lamprologus_kungweensis',
+		13 'Lamprologus_laparogramma',
+		14 'Lamprologus_laparogramma2',
+		15 'Lamprologus_lemairii',
+		16 'Lamprologus_lemairii2',
+		17 'Lamprologus_lemairii3',
+		18 'Lamprologus_meleagris',
+		19 'Lamprologus_meleagris2',
+		20 'Lamprologus_meleagris3',
+		21 'Lamprologus_ocellatus',
+		22 'Lamprologus_ocellatus2',
+		23 'Lamprologus_ocellatus3',
+		24 'Lamprologus_ornatipinnis',
+		25 'Lamprologus_ornatipinnis2',
+		26 'Lamprologus_ornatipinnis3',
+		27 'Lamprologus_ornatipinnis4',
+		28 'Lamprologus_signatus',
+		29 'Lamprologus_speciosus',
+		30 'Lamprologus_speciosus2',
+		31 'Lamprologus_speciosus3',
+		32 'Lepidiolamprologus_attenuatus',
+		33 'Lepidiolamprologus_attenuatus2',
+		34 'Lepidiolamprologus_attenuatus3',
+		35 'Lepidiolamprologus_elongatus',
+		36 'Lepidiolamprologus_profundicola',
+		37 'Neolamprologus_boulengeri',
+		38 'Neolamprologus_boulengeri2',
+		39 'Neolamprologus_brevis',
+		40 'Neolamprologus_brevis2',
+		41 'Neolamprologus_calliurus',
+		42 'Neolamprologus_calliurus2',
+		43 'Neolamprologus_calliurus3',
+		44 'Neolamprologus_caudopunctatus',
+		45 'Neolamprologus_caudopunctatus2',
+		46 'Neolamprologus_caudopunctatus3',
+		47 'Neolamprologus_cf._meeli/boulengeri',
+		48 'Neolamprologus_cf._meeli/boulengeri2',
+		49 'Neolamprologus_fasciatus',
+		50 'Neolamprologus_fasciatus_x_Neolamprologus_calliurus',
+		51 'Neolamprologus_fasciatus_x_Neolamprologus_calliurus2',
+		52 'Neolamprologus_fasciatus2',
+		53 'Neolamprologus_hecqui',
+		54 'Neolamprologus_hecqui2',
+		55 'Neolamprologus_leloupi',
+		56 'Neolamprologus_leloupi2',
+		57 'Neolamprologus_meeli',
+		58 'Neolamprologus_multifasciatus',
+		59 'Neolamprologus_multifasciatus2',
+		60 'Neolamprologus_multifasciatus3',
+		61 'Neolamprologus_similis',
+		62 'Neolamprologus_similis2',
+		63 'Neolamprologus_similis3',
+		64 'Neolamprologus_wauthioni',
+		65 'Neolamprologus_wauthioni2',
+		66 'Telmatochromis_vittatus',
+		67 'Variabilichromis_moorii';
+	TREE Constraint = ((((52,49),((58,59,60),(61,63,62))),((24,25,27,26),((28,(14,13)),12)),(41,51,50,42,43,((39,40),(8,9))),((16,17,15),(35,(36,((37,38),((57,(54,53)),((47,48),(34,32,33)))))),(44,45,46),(55,56),((((23,21,22),(18,19,20)),((29,30,31),(64,65))),(11,7,10),(1,5,4,3,2))),66,67),6);
+
+END;
+
+
+Begin MESQUITE;
+		MESQUITESCRIPTVERSION 2;
+		TITLE AUTO;
+		tell ProjectCoordinator;
+		timeSaved 1437149439833;
+		getEmployee #mesquite.minimal.ManageTaxa.ManageTaxa;
+		tell It;
+			setID 0 4677121461974408238;
+		endTell;
+		getWindow;
+		tell It;
+			suppress;
+			setResourcesState false false 381;
+			setPopoutState 400;
+			setExplanationSize 0;
+			setAnnotationSize 0;
+			setFontIncAnnot 0;
+			setFontIncExp 0;
+			setSize 1446 1184;
+			setLocation 877 23;
+			setFont SanSerif;
+			setFontSize 12;
+			getToolPalette;
+			tell It;
+			endTell;
+			desuppress;
+		endTell;
+		getEmployee  #mesquite.trees.BasicTreeWindowCoord.BasicTreeWindowCoord;
+		tell It;
+			makeTreeWindow #4677121461974408238  #mesquite.trees.BasicTreeWindowMaker.BasicTreeWindowMaker;
+			tell It;
+				suppressEPCResponse;
+				setTreeSource  #mesquite.trees.StoredTrees.StoredTrees;
+				tell It;
+					setTreeBlock 1;
+					toggleUseWeights off;
+				endTell;
+				setAssignedID 821.1437149009027.976630650970111506;
+				getTreeWindow;
+				tell It;
+					setExplanationSize 30;
+					setAnnotationSize 20;
+					setFontIncAnnot 0;
+					setFontIncExp 0;
+					setSize 1065 1117;
+					setLocation 877 23;
+					setFont SanSerif;
+					setFontSize 12;
+					getToolPalette;
+					tell It;
+						setTool mesquite.trees.BasicTreeWindowMaker.BasicTreeWindow.arrow;
+					endTell;
+					setActive;
+					getTreeDrawCoordinator #mesquite.trees.BasicTreeDrawCoordinator.BasicTreeDrawCoordinator;
+				tell It;
+					suppress;
+					setTreeDrawer  #mesquite.trees.SquareTree.SquareTree;
+					tell It;
+						setNodeLocs #mesquite.trees.NodeLocsStandard.NodeLocsStandard;
+						tell It;
+							branchLengthsToggle off;
+							toggleScale on;
+							toggleBroadScale off;
+							toggleCenter on;
+							toggleEven on;
+						endTell;
+						setEdgeWidth 6;
+						orientUp;
+						setCornerMode Right_Angle  50;
+					endTell;
+					setBackground White;
+					setBranchColor Black;
+					showNodeNumbers off;
+					showBranchColors on;
+					labelBranchLengths off;
+					centerBrLenLabels on;
+					showBrLensUnspecified on;
+					showBrLenLabelsOnTerminals on;
+					setBrLenLabelColor 0 0 255;
+					setNumBrLenDecimals 6;
+					desuppress;
+					getEmployee #mesquite.trees.BasicDrawTaxonNames.BasicDrawTaxonNames;
+					tell It;
+						setColor Black;
+						toggleColorPartition on;
+						toggleShadePartition off;
+						toggleShowFootnotes on;
+						toggleNodeLabels on;
+						toggleCenterNodeNames off;
+						toggleShowNames on;
+						namesAngle ?;
+					endTell;
+				endTell;
+					setTreeNumber 1;
+					setTree '((((52,49),((58,59,60),(61,63,62))),((24,25,27,26),((28,(14,13)),12)),(51,50,(41,43,42),((39,40),(8,9))),((16,17,15),(35,(36,((37,38),((57,(54,53)),((47,48),(34,32,33)))))),(44,45,46),(55,56),((((23,21,22),(18,19,20)),((29,30,31),(64,65))),(11,7,10),(1,5,4,3,2))),66,67),6);';
+					setDrawingSizeMode 0;
+					toggleLegendFloat on;
+					scale 0;
+					toggleTextOnTree off;
+					showWindow;
+				endTell;
+				desuppressEPCResponse;
+				getEmployee #mesquite.trees.ColorBranches.ColorBranches;
+				tell It;
+					setColor Red;
+					removeColor off;
+				endTell;
+				getEmployee #mesquite.ornamental.BranchNotes.BranchNotes;
+				tell It;
+					setAlwaysOn off;
+				endTell;
+				getEmployee #mesquite.ornamental.ColorTreeByPartition.ColorTreeByPartition;
+				tell It;
+					colorByPartition off;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocDoubles.DrawTreeAssocDoubles;
+				tell It;
+					setOn on;
+					setDigits 4;
+					writeAsPercentage off;
+					toggleCentred on;
+					toggleHorizontal on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.ornamental.DrawTreeAssocStrings.DrawTreeAssocStrings;
+				tell It;
+					setOn on;
+					toggleCentred on;
+					toggleHorizontal on;
+					setFontSize 10;
+					setOffset 0  0;
+				endTell;
+				getEmployee #mesquite.trees.TreeInfoValues.TreeInfoValues;
+				tell It;
+					panelOpen false;
+				endTell;
+			endTell;
+		endTell;
+		endTell;
+end;
+
+

@@ -1,0 +1,13 @@
+Hi Brian,
+
+I hope things are going well for you these days!
+We read your paper with Dwueng-Chwuan Jhwueng as a group (http://biorxiv.org/content/early/2015/08/05/023986), and it seems to us that there might be some errors in the covariance formula for the diagonal terms. In your small example page 7-8, our derivations for the variance of R gave this:
+\sigma^2*(t_1+t_2)*(m^2 + (1-m)^2) + sigma_H^2 * t_3 + \nu_H .
+The difference with your formula is in the m^2 + (1-m)^2 factor. Paul Bastide is visiting UW-Madison this Fall and lead our discussion. He checked in your BMhyb package to see if that was just a typo in your preprint, and if you had the same formula we found in your implementation. But he found that the diagonal terms matched the formula in your preprint, and that instead some off-diagonal terms did not (there were too large compared to what was expected in the formula). We didn't investigate things further ---sorry I don't have code to be more specific about what Paul found. But I just wanted to let you know.
+
+We might be wrong about the formulas, but what we derived actually agrees with the trait evolution model already described by Pickrell & Pritchard (2012) for networks: Inference of Population Splits and Mixtures from Genome-wide Allele Frequency Data (PLOS genetics 8(11):e1002967). They focus on frequency data, so we just need to replace their ancestral x(1-x) by a sigma^2 parameter. But they provide a general formula for the covariance matrix, given any network. It's in their Supplementary Information text, page 3 mostly, equations (12) and (13). Even though their goal is not to study the evolution of a particular trait (instead their goal is to reconstruct the network from many many traits), it's the first paper that I know of where such a trait model is presented on a network. Very cool!
+
+If it's not too late for your paper with Dwueng-Chwuan, perhaps it's worth a check for these typos and their implementation. Perhaps you will find that the estimated parameters get closer to the true values in your simulations! In any case, please correct us if we are wrong. By the way, my student Claudia has a cool method (I think, but I know that I am biased) to estimate a network from multi-locus sequence data: http://arxiv.org/abs/1509.06075 (and Julia software https://github.com/crsl4/PhyloNetworks). These network models are exciting, I think.
+
+Cheers,
+Cecile.

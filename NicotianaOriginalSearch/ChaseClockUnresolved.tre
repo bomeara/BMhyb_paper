@@ -1,0 +1,38 @@
+#NEXUS 
+
+Begin trees;  [Treefile saved Wed Jul 30 11:07:54 2014]
+[!
+>Data file = /Users/bomeara/Dropbox/CollabJhwuengOMeara/NewEmpiricalExample/ChaseEtAl.aln.renamed.nex
+>Heuristic search settings:
+>  Optimality criterion = parsimony
+>    Character-status summary:
+>      Of 697 total characters:
+>        All characters are of type 'unord'
+>        All characters have equal weight
+>        387 characters are constant
+>        119 variable characters are parsimony-uninformative
+>        Number of parsimony-informative characters = 191
+>    Gaps are treated as "missing"
+>    Multistate taxa interpreted as uncertainty
+>  Starting tree(s) obtained via stepwise addition
+>  Addition sequence: random
+>    Number of replicates = 100
+>    Starting seed = 809996966
+>  Number of trees held at each step during stepwise addition = 1
+>  Branch-swapping algorithm: tree-bisection-reconnection (TBR)
+>  Steepest descent option not in effect
+>  Initial 'MaxTrees' setting = 100
+>  Branches collapsed (creating polytomies) if maximum branch length is zero
+>  'MulTrees' option in effect
+>  Topological constraints not enforced
+>  Trees are unrooted
+>
+>Heuristic search completed
+>   Total number of rearrangements tried = 30150229
+>   Score of best tree(s) found = 832
+>   Number of trees retained = 72
+>   Note: Effectiveness of search may have been diminished due to tree-buffer overflow.
+>   Time used = 5 sec (CPU time = 4.61 sec)
+]
+tree PAUP_1 = [&R] (((((((((Nicotiana_acaulis:0.022975,Nicotiana_glauca:0.022975):0.003144,(Nicotiana_noctiflora:0.000613,Nicotiana_petunioides:0.000613):0.025506):0.002735,(Nicotiana_linearis:0.013835,Nicotiana_spegazzinii:0.013835):0.015019):0.003207,((((Nicotiana_arentsii:0.001870,Nicotiana_undulata:0.001870):0.016547,Nicotiana_glutinosa:0.018418):0.006157,(Nicotiana_thyrsiflora:0.010102,Nicotiana_wigandioides:0.010102):0.014473):0.001873,((Nicotiana_bonavidesii:0.010233,Nicotiana_raimondii:0.010233):0.006660,((Nicotiana_cordifolia:0.003692,Nicotiana_solanifolia:0.003692):0.005126,((Nicotiana_knightiana:0.005875,Nicotiana_rustica:0.005875):0.000896,Nicotiana_paniculata:0.006771):0.002047):0.008075):0.009554):0.005613):0.001944,((((((Nicotiana_acuminata:0.001028,Nicotiana_attenuata:0.001028):0.005598,Nicotiana_corymbosa:0.006626):0.001386,Nicotiana_pauciflora:0.008011):0.001228,Nicotiana_miersii:0.009239):0.004991,Nicotiana_bigelovii:0.014231,Nicotiana_clevelandii:0.014231):0.009917,((((Nicotiana_nesophila:0,Nicotiana_stocktonii:0):0.006370,Nicotiana_repanda:0.006370):0.014037,Nicotiana_nudicaulis:0.020407):0.001685,Nicotiana_sylvestris:0.022092):0.002056):0.009857):0.001177,((Nicotiana_africana:0.026120,((((((Nicotiana_amplexicaulis:0.020226,((Nicotiana_benthamiana:0.012155,Nicotiana_excelsior:0.012155):0.005647,Nicotiana_maritima:0.017802):0.002423,((Nicotiana_cavicola:0.003565,Nicotiana_eastii:0.003565,Nicotiana_suaveolens:0.003565):0.009005,((((Nicotiana_exigua:0.001455,Nicotiana_rosulata:0.001455):0.006704,Nicotiana_goodspeedii:0.008159):0.001113,Nicotiana_velutina:0.009272):0,Nicotiana_gossei:0.009272):0.003298):0.007656):0.000516,Nicotiana_rotundifolia:0.020741):0.000529,Nicotiana_debneyi:0.021270,Nicotiana_didepta:0.021270):0.000641,Nicotiana_occidentalis:0.021911):0.001911,(Nicotiana_hesperis:0.020302,(((Nicotiana_ingulba:0.006310,Nicotiana_megalosiphon:0.006310):0.005609,Nicotiana_simulans:0.011919):0.005138,Nicotiana_umbratica:0.017057):0.003245):0.003520):0.000863,Nicotiana_fragrans:0.024685):0.001434):0.003271,((Nicotiana_alata:0.003075,Nicotiana_bonariensis:0.003075,Nicotiana_langsdorffii:0.003075,Nicotiana_x_sanderae:0.003075):0.011717,(Nicotiana_forgetiana:0.014792,(Nicotiana_longiflora:0.002855,(Nicotiana_picilla:0.000838,Nicotiana_plumbaginifolia:0.000838):0.002017):0.011937):0):0.014599):0.005791):0.006533,(Nicotiana_obtusifolia:0,Nicotiana_palmeri:0):0.041715):0.002663,(((((Nicotiana_digluta:0.000403,Nicotiana_tabacum:0.000403,Nicotiana_tabacum_var_AWA:0.000403,Nicotiana_tomentosiformis:0.000403):0.003655,Nicotiana_kawakamii:0.004058):0.004181,Nicotiana_tomentosa:0.008239):0.006824,Nicotiana_setchellii:0.015062):0.002444,Nicotiana_otophora:0.017506):0.026872):0.048427,(Petunia_axillaris:0.081944,Cestrum_elegans:0.081944):0.010861,((Anthocercis_gracilis:0.041472,(Anthotroche_pannosa:0.027323,Cyphanthera_myosotidea:0.027323):0.014148):0.037570,Symonanthus_bancroftii:0.079042):0.013763):0;
+End;
