@@ -31,10 +31,10 @@ average.results <- data.frame()
 best.results <- data.frame()
 true.vs.estimated.vcv <- list()
 current.file.count=0
-all.files <- c(system(paste0("ls -1 *Try8*OPT_and_GRID.RData"),intern=TRUE), system(paste0("ls -1 *Try8*GRID_only.RData"),intern=TRUE))
+all.files <- c(system(paste0("ls -1 *Try9*OPT_and_GRID.RData"),intern=TRUE), system(paste0("ls -1 *Try9*GRID_only.RData"),intern=TRUE))
 for (j in sequence(dim(possible.sets)[1])) {
 	id <- j
-	#files <- system(paste0("ls -1 *Try8*ParamCombo",id,".P*SUCCESS.RData"),intern=TRUE, ignore.stderr=TRUE)
+	#files <- system(paste0("ls -1 *Try9*ParamCombo",id,".P*SUCCESS.RData"),intern=TRUE, ignore.stderr=TRUE)
 	files <- all.files[grepl(paste0("ParamCombo",id,".P"), all.files)]
 	for (file.index in sequence(length(files))) {
 		rm(result1)
@@ -60,8 +60,8 @@ for (j in sequence(dim(possible.sets)[1])) {
 					local.results <- result.grid.from.starting$results
 					run.type <- "grid"
 				} else {
-					try(local.results <- rbind(result1, result2, result3, result4))
-					run.type <- "optim"
+					try(local.results <- rbind(result1, result2, result3, result4, result.grid.from.starting$results))
+					run.type <- c(rep("optim",4), rep("grid", 4))
 				}
 				if(!is.null(local.results)) {
 					local.results$run.type <- run.type

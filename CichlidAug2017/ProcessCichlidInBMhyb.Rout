@@ -857,3 +857,1121 @@ null device
 [1] "Parameter estimates were"
     sigma.sq           mu           bt           vh 
 1.135374e-04 2.005099e+00 7.503258e-01 2.652715e-06 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              5.000000e+00              2.840381e+01 
+                 sigma.sq                        mu                        bt 
+             5.364357e-07              2.005201e+00              1.303033e+00 
+                       vh 
+             9.831878e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0139392313871"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.135374e-04 2.005099e+00 7.503258e-01 2.652715e-06 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              6.000000e+00              2.840381e+01 
+                 sigma.sq                        mu                        bt 
+             5.364357e-07              2.005201e+00              1.303033e+00 
+                       vh 
+             9.831878e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0139392313871"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.135374e-04 2.005099e+00 7.503258e-01 2.652715e-06 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              7.000000e+00              2.840381e+01 
+                 sigma.sq                        mu                        bt 
+             5.364357e-07              2.005201e+00              1.303033e+00 
+                       vh 
+             9.831878e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0139392313871"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.135374e-04 2.005099e+00 7.503258e-01 2.652715e-06 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 30.4616138838108"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.036042e-04 1.963831e+00 1.640594e+01 7.248026e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 27.7155896768264"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+4.536568e-07 2.015132e+00 8.011482e-01 7.443101e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.6000468991089"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+4.069981e-03 2.014420e+00 8.648663e-01 7.923568e-07 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              8.000000e+00              2.840381e+01 
+                 sigma.sq                        mu                        bt 
+             5.364357e-07              2.005201e+00              1.303033e+00 
+                       vh 
+             9.831878e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0139392313871"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.135374e-04 2.005099e+00 7.503258e-01 2.652715e-06 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 29.1364163589866"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.249169e-06 2.004122e+00 1.370863e+00 1.340381e+01 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              9.000000e+00              2.840381e+01 
+                 sigma.sq                        mu                        bt 
+             5.364357e-07              2.005201e+00              1.303033e+00 
+                       vh 
+             9.831878e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0139392313871"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.135374e-04 2.005099e+00 7.503258e-01 2.652715e-06 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              1.000000e+01              2.840381e+01 
+                 sigma.sq                        mu                        bt 
+             5.364357e-07              2.005201e+00              1.303033e+00 
+                       vh 
+             9.831878e+00 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "The sampling to find confidence in parameters actually found a better part of the likelihood surface. Restarting the run for this model at that point"
+[1] "Uncertainty plot has been saved in Model4_uncertainty_plot.pdf in /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017"
+  Model     sigma.sq       mu       bt       vh SE    AICc  NegLogL K
+1     4 5.364357e-07 2.005201 1.303033 9.831878  0 66.6258 28.40381 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper bt.lower bt.upper vh.lower
+1   5.364357e-07   0.0008302222 1.739933 2.005201 1.303033 1.646708  8.79167
+  vh.upper SE.lower SE.upper
+1 10.25355        0        0
+[1] "Starting model 4 of 4 models"
+[1] "Initial search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0028943351176"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.736146e-09 2.004715e+00 7.479869e-01 6.040534e-04 
+[1] "Initial search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 23.5283749557991"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.048251e-05 2.025437e+00 1.156222e+00 7.498560e-01 
+        step    negloglik     sigma.sq           mu           bt           vh 
+0.000000e+00 3.077774e+01 5.816001e-04 1.965542e+00 1.831699e+01 6.641632e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0483258722015"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+2.976599e-05 1.965693e+00 7.775197e-01 1.241541e-07 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+00              1.000000e+00              3.077774e+01 
+                 sigma.sq                        mu                        bt 
+             5.816001e-04              1.965542e+00              1.831699e+01 
+                       vh 
+             6.641632e+00 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0483258722015"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+2.976599e-05 1.965693e+00 7.775197e-01 1.241541e-07 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 32.211381849094"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+2.322249e-07 1.991615e+00 5.874405e+01 1.849659e+01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.2172878235822"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+1.859863e-03 2.022988e+00 7.334737e-01 9.044814e-07 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             2.000000e+00              0.000000e+00              2.149343e+01 
+                 sigma.sq                        mu                        bt 
+             4.098796e-03              2.055332e+00              7.610113e-01 
+                       vh 
+             5.468291e-08 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             3.000000e+00              0.000000e+00              2.108107e+01 
+                 sigma.sq                        mu                        bt 
+             1.710947e-09              2.055265e+00              7.615915e-01 
+                       vh 
+             2.850586e-08 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              0.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              1.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              2.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              3.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              4.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              5.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              6.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             1.100000e+01              7.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             1.200000e+01              8.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             1.300000e+01              9.000000e+00              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.0584176456002"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh 
+9.368524e-11 2.059852e+00 7.084620e-01 2.370517e-07 
+                     step steps.without.improvement                 negloglik 
+             1.400000e+01              1.000000e+01              2.106005e+01 
+                 sigma.sq                        mu                        bt 
+             2.846154e-10              2.059977e+00              7.180975e-01 
+                       vh 
+             4.766761e-08 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 5000 done"
+[1] "200 of 5000 done"
+[1] "300 of 5000 done"
+[1] "400 of 5000 done"
+[1] "500 of 5000 done"
+[1] "600 of 5000 done"
+[1] "700 of 5000 done"
+[1] "800 of 5000 done"
+[1] "900 of 5000 done"
+[1] "1000 of 5000 done"
+[1] "1100 of 5000 done"
+[1] "1200 of 5000 done"
+[1] "1300 of 5000 done"
+[1] "1400 of 5000 done"
+[1] "1500 of 5000 done"
+[1] "1600 of 5000 done"
+[1] "1700 of 5000 done"
+[1] "1800 of 5000 done"
+[1] "1900 of 5000 done"
+[1] "2000 of 5000 done"
+[1] "2100 of 5000 done"
+[1] "2200 of 5000 done"
+[1] "2300 of 5000 done"
+[1] "2400 of 5000 done"
+[1] "2500 of 5000 done"
+[1] "2600 of 5000 done"
+[1] "2700 of 5000 done"
+[1] "2800 of 5000 done"
+[1] "2900 of 5000 done"
+[1] "3000 of 5000 done"
+[1] "3100 of 5000 done"
+[1] "3200 of 5000 done"
+[1] "3300 of 5000 done"
+[1] "3400 of 5000 done"
+[1] "3500 of 5000 done"
+[1] "3600 of 5000 done"
+[1] "3700 of 5000 done"
+[1] "3800 of 5000 done"
+[1] "3900 of 5000 done"
+[1] "4000 of 5000 done"
+[1] "4100 of 5000 done"
+[1] "4200 of 5000 done"
+[1] "4300 of 5000 done"
+[1] "4400 of 5000 done"
+[1] "4500 of 5000 done"
+[1] "4600 of 5000 done"
+[1] "4700 of 5000 done"
+[1] "4800 of 5000 done"
+[1] "4900 of 5000 done"
+[1] "5000 of 5000 done"
+[1] "Uncertainty plot has been saved in Model4_uncertainty_plot.pdf in /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017"
+  Model     sigma.sq       mu        bt           vh SE     AICc  NegLogL K
+1     4 2.846154e-10 2.059977 0.7180975 4.766761e-08  0 51.93828 21.06005 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper  bt.lower bt.upper
+1   2.846154e-10     0.01966266 1.731942 2.290531 0.4465636 1.358995
+      vh.lower  vh.upper SE.lower SE.upper
+1 4.766761e-08 0.5973075        0        0
+> save(results.cichlid.known_nonzero.measurement.error, phy, flow, data.vector.raw, error.vector.raw, file="CichlidResults_fixednonzeroerror.RData")
+> try(system("echo 'Measurement error cichlid done' | terminal-notifier -sound default"))
+> system("mv Model*.pdf FixedActualError")
+> system("mv CichlidResults_fixednonzeroerror.RData FixedActualError")
+> 
+> try(system("rm -rf InferredError"))
+> try(system("mkdir InferredError"))
+> 
+> results.cichlid.inferrederror <- BMhyb(data.vector.raw, phy, flow, store.sims=TRUE, measurement.error=NULL, badval.if.not.positive.definite=FALSE, attempt.deletion.fix=FALSE)
+Error in eigen(V.modified) : error code 2 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 1 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 5 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 1 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 1 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 6 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 7 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 1 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 6 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 4 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 5 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 6 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 5 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 4 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 4 from Lapack routine 'dsyevr'
+Error in eigen(V.modified) : error code 4 from Lapack routine 'dsyevr'
+[1] "Starting model 1 of 4 models"
+        step    negloglik     sigma.sq           mu           vh           SE 
+0.000000e+00 2.296637e+01 5.812733e-10 2.211788e+00 1.467569e-04 5.940238e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.000000e+00              1.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             3.634406e-09              2.211752e+00              8.290199e-08 
+                       SE 
+             5.940406e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             2.000000e+00              2.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             3.000000e+00              3.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              4.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              5.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              6.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              7.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              8.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              9.000000e+00              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              1.000000e+01              2.296620e+01 
+                 sigma.sq                        mu                        vh 
+             1.838687e-09              2.211752e+00              1.531351e-08 
+                       SE 
+             5.940406e-01 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "The sampling to find confidence in parameters actually found a better part of the likelihood surface. Restarting the run for this model at that point"
+[1] "Uncertainty plot has been saved in Model1_uncertainty_plot.pdf in /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017"
+  Model     sigma.sq       mu bt           vh        SE     AICc NegLogL K
+1     1 1.838687e-09 2.211752  1 1.531351e-08 0.5940406 55.75059 22.9662 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper bt.lower bt.upper
+1   1.838687e-09    0.001120416 1.932981 2.368587        1        1
+      vh.lower    vh.upper  SE.lower  SE.upper
+1 1.531351e-08 0.001072305 0.4950793 0.6969275
+[1] "Starting model 1 of 4 models"
+        step    negloglik     sigma.sq           mu           vh           SE 
+0.000000e+00 2.283676e+01 5.425343e-10 2.189042e+00 5.733151e-03 5.490644e-01 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             1.000000e+00              0.000000e+00              2.279710e+01 
+                 sigma.sq                        mu                        vh 
+             2.892658e-10              2.158808e+00              4.701749e-07 
+                       SE 
+             5.478726e-01 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             2.000000e+00              0.000000e+00              2.279281e+01 
+                 sigma.sq                        mu                        vh 
+             6.847875e-10              2.163742e+00              9.625153e-03 
+                       SE 
+             5.522831e-01 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             3.000000e+00              0.000000e+00              2.277792e+01 
+                 sigma.sq                        mu                        vh 
+             2.303259e-10              2.158258e+00              5.687384e-08 
+                       SE 
+             5.623407e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              1.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              2.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              3.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              4.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              5.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              6.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              7.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             1.100000e+01              8.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             1.200000e+01              9.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+                     step steps.without.improvement                 negloglik 
+             1.300000e+01              1.000000e+01              2.277791e+01 
+                 sigma.sq                        mu                        vh 
+             2.897672e-10              2.158197e+00              9.215311e-08 
+                       SE 
+             5.625550e-01 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 5000 done"
+[1] "200 of 5000 done"
+[1] "300 of 5000 done"
+[1] "400 of 5000 done"
+[1] "500 of 5000 done"
+[1] "600 of 5000 done"
+[1] "700 of 5000 done"
+[1] "800 of 5000 done"
+[1] "900 of 5000 done"
+[1] "1000 of 5000 done"
+[1] "1100 of 5000 done"
+[1] "1200 of 5000 done"
+[1] "1300 of 5000 done"
+[1] "1400 of 5000 done"
+[1] "1500 of 5000 done"
+[1] "1600 of 5000 done"
+[1] "1700 of 5000 done"
+[1] "1800 of 5000 done"
+[1] "1900 of 5000 done"
+[1] "2000 of 5000 done"
+[1] "2100 of 5000 done"
+[1] "2200 of 5000 done"
+[1] "2300 of 5000 done"
+[1] "2400 of 5000 done"
+[1] "2500 of 5000 done"
+[1] "2600 of 5000 done"
+[1] "2700 of 5000 done"
+[1] "2800 of 5000 done"
+[1] "2900 of 5000 done"
+[1] "3000 of 5000 done"
+[1] "3100 of 5000 done"
+[1] "3200 of 5000 done"
+[1] "3300 of 5000 done"
+[1] "3400 of 5000 done"
+[1] "3500 of 5000 done"
+[1] "3600 of 5000 done"
+[1] "3700 of 5000 done"
+[1] "3800 of 5000 done"
+[1] "3900 of 5000 done"
+[1] "4000 of 5000 done"
+[1] "4100 of 5000 done"
+[1] "4200 of 5000 done"
+[1] "4300 of 5000 done"
+[1] "4400 of 5000 done"
+[1] "4500 of 5000 done"
+[1] "4600 of 5000 done"
+[1] "4700 of 5000 done"
+[1] "4800 of 5000 done"
+[1] "4900 of 5000 done"
+[1] "5000 of 5000 done"
+[1] "Uncertainty plot has been saved in Model1_uncertainty_plot.pdf in /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017"
+  Model     sigma.sq       mu bt           vh       SE     AICc  NegLogL K
+1     1 2.897672e-10 2.158197  1 9.215311e-08 0.562555 55.37401 22.77791 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper bt.lower bt.upper
+1   2.897672e-10      0.1228919 1.788228 2.496988        1        1
+      vh.lower  vh.upper  SE.lower  SE.upper
+1 9.215311e-08 0.7430618 0.1316684 0.7341537
+[1] "Starting model 2 of 4 models"
+        step    negloglik     sigma.sq           mu           bt           SE 
+0.000000e+00 2.195456e+01 6.430819e-09 2.223074e+00 7.031243e-01 5.456099e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.000000e+00              1.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             5.769044e-10              2.223077e+00              7.031146e-01 
+                       SE 
+             5.456094e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             2.000000e+00              2.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             3.000000e+00              3.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              4.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              5.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              6.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              7.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              8.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              9.000000e+00              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              1.000000e+01              2.195456e+01 
+                 sigma.sq                        mu                        bt 
+             3.711981e-10              2.223084e+00              7.031659e-01 
+                       SE 
+             5.456115e-01 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 5000 done"
+[1] "200 of 5000 done"
+[1] "300 of 5000 done"
+[1] "400 of 5000 done"
+[1] "500 of 5000 done"
+[1] "600 of 5000 done"
+[1] "700 of 5000 done"
+[1] "800 of 5000 done"
+[1] "900 of 5000 done"
+[1] "1000 of 5000 done"
+[1] "1100 of 5000 done"
+[1] "1200 of 5000 done"
+[1] "1300 of 5000 done"
+[1] "1400 of 5000 done"
+[1] "1500 of 5000 done"
+[1] "1600 of 5000 done"
+[1] "1700 of 5000 done"
+[1] "1800 of 5000 done"
+[1] "1900 of 5000 done"
+[1] "2000 of 5000 done"
+[1] "2100 of 5000 done"
+[1] "2200 of 5000 done"
+[1] "2300 of 5000 done"
+[1] "2400 of 5000 done"
+[1] "2500 of 5000 done"
+[1] "2600 of 5000 done"
+[1] "2700 of 5000 done"
+[1] "2800 of 5000 done"
+[1] "2900 of 5000 done"
+[1] "3000 of 5000 done"
+[1] "3100 of 5000 done"
+[1] "3200 of 5000 done"
+[1] "3300 of 5000 done"
+[1] "3400 of 5000 done"
+[1] "3500 of 5000 done"
+[1] "3600 of 5000 done"
+[1] "3700 of 5000 done"
+[1] "3800 of 5000 done"
+[1] "3900 of 5000 done"
+[1] "4000 of 5000 done"
+[1] "4100 of 5000 done"
+[1] "4200 of 5000 done"
+[1] "4300 of 5000 done"
+[1] "4400 of 5000 done"
+[1] "4500 of 5000 done"
+[1] "4600 of 5000 done"
+[1] "4700 of 5000 done"
+[1] "4800 of 5000 done"
+[1] "4900 of 5000 done"
+[1] "5000 of 5000 done"
+[1] "Uncertainty plot has been saved in Model2_uncertainty_plot.pdf in /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017"
+  Model     sigma.sq       mu        bt vh        SE     AICc  NegLogL K
+1     2 3.711981e-10 2.223084 0.7031659  0 0.5456115 53.72731 21.95456 4
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper  bt.lower bt.upper vh.lower
+1   3.711981e-10      0.1448979 1.712063  2.60316 0.4411066 1.110445        0
+  vh.upper  SE.lower  SE.upper
+1        0 0.1025552 0.7220283
+[1] "Starting model 3 of 4 models"
+        step    negloglik     sigma.sq           mu           SE 
+0.000000e+00 2.278020e+01 9.595604e-10 2.157095e+00 5.677192e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.000000e+00              1.000000e+00              2.278016e+01 
+                 sigma.sq                        mu                        SE 
+             4.163604e-10              2.156123e+00              5.675456e-01 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             2.000000e+00              0.000000e+00              2.277794e+01 
+                 sigma.sq                        mu                        SE 
+             3.809257e-09              2.158724e+00              5.627538e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             3.000000e+00              1.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              2.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              3.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              4.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              5.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              6.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              7.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              8.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             1.100000e+01              9.000000e+00              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+                     step steps.without.improvement                 negloglik 
+             1.200000e+01              1.000000e+01              2.277791e+01 
+                 sigma.sq                        mu                        SE 
+             8.342735e-10              2.157882e+00              5.627504e-01 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 5000 done"
+[1] "200 of 5000 done"
+[1] "300 of 5000 done"
+[1] "400 of 5000 done"
+[1] "500 of 5000 done"
+[1] "600 of 5000 done"
+[1] "700 of 5000 done"
+[1] "800 of 5000 done"
+[1] "900 of 5000 done"
+[1] "1000 of 5000 done"
+[1] "1100 of 5000 done"
+[1] "1200 of 5000 done"
+[1] "1300 of 5000 done"
+[1] "1400 of 5000 done"
+[1] "1500 of 5000 done"
+[1] "1600 of 5000 done"
+[1] "1700 of 5000 done"
+[1] "1800 of 5000 done"
+[1] "1900 of 5000 done"
+[1] "2000 of 5000 done"
+[1] "2100 of 5000 done"
+[1] "2200 of 5000 done"
+[1] "2300 of 5000 done"
+[1] "2400 of 5000 done"
+[1] "2500 of 5000 done"
+[1] "2600 of 5000 done"
+[1] "2700 of 5000 done"
+[1] "2800 of 5000 done"
+[1] "2900 of 5000 done"
+[1] "3000 of 5000 done"
+[1] "3100 of 5000 done"
+[1] "3200 of 5000 done"
+[1] "3300 of 5000 done"
+[1] "3400 of 5000 done"
+[1] "3500 of 5000 done"
+[1] "3600 of 5000 done"
+[1] "3700 of 5000 done"
+[1] "3800 of 5000 done"
+[1] "3900 of 5000 done"
+[1] "4000 of 5000 done"
+[1] "4100 of 5000 done"
+[1] "4200 of 5000 done"
+[1] "4300 of 5000 done"
+[1] "4400 of 5000 done"
+[1] "4500 of 5000 done"
+[1] "4600 of 5000 done"
+[1] "4700 of 5000 done"
+[1] "4800 of 5000 done"
+[1] "4900 of 5000 done"
+[1] "5000 of 5000 done"
+[1] "Uncertainty plot has been saved in Model3_uncertainty_plot.pdf in /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017"
+  Model     sigma.sq       mu bt vh        SE    AICc  NegLogL K sigma.sq.lower
+1     3 8.342735e-10 2.157882  1  0 0.5627504 52.5993 22.77791 3   8.342735e-10
+  sigma.sq.upper mu.lower mu.upper bt.lower bt.upper vh.lower vh.upper
+1      0.1554515 1.778567 2.532763        1        1        0        0
+    SE.lower  SE.upper
+1 0.05835465 0.7394098
+[1] "Starting model 4 of 4 models"
+[1] "Initial search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.9671097920412"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+7.382677e-05 2.232272e+00 7.021201e-01 8.403204e-04 5.400829e-01 
+        step    negloglik     sigma.sq           mu           bt           vh 
+0.000000e+00 3.055962e+01 9.332224e-09 2.197643e+00 9.542428e+00 6.609549e+00 
+          SE 
+5.632838e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.0686083960535"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+2.496436e-07 2.197324e+00 7.257257e-01 2.015288e-02 5.656500e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 34.4183734532989"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+3.807408e-08 2.217197e+00 7.007102e+01 6.254192e+01 5.637077e-01 
+                     step steps.without.improvement                 negloglik 
+             1.000000e+00              1.000000e+00              3.055962e+01 
+                 sigma.sq                        mu                        bt 
+             9.332224e-09              2.197643e+00              9.542428e+00 
+                       vh                        SE 
+             6.609549e+00              5.632838e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.0686083960535"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+2.496436e-07 2.197324e+00 7.257257e-01 2.015288e-02 5.656500e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 34.7436881449325"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+9.804681e-05 2.264787e+00 7.074744e+01 6.337339e+01 5.129236e-01 
+                     step steps.without.improvement                 negloglik 
+             2.000000e+00              2.000000e+00              3.055962e+01 
+                 sigma.sq                        mu                        bt 
+             9.332224e-09              2.197643e+00              9.542428e+00 
+                       vh                        SE 
+             6.609549e+00              5.632838e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.0686083960535"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+2.496436e-07 2.197324e+00 7.257257e-01 2.015288e-02 5.656500e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 34.4119925753331"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+7.621106e-06 2.191750e+00 8.235940e+01 1.063352e+01 5.505413e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 33.6505208231342"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.354557e-06 2.209945e+00 9.199079e+01 2.366296e+01 5.641412e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.2655421527883"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+9.477670e-08 2.222244e+00 8.038390e-01 3.750179e-02 5.772387e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 32.9097441149458"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+3.600165e-05 2.118730e+00 1.660887e+01 8.369692e+00 4.629215e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 34.216222725951"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+3.405218e-06 2.221699e+00 6.198026e+01 5.679650e+01 5.652201e-01 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             3.000000e+00              0.000000e+00              2.298898e+01 
+                 sigma.sq                        mu                        bt 
+             1.090503e-01              2.184429e+00              6.425103e-01 
+                       vh                        SE 
+             1.860415e-08              5.980629e-03 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9852872136701"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.097566e-01 2.171564e+00 6.427968e-01 9.441897e-08 5.259925e-02 
+                     step steps.without.improvement                 negloglik 
+             4.000000e+00              1.000000e+00              2.298898e+01 
+                 sigma.sq                        mu                        bt 
+             1.090503e-01              2.184429e+00              6.425103e-01 
+                       vh                        SE 
+             1.860415e-08              5.980629e-03 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9852872136701"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.097566e-01 2.171564e+00 6.427968e-01 9.441897e-08 5.259925e-02 
+                     step steps.without.improvement                 negloglik 
+             5.000000e+00              2.000000e+00              2.298898e+01 
+                 sigma.sq                        mu                        bt 
+             1.090503e-01              2.184429e+00              6.425103e-01 
+                       vh                        SE 
+             1.860415e-08              5.980629e-03 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9852872136701"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.097566e-01 2.171564e+00 6.427968e-01 9.441897e-08 5.259925e-02 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 28.802215335414"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+6.149497e-08 2.207191e+00 3.239473e+00 5.913622e+00 5.560995e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9845469484054"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.463538e-05 2.240766e+00 6.454897e-01 3.453181e-01 5.344630e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.7273786853432"
+[1] "Parameter estimates were"
+   sigma.sq          mu          bt          vh          SE 
+0.002365549 2.069957319 0.851198944 0.001519478 0.515145493 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 29.7448448237975"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+2.844436e-08 2.200984e+00 6.194849e+00 5.832337e+00 5.646210e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 26.0932640416033"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+9.185213e-06 2.267999e+00 8.967569e-01 2.450189e+00 5.611695e-01 
+                     step steps.without.improvement                 negloglik 
+             6.000000e+00              3.000000e+00              2.298898e+01 
+                 sigma.sq                        mu                        bt 
+             1.090503e-01              2.184429e+00              6.425103e-01 
+                       vh                        SE 
+             1.860415e-08              5.980629e-03 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9852872136701"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.097566e-01 2.171564e+00 6.427968e-01 9.441897e-08 5.259925e-02 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 21.9548461126395"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+8.595939e-08 2.221521e+00 7.070499e-01 1.371311e-06 5.449311e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 30.3363564225481"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+4.175039e-07 2.157613e+00 6.266612e+00 2.206335e+00 5.748090e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.2233063020339"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+2.789012e-07 2.243096e+00 6.106809e-01 5.211532e-02 5.536840e-01 
+                     step steps.without.improvement                 negloglik 
+             7.000000e+00              4.000000e+00              2.298898e+01 
+                 sigma.sq                        mu                        bt 
+             1.090503e-01              2.184429e+00              6.425103e-01 
+                       vh                        SE 
+             1.860415e-08              5.980629e-03 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9852872136701"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.097566e-01 2.171564e+00 6.427968e-01 9.441897e-08 5.259925e-02 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 24.1031150547972"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+5.404241e-08 2.218382e+00 8.655082e-01 8.273354e-01 5.657278e-01 
+                     step steps.without.improvement                 negloglik 
+             8.000000e+00              5.000000e+00              2.298898e+01 
+                 sigma.sq                        mu                        bt 
+             1.090503e-01              2.184429e+00              6.425103e-01 
+                       vh                        SE 
+             1.860415e-08              5.980629e-03 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9852872136701"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.097566e-01 2.171564e+00 6.427968e-01 9.441897e-08 5.259925e-02 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 28.400722856364"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+0.0001619695 2.1451010695 3.3856085973 3.2867566020 0.5348395855 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 28.6729504028643"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.067628e-05 2.219112e+00 1.021900e+00 8.195994e+00 5.594790e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 22.9725467168204"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.016193e-01 2.180738e+00 6.412232e-01 3.210349e-07 1.042925e-01 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 26.6601826169793"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+0.0002955998 2.3319580890 1.0190809037 2.5629530133 0.5589836571 
+[1] "This search had a convergence code of 1, indicating it did not converge. See ?optim for what the code may mean. Starting again, likely near that point. Negative log likelihood was 26.1761884067383"
+[1] "Parameter estimates were"
+    sigma.sq           mu           bt           vh           SE 
+1.530478e-06 2.221154e+00 7.599875e-01 2.730174e+00 5.552212e-01 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             9.000000e+00              0.000000e+00              2.298186e+01 
+                 sigma.sq                        mu                        bt 
+             1.061990e-01              2.172976e+00              6.393158e-01 
+                       vh                        SE 
+             1.231151e-07              5.428001e-02 
+[1] "New improvement found, resetting step counter"
+                     step steps.without.improvement                 negloglik 
+             1.000000e+01              0.000000e+00              2.297160e+01 
+                 sigma.sq                        mu                        bt 
+             1.018353e-01              2.182449e+00              6.464286e-01 
+                       vh                        SE 
+             2.817363e-09              1.131515e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.100000e+01              1.000000e+00              2.297145e+01 
+                 sigma.sq                        mu                        bt 
+             1.015311e-01              2.179300e+00              6.441871e-01 
+                       vh                        SE 
+             1.327964e-08              1.147524e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.200000e+01              2.000000e+00              2.297145e+01 
+                 sigma.sq                        mu                        bt 
+             1.014759e-01              2.179808e+00              6.435803e-01 
+                       vh                        SE 
+             3.041410e-09              1.149498e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.300000e+01              3.000000e+00              2.297145e+01 
+                 sigma.sq                        mu                        bt 
+             1.014830e-01              2.179894e+00              6.435938e-01 
+                       vh                        SE 
+             7.620863e-08              1.149142e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.400000e+01              4.000000e+00              2.297144e+01 
+                 sigma.sq                        mu                        bt 
+             1.014436e-01              2.180585e+00              6.436716e-01 
+                       vh                        SE 
+             1.754832e-08              1.152269e-01 
+[1] "New improvement found, but slight; taking the best value, but not resetting the step counter"
+                     step steps.without.improvement                 negloglik 
+             1.500000e+01              5.000000e+00              2.297144e+01 
+                 sigma.sq                        mu                        bt 
+             1.014393e-01              2.180729e+00              6.437677e-01 
+                       vh                        SE 
+             4.189113e-09              1.153043e-01 
+                     step steps.without.improvement                 negloglik 
+             1.600000e+01              6.000000e+00              2.297144e+01 
+                 sigma.sq                        mu                        bt 
+             1.014393e-01              2.180729e+00              6.437677e-01 
+                       vh                        SE 
+             4.189113e-09              1.153043e-01 
+                     step steps.without.improvement                 negloglik 
+             1.700000e+01              7.000000e+00              2.297144e+01 
+                 sigma.sq                        mu                        bt 
+             1.014393e-01              2.180729e+00              6.437677e-01 
+                       vh                        SE 
+             4.189113e-09              1.153043e-01 
+                     step steps.without.improvement                 negloglik 
+             1.800000e+01              8.000000e+00              2.297144e+01 
+                 sigma.sq                        mu                        bt 
+             1.014393e-01              2.180729e+00              6.437677e-01 
+                       vh                        SE 
+             4.189113e-09              1.153043e-01 
+                     step steps.without.improvement                 negloglik 
+             1.900000e+01              9.000000e+00              2.297144e+01 
+                 sigma.sq                        mu                        bt 
+             1.014393e-01              2.180729e+00              6.437677e-01 
+                       vh                        SE 
+             4.189113e-09              1.153043e-01 
+                     step steps.without.improvement                 negloglik 
+             2.000000e+01              1.000000e+01              2.297144e+01 
+                 sigma.sq                        mu                        bt 
+             1.014393e-01              2.180729e+00              6.437677e-01 
+                       vh                        SE 
+             4.189113e-09              1.153043e-01 
+[1] "Now doing simulation to estimate parameter uncertainty"
+[1] "100 of 5000 done"
+[1] "200 of 5000 done"
+[1] "300 of 5000 done"
+[1] "400 of 5000 done"
+[1] "500 of 5000 done"
+[1] "600 of 5000 done"
+[1] "700 of 5000 done"
+[1] "800 of 5000 done"
+[1] "900 of 5000 done"
+[1] "1000 of 5000 done"
+[1] "1100 of 5000 done"
+[1] "1200 of 5000 done"
+[1] "1300 of 5000 done"
+[1] "1400 of 5000 done"
+[1] "1500 of 5000 done"
+[1] "1600 of 5000 done"
+[1] "1700 of 5000 done"
+[1] "1800 of 5000 done"
+[1] "1900 of 5000 done"
+[1] "2000 of 5000 done"
+[1] "2100 of 5000 done"
+[1] "2200 of 5000 done"
+[1] "2300 of 5000 done"
+[1] "2400 of 5000 done"
+[1] "2500 of 5000 done"
+[1] "2600 of 5000 done"
+[1] "2700 of 5000 done"
+[1] "2800 of 5000 done"
+[1] "2900 of 5000 done"
+[1] "3000 of 5000 done"
+[1] "3100 of 5000 done"
+[1] "3200 of 5000 done"
+[1] "3300 of 5000 done"
+[1] "3400 of 5000 done"
+[1] "3500 of 5000 done"
+[1] "3600 of 5000 done"
+[1] "3700 of 5000 done"
+[1] "3800 of 5000 done"
+[1] "3900 of 5000 done"
+[1] "4000 of 5000 done"
+[1] "4100 of 5000 done"
+[1] "4200 of 5000 done"
+[1] "4300 of 5000 done"
+[1] "4400 of 5000 done"
+[1] "4500 of 5000 done"
+[1] "4600 of 5000 done"
+[1] "4700 of 5000 done"
+[1] "4800 of 5000 done"
+[1] "4900 of 5000 done"
+[1] "5000 of 5000 done"
+[1] "Uncertainty plot has been saved in Model4_uncertainty_plot.pdf in /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017"
+  Model  sigma.sq       mu        bt           vh        SE     AICc  NegLogL K
+1     4 0.1014393 2.180729 0.6437677 4.189113e-09 0.1153043 58.80002 22.97144 5
+  sigma.sq.lower sigma.sq.upper mu.lower mu.upper  bt.lower bt.upper
+1     0.02254841      0.1759737 1.589693 2.910519 0.3927626 1.212471
+      vh.lower  vh.upper  SE.lower  SE.upper
+1 4.189113e-09 0.6420568 0.0356148 0.6229579
+> try(system("echo 'Estimating SE cichlid done' | terminal-notifier -sound default"))
+> 
+> save(results.cichlid.inferrederror, phy, flow, data.vector.raw, file="CichlidResults_inferrederror.RData")
+> 
+> try(system("echo 'Inferred Measurement error cichlid done' | terminal-notifier -sound default"))
+> system("mv Model*.pdf InferredError")
+> system("mv CichlidResults_inferrederror.RData InferredError")
+> 
+> results.cichlid.no.measurement.error$results$error <- "Zero"
+> results.cichlid.known_nonzero.measurement.error$results$error <- "Empirical"
+> results.cichlid.inferrederror$results$error <- "Inferred"
+> results.cichlid.no.measurement.error$sims$error <- "Zero"
+> results.cichlid.known_nonzero.measurement.error$sims$error <- "Empirical"
+> results.cichlid.inferrederror$sims$error <- "Inferred"
+> all.results <- rbind(results.cichlid.no.measurement.error$results, results.cichlid.known_nonzero.measurement.error$results, results.cichlid.inferrederror$results)
+> all.results$deltaAICc <- all.results$AICc - min(all.results$AICc)
+> all.results$AkaikeWeight <- AkaikeWeight(all.results$deltaAICc)
+> all.sims <- rbind(results.cichlid.no.measurement.error$sims, results.cichlid.known_nonzero.measurement.error$sims, results.cichlid.inferrederror$sims)
+> setwd("/Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017")
+> save(all.results, all.sims, file="CichlidResults_AllCombined.RData")
+> save(list=ls(), file="CichlidResults_DumpOfEverything.RData")
+> 
+> #phy2<-drop.tip(phy, "Nicotiana_alata")
+> #pruned2<-treedata(phy2, data.log)
+> # data2.log <- pruned2$data[,1]
+> # names(data2.log) <-rownames(pruned2$data)
+> # flow2<-data.frame(donor=c("Nicotiana_sylvestris", "Nicotiana_paniculata"), recipient=c("Nicotiana_tabacum", "Nicotiana_rustica"), gamma=c(0.5, 0.5), time.from.root=c(0.042861 - 0.000524, 0.042861 - 0.001893), stringsAsFactors=FALSE)
+> 
+> # results <- BMhyd(data2.log, pruned2$phy, flow2, models=c(1))
+> 
+> proc.time()
+    user   system  elapsed 
+1136.226   13.257 1591.004 
