@@ -7,7 +7,7 @@ library(ape)
 library(corpcor)
 library(phylobase)
 #options(warn=2)
-options(warn=1)
+options(warn=-1)
 phy <- read.tree("nicotiana.phy")
 data.raw <- read.csv("nicotiana.csv", stringsAsFactors=FALSE)
 data.vector.raw <- as.numeric(data.raw[,2])
@@ -28,7 +28,7 @@ dev.off()
 #try(system("echo 'Making nicotiana tree done' | terminal-notifier -sound default"))
 
 options(error = utils::recover)
-n.points=10000
+n.points=50000
 results.nicotiana.no.measurement.error <- NULL
 #results.nicotiana.no.measurement.error3 <- BMhybGrid(data.vector.raw, phy, flow, store.sims=TRUE, measurement.error=0, n.points=n.points, attempt.deletion.fix=FALSE, get.se=TRUE, plot.se=TRUE, models=3)
 
