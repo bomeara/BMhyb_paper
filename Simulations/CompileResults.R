@@ -62,7 +62,7 @@ for (j in sequence(dim(possible.sets)[1])) {
 					run.type <- "grid"
 				} else {
 					try(local.results <- rbind(result1, result2, result3, result4, result.grid.from.starting$results))
-					run.type <- c(rep("optim",4), rep("grid", 4))
+					run.type <- c(rep("optim",sum(nrow(result1), nrow(result2), nrow(result3), nrow(result4))), rep("grid", nrow(result.grid.from.starting$results)))
 				}
 				if(!is.null(local.results)) {
 					local.results$run.type <- run.type
