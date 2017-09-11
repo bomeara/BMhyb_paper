@@ -31,7 +31,8 @@ average.results <- data.frame()
 best.results <- data.frame()
 true.vs.estimated.vcv <- list()
 current.file.count=0
-all.files <- c(system(paste0("ls -1 *Try9*OPT_and_GRID.RData"),intern=TRUE), system(paste0("ls -1 *Try9*GRID_only.RData"),intern=TRUE))
+#all.files <- c(system(paste0("ls -1 | grep Try9 | grep OPT_and_GRID.RData"),intern=TRUE), system(paste0("ls -1 | grep Try9 | grep GRID_only.RData"),intern=TRUE))
+all.files <- system(paste0("ls -1 | grep Try9 | grep OPT_and_GRID.RData"),intern=TRUE)
 for (j in sequence(dim(possible.sets)[1])) {
 	id <- j
 	#files <- system(paste0("ls -1 *Try9*ParamCombo",id,".P*SUCCESS.RData"),intern=TRUE, ignore.stderr=TRUE)
@@ -72,6 +73,9 @@ for (j in sequence(dim(possible.sets)[1])) {
 					#print(local.results)
 					local.results <- local.results[,-(which(grepl("lower", colnames(local.results))))]
 					local.results <- local.results[,-(which(grepl("upper", colnames(local.results))))]
+					for (col.index in sequence(ncol(local.results))) {
+						local.results[,col.index] <- unlist(local.results[,col.index])
+					}
 					local.results$deltaAICc <- local.results$AICc - min(local.results$AICc)
 					rel.lik <- exp(-0.5* local.results$deltaAICc)
 					local.results$AkaikeWeight <- rel.lik / sum(rel.lik)
