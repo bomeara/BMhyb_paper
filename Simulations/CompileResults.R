@@ -47,8 +47,8 @@ for (j in sequence(dim(possible.sets)[1])) {
 		print(files[file.index])
 
 		try(load(files[file.index]))
-		if(!is.null(result.grid) & class(result.grid)!="try-error") {
-			if(nrow(result.grid$results)>0) {
+		if(!is.null(result.grid) & class(result.grid)!="try-error" & class(result.grid.from.starting)!="try-error") {
+			if(nrow(result.grid$results)>0 ) {
 			    #print(result4)
 				file.split <- unlist(strsplit(strsplit(files[file.index],"_")[[1]],"\\."))
 				current.file.count <- current.file.count + 1
@@ -58,7 +58,7 @@ for (j in sequence(dim(possible.sets)[1])) {
 				local.results <- result.grid$results
 				run.type <- "none"
 				if(grepl("GRID_only", files[file.index])) {
-					local.results <- result.grid.from.starting$results
+					try(local.results <- result.grid.from.starting$results)
 					run.type <- "grid"
 				} else {
 					try(local.results <- rbind(result1, result2, result3, result4, result.grid.from.starting$results))
