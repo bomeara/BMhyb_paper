@@ -67,7 +67,7 @@ for (figure.index in sequence(2)) {
 		if(params.to.plot[param.index]=="SE") {
 			y.range <- c(-.2, 1.5)
 		}
-		
+
 		if(params.to.plot[param.index]=="mu") {
 		    y.range <- c(0, 2)
 		}
@@ -114,10 +114,3 @@ for (figure.index in sequence(2)) {
 	dev.off()
 	system(paste("open ", pdf.name))
 }
-
-combo.counts <- rep(0, nrow(possible.sets))
-for (i in sequence(length(combo.counts))) {
-    combo.counts[i] <- nrow(subset(all.results, all.results$combo==i))   
-}
-possible.sets.and.results <- possible.sets
-possible.sets.and.results$finished.sims <- combo.counts
