@@ -8,7 +8,7 @@ results.nicotiana<- all.results
 
 
 
-MakePrettyTable <- function(results, model.names=c("vH free", "beta free", "vH and beta fixed", "vH and beta free"), params = c("sigma.sq", "mu", "bt", "vh", "SE", "sigma.sq_times_treeheight", "SE2"), round.factor=3, phy) {
+MakePrettyTable <- function(results, model.names=c("vH free", "beta free", "vH and beta fixed", "vH and beta free"), params = c("sigma.sq", "mu", "bt", "vh", "SE", "sigma.sq_times_treeheight", "SE2"), round.factor=1, phy) {
 	results$sigma.sq_times_treeheight <- unlist(results$sigma.sq) * max(branching.times(phy))
 	results$sigma.sq_times_treeheight.lower <- unlist(results$sigma.sq.lower) * max(branching.times(phy))
 	results$sigma.sq_times_treeheight.upper <- unlist(results$sigma.sq.upper) * max(branching.times(phy))
