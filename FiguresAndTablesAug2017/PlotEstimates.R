@@ -6,10 +6,12 @@ load("../Simulations/SimulationResults.RData")
 source("../Simulations/GeneratePossibleSets.R")
 
 params.to.plot.main.fig <- c("bt", "vh")
-params.to.plot.supp.fig <- c("bt", "vh", "mu", "SE", "sigma.sq")
+#params.to.plot.supp.fig <- c("bt", "vh", "mu", "SE", "sigma.sq")
+params.to.plot.supp.fig <- c("bt", "vh", "mu", "sigma.sq")
+
 
 logs.to.use.main.fig <-    c("y", "")
-logs.to.use.supp.fig <-    c("y", "", "", "", "y")
+logs.to.use.supp.fig <-    c("y", "", "", "y")
 hybrid.labels <- c("i", "v", "x")
 nonhybrid.labels <- c("30", "100")
 
@@ -62,17 +64,20 @@ for (figure.index in sequence(2)) {
 		combos.of.ntax <- expand.grid(nonhybrids=values.ntip.nonhybrids, hybrids=values.ntip.hybrids)
 		y.range <- range(c(quantile(values.true, c(0.01, 0.99)), values.estimated))
 		if(params.to.plot[param.index]=="vh") {
-			y.range <- c(-5, 20)
+			y.range <- c(-1, 30)
 		}
 		if(params.to.plot[param.index]=="SE") {
 			y.range <- c(-.2, 1.5)
 		}
 
 		if(params.to.plot[param.index]=="mu") {
-		    y.range <- c(0, 2)
+		    y.range <- c(-1,5)
 		}
 		if(params.to.plot[param.index]=="bt") {
-		    y.range <- c(1e-7, 1e3)
+		    y.range <- c(1/5, 50)
+		}
+		if(params.to.plot[param.index]=="sigma.sq") {
+		  y.range <- c(1e-3, 1)
 		}
 		plot(x=c(0, dim(combos.of.parameters)[1]+3+length(values.ntip.nonhybrids)), y=y.range, type="n", xaxt="n", xlab="", ylab=params.to.plot[param.index], bty="n", log=logs.to.use[param.index], main=paste(params.to.plot[param.index]))
 		base.position = 0
