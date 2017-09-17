@@ -1,0 +1,5 @@
+,donor,recipient,m,time.from.root.donor,time.from.root.recipient
+1,Nicotiana_sylvestris,Nicotiana_tabacum,0.5,13.22909613,13.22909613
+2,Nicotiana_undulata,Nicotiana_rustica,0.5,6.48075299,6.48075299
+3,Nicotiana_arentsii,Nicotiana_rustica,0.5,6.48075299,6.48075299
+4,Nicotiana_wigandioides,Nicotiana_arentsii,0.5,13.1602794,13.1602794
