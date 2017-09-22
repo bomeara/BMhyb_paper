@@ -1,0 +1,13 @@
+treefile = treePL.input.tre
+smooth = 100
+numsites = 1047
+mrca = FROMPAPER Lamprologus_callipterus Neolamprologus_calliurus
+min = FROMPAPER 419
+max = FROMPAPER 419
+outfile = Cichlid.chronogram.tre
+opt = 5
+moredetail
+optad = 2
+optcvad = 2
+moredetailcvad
+randomcv
