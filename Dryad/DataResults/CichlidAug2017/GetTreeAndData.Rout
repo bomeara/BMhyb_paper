@@ -1,0 +1,1868 @@
+
+R version 3.4.1 (2017-06-30) -- "Single Candle"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> rm(list=ls())
+> library(ape)
+> library(geiger)
+> library(rfishbase)
+> #they had one as AY7403786 but it should be AY740386 (species matches)
+> cichlid.accessions<-c("DQ055016", "AY682545", "EF191082", "EF191108", "EF191105", "EF191121", "AF398229", "EF191107", "AF398226", "DQ055023", "EF191083", "EF191117", "EF191096", "AY740388", "DQ055024", "EF191122", "EF191119", "EF191120", "EF191103", "EF191104", "EF191089", "EF191090", "EF191091", "DQ055030", "EF191099", "EF191100", "EF191116", "EF191118", "EF191124", "EF191125", "EF191123", "EF191126", "EF191085", "EF191084", "EF191087", "EF191088", "AY740386", "DQ055019", "EF191093", "DQ055027", "EF191097", "EF191098", "EF191113", "EF191114", "EF191115", "EF191109", "EF191110", "EF191111", "EF191112", "EF191086", "DQ055032", "EF191101", "EF191102", "DQ055036", "DQ055037", "DQ055057", "DQ055034", "DQ055040", "EF191092", "DQ055018", "DQ055041", "DQ055051", "DQ055025", "DQ055038", "DQ055052", "EF191094", "EF191095") #From Koblmüller et al. 2007
+> bad<-c()
+> system("rm Cichlid.fasta")
+> seq<-read.GenBank(cichlid.accessions)
+> seq2<-seq
+> names(seq2) <- attr(seq, "species")
+> write.dna(seq2, file="Cichlid.fasta", format="fasta", nbcol=-1, append=FALSE, colsep = "")
+> system("mafft --auto Cichlid.fasta > Cichlid.aln.fasta")
+
+generating a scoring matrix for nucleotide (dist=200) ... done
+All-to-all alignment.
+    0 / 67    1 / 67    2 / 67    3 / 67    4 / 67    5 / 67    6 / 67    7 / 67    8 / 67    9 / 67   10 / 67   11 / 67   12 / 67   13 / 67   14 / 67   15 / 67   16 / 67   17 / 67   18 / 67   19 / 67   20 / 67   21 / 67   22 / 67   23 / 67   24 / 67   25 / 67   26 / 67   27 / 67   28 / 67   29 / 67   30 / 67   31 / 67   32 / 67   33 / 67   34 / 67   35 / 67   36 / 67   37 / 67   38 / 67   39 / 67   40 / 67   41 / 67   42 / 67   43 / 67   44 / 67   45 / 67   46 / 67   47 / 67   48 / 67   49 / 67   50 / 67   51 / 67   52 / 67   53 / 67   54 / 67   55 / 67   56 / 67   57 / 67   58 / 67   59 / 67   60 / 67   61 / 67   62 / 67   63 / 67   64 / 67   65 / 67tbfast-pair (nuc) Version 7.305b alg=L, model=DNA200 (2), 2.00 (6.00), -0.10 (-0.30), noshift, amax=0.0
+0 thread(s)
+
+Loading 'hat3.seed' ... 
+done.
+Writing hat3 for iterative refinement
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+treein = 0
+compacttree = 0
+Constructing a UPGMA tree ... 
+    0 / 67   10 / 67   20 / 67   30 / 67   40 / 67   50 / 67   60 / 67
+done.
+
+Progressive alignment ... 
+STEP     1 /66 cSTEP     2 /66 cSTEP     3 /66 cSTEP     4 /66 cSTEP     5 /66 cSTEP     6 /66 cSTEP     7 /66 cSTEP     8 /66 cSTEP     9 /66 cSTEP    10 /66 cSTEP    11 /66 cSTEP    12 /66 cSTEP    13 /66 cSTEP    14 /66 cSTEP    15 /66 cSTEP    16 /66 cSTEP    17 /66 cSTEP    18 /66 cSTEP    19 /66 cSTEP    20 /66 cSTEP    21 /66 cSTEP    22 /66 cSTEP    23 /66 cSTEP    24 /66 cSTEP    25 /66 cSTEP    26 /66 cSTEP    27 /66 cSTEP    28 /66 cSTEP    29 /66 cSTEP    30 /66 cSTEP    31 /66 cSTEP    32 /66 cSTEP    33 /66 cSTEP    34 /66 cSTEP    35 /66 cSTEP    36 /66 cSTEP    37 /66 cSTEP    38 /66 cSTEP    39 /66 cSTEP    40 /66 cSTEP    41 /66 cSTEP    42 /66 cSTEP    43 /66 cSTEP    44 /66 cSTEP    45 /66 cSTEP    46 /66 cSTEP    47 /66 cSTEP    48 /66 cSTEP    49 /66 cSTEP    50 /66 cSTEP    51 /66 cSTEP    52 /66 cSTEP    53 /66 cSTEP    54 /66 cSTEP    55 /66 cSTEP    56 /66 cSTEP    57 /66 cSTEP    58 /66 cSTEP    59 /66 cSTEP    60 /66 cSTEP    61 /66 cSTEP    62 /66 cSTEP    63 /66 cSTEP    64 /66 cSTEP    65 /66 cSTEP    66 /66 c
+done.
+tbfast (nuc) Version 7.305b alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+0 thread(s)
+
+minimumweight = 0.000010
+autosubalignment = 0.000000
+nthread = 0
+randomseed = 0
+blosum 62 / kimura 200
+poffset = 0
+niter = 16
+sueff_global = 0.100000
+Loading 'hat3' ... done.
+generating a scoring matrix for nucleotide (dist=200) ... done
+
+    0 / 67   10 / 67   20 / 67   30 / 67   40 / 67   50 / 67   60 / 67
+Segment   1/  1    1-1048
+STEP 001-001-0  identical.   STEP 001-001-1  identical.   STEP 001-002-0  identical.   STEP 001-002-1  identical.   STEP 001-003-0  identical.   STEP 001-003-1  identical.   STEP 001-004-0  identical.   STEP 001-004-1  identical.   STEP 001-005-0  identical.   STEP 001-005-1  identical.   STEP 001-006-0  identical.   STEP 001-006-1  identical.   STEP 001-007-0  identical.   STEP 001-007-1  identical.   STEP 001-008-0  identical.   STEP 001-008-1  identical.   STEP 001-009-0  identical.   STEP 001-009-1  identical.   STEP 001-010-0  identical.   STEP 001-010-1  identical.   STEP 001-011-0  identical.   STEP 001-011-1  identical.   STEP 001-012-0  identical.   STEP 001-012-1  identical.   STEP 001-013-0  identical.   STEP 001-013-1  identical.   STEP 001-014-0  identical.   STEP 001-014-1  identical.   STEP 001-015-0  identical.   STEP 001-015-1  identical.   STEP 001-016-0  identical.   STEP 001-016-1  identical.   STEP 001-017-0  identical.   STEP 001-017-1  identical.   STEP 001-018-0  identical.   STEP 001-018-1  identical.   STEP 001-019-0  identical.   STEP 001-019-1  identical.   STEP 001-020-0  identical.   STEP 001-020-1  identical.   STEP 001-021-0  identical.   STEP 001-021-1  identical.   STEP 001-022-0  identical.   STEP 001-022-1  identical.   STEP 001-023-0  identical.   STEP 001-023-1  identical.   STEP 001-024-0  identical.   STEP 001-024-1  identical.   STEP 001-025-0  identical.   STEP 001-025-1  identical.   STEP 001-026-0  identical.   STEP 001-026-1  identical.   STEP 001-027-0  identical.   STEP 001-027-1  identical.   STEP 001-028-0  identical.   STEP 001-028-1  identical.   STEP 001-029-0  identical.   STEP 001-029-1  identical.   STEP 001-030-0  identical.   STEP 001-030-1  identical.   STEP 001-031-0  identical.   STEP 001-031-1  identical.   STEP 001-032-0  identical.   STEP 001-032-1  identical.   STEP 001-033-0  identical.   STEP 001-033-1  identical.   STEP 001-034-0  identical.   STEP 001-034-1  identical.   STEP 001-035-0  identical.   STEP 001-035-1  identical.   STEP 001-036-0  identical.   STEP 001-036-1  identical.   STEP 001-037-0  identical.   STEP 001-037-1  identical.   STEP 001-038-0  identical.   STEP 001-038-1  identical.   STEP 001-039-0  identical.   STEP 001-039-1  identical.   STEP 001-040-0  identical.   STEP 001-040-1  identical.   STEP 001-041-0  identical.   STEP 001-041-1  identical.   STEP 001-042-0  identical.   STEP 001-042-1  identical.   STEP 001-043-0  identical.   STEP 001-043-1  identical.   STEP 001-044-0  identical.   STEP 001-044-1  identical.   STEP 001-045-0  identical.   STEP 001-045-1  identical.   STEP 001-046-0  identical.   STEP 001-046-1  identical.   STEP 001-047-0  identical.   STEP 001-047-1  identical.   STEP 001-048-0  identical.   STEP 001-048-1  identical.   STEP 001-049-0  identical.   STEP 001-049-1  identical.   STEP 001-050-0  identical.   STEP 001-050-1  identical.   STEP 001-051-0  identical.   STEP 001-051-1  identical.   STEP 001-052-0  identical.   STEP 001-052-1  identical.   STEP 001-053-0  identical.   STEP 001-053-1  identical.   STEP 001-054-0  identical.   STEP 001-054-1  identical.   STEP 001-055-0  identical.   STEP 001-055-1  identical.   STEP 001-056-0  identical.   STEP 001-056-1  identical.   STEP 001-057-0  identical.   STEP 001-057-1  identical.   STEP 001-058-0  identical.   STEP 001-058-1  identical.   STEP 001-059-0  identical.   STEP 001-059-1  identical.   STEP 001-060-0  identical.   STEP 001-060-1  identical.   STEP 001-061-0  identical.   STEP 001-061-1  identical.   STEP 001-062-0  identical.   STEP 001-062-1  identical.   STEP 001-063-0  identical.   STEP 001-063-1  identical.   STEP 001-064-0  identical.   STEP 001-064-1  identical.   STEP 001-065-0  identical.   STEP 001-065-1  identical.   STEP 001-066-1  identical.   STEP 002-066-1  identical.   STEP 002-065-0  identical.   STEP 002-065-1  identical.   
+Converged.
+
+done
+dvtditr (nuc) Version 7.305b alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+0 thread(s)
+
+
+Strategy:
+ L-INS-i (Probably most accurate, very slow)
+ Iterative refinement method (<16) with LOCAL pairwise alignment information
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+
+> seq3 <- read.FASTA("Cichlid.aln.fasta")
+> names(seq3) <- gsub("'", "", names(seq3))
+> seq4 <- as.character(seq3)
+> seq4<-seq3[!duplicated(names(seq3))]
+> write.dna(seq4, file="Cichlid.for.raxml.txt")
+> system("/usr/local/Cellar/raxml/8.2.11_1/bin/raxmlHPC-PTHREADS -s Cichlid.for.raxml.txt -g Cichlid.Constraint.phy -f d -m GTRGAMMA -p 12345 -n Cichlid.GTRGAMMA")
+
+WARNING: The number of threads is currently set to 0
+You can specify the number of threads to run via -T numberOfThreads
+NumberOfThreads must be set to an integer value greater than 1
+
+RAxML, will now set the number of threads automatically to 2 !
+
+RAxML output files with the run ID <Cichlid.GTRGAMMA> already exist 
+in directory /Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017/ ...... exiting
+> constraint.tree <- read.tree("Cichlid.Constraint.phy")
+> raxml.tree <- read.tree("RAxML_bestTree.Cichlid.RAxML")
+> raxml.tree <- reorder(root(raxml.tree, outgroup="Julidochromis_ornatus"))
+> write.tree(raxml.tree, file="treePL.input.tre")
+> 
+> #Note: there were numerical issues with a fixed age of 4.19. So used age of 419, then correct brlen in R
+> treePL.correction = 100
+> cat(paste("treefile = treePL.input.tre\nsmooth = 100\nnumsites = ", dim(as.matrix(seq3))[2], "\nmrca = FROMPAPER Lamprologus_callipterus Neolamprologus_calliurus\nmin = FROMPAPER ", treePL.correction*round(mean(c(3.80, 4.58)),3), "\nmax = FROMPAPER ", treePL.correction*round(mean(c(3.80, 4.58)),3),"\noutfile = Cichlid.chronogram.tre\nthorough\nprime",sep=""), file="batch.treePL")
+> system("treePL batch.treePL")
+outfile: Cichlid.chronogram.tre
+set thorough: true (MAY TAKE A WHILE)
+PRIMING the optimization parameters and then exiting
+finished reading config file
+using system clock for random number seed = 1502133329
+tiny branch length at Lamprologus_callipterus_x_Neolamprologus_calliurus. setting to 0.00095510984
+tiny branch length at Neolamprologus_fasciatus_x_Neolamprologus_calliurus. setting to 0.00095510984
+tiny branch length at Altolamprologus_compressiceps. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+setting FROMPAPER min: 419
+setting FROMPAPER max: 419
+preorder prep
+calculating character durations
+setting min and max
+setting up all constraints
+getting feasible start dates
+start rate 0.00015288162
+numparams:30
+initial calc: 7462.708
+LF SIM
+exit siman: 280.19195
+now priming regular
+nfeval: 25 rc: Linear search failed
+ final: 280.19195 diff: 0
+setting NLOPT: LD_LBFGS 
+result: 4
+ final: 279.87047 diff: 0.32148672
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: -1
+ final: 211.65681 diff: 68.535146
+setting NLOPT: LD_MMA
+result: 4
+ final: 279.87026 diff: 0.32169767
+setting NLOPT: LD_VAR2 
+result: 4
+ final: 279.87047 diff: 0.32148672
+setting NLOPT : LN_SBPLX 
+result: 5
+ final: 217.44326 diff: 62.748698
+----
+now priming AD
+nfeval: 55 rc: Linear search failed
+ final: 275.33313 diff: 4.8588217
+setting NLOPT: LD_LBFGS 
+result: 3
+ final: 211.65597 diff: 68.535984
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+ final: 211.65576 diff: 68.536196
+setting NLOPT: LD_MMA
+result: 3
+ final: 279.87 diff: 0.32195233
+setting NLOPT: LD_VAR2 
+result: 3
+ final: 279.86998 diff: 0.32197162
+setting NLOPT : LN_SBPLX 
+result: 5
+ final: 217.44326 diff: 62.748698
+----
+now priming CV (AD)
+nfeval: 9999 rc: Unable to progress
+ final: 213.73167 diff: 66.460289
+setting NLOPT parallel : LD_LBFGS 
+result: 3
+ final: 115.59408 diff: 164.59788
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+ final: 114.90324 diff: 165.28871
+setting NLOPT parallel : LD_MMA
+result: 3
+ final: 115.63589 diff: 164.55606
+setting NLOPT parallel : LD_VAR2 
+result: 3
+ final: 115.59414 diff: 164.59781
+setting NLOPT parallel : LN_SBPLX 
+result: 5
+ final: 115.5447 diff: 164.64726
+best: 2(0) bestad: 2 (1) bestcv: 2 (1)
+PLACE THE LINES BELOW IN THE CONFIGURATION FILE
+opt = 2
+optad = 2
+moredetailad
+optcvad = 2
+moredetailcvad
+> 
+> #manually got the optimal parameters from first run. Ran again.
+> 
+> cat(paste("treefile = treePL.input.tre
++ smooth = 100
++ numsites = 1047
++ mrca = FROMPAPER Lamprologus_callipterus Neolamprologus_calliurus
++ min = FROMPAPER 419
++ max = FROMPAPER 419
++ outfile = Cichlid.chronogram.tre
++ opt = 5
++ moredetail
++ optad = 2
++ optcvad = 2
++ moredetailcvad
++ randomcv
++ "), file="batch.treePL")
+> system("treePL batch.treePL")
+outfile: Cichlid.chronogram.tre
+setting opt: 5
+setting optad: 2
+setting optcvad: 2
+finished reading config file
+using system clock for random number seed = 1502133329
+tiny branch length at Lamprologus_callipterus_x_Neolamprologus_calliurus. setting to 0.00095510984
+tiny branch length at Neolamprologus_fasciatus_x_Neolamprologus_calliurus. setting to 0.00095510984
+tiny branch length at Altolamprologus_compressiceps. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+tiny branch length at internal node. setting to 0.00095510984
+setting FROMPAPER min: 419
+setting FROMPAPER max: 419
+preorder prep
+calculating character durations
+setting min and max
+setting up all constraints
+getting feasible start dates
+start rate 0.00015288162
+numparams:30
+initial calc: 7462.708
+LF SIM
+exit siman: 280.19195
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 217.44326
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 211.65576
+LF SIM
+exit siman: 211.65576
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 211.65576
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: -1
+calculating without gradient (might want to try a different optad=VALUE)
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc2: 211.65576
+LF SIM
+exit siman: 211.65576
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 211.65576
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: -1
+calculating without gradient (might want to try a different optad=VALUE)
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc2: 211.65576
+exited lf converged :1
+lf calc: 211.65576
+conducting cross validation analysis
+conducting RANDOM SUBSAMPLE cross validation analysis
+sampling 3 tips from 32 total tips 10 times
+--------------
+numparams:90
+smoothing:1000
+211.65576
+exit siman: 156.54124
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 155.13276
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 152.71375
+exit siman: 152.71375
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 152.71375
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 152.71375
+exit siman: 152.71375
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 152.71375
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 152.71375
+exit siman: 152.71375
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 152.71375
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 152.71375
+exit siman: 152.71375
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 152.71375
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 152.71375
+after opt calc: 152.71375
+curcv: 1000
+cv check: 138.45105
+exit siman: 136.17513
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 136.08796
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 136.04415
+exit siman: 136.04431
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 136.04415
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 136.04415
+exit siman: 136.04415
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 136.04415
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 136.04415
+post opt cv check: 136.04415
+(chisq): 21.631777
+cv: 1
+cv check: 145.19606
+exit siman: 144.82879
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 144.80781
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.80374
+exit siman: 144.80374
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 144.80374
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.80374
+exit siman: 144.80374
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 144.80374
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.80374
+post opt cv check: 144.80374
+(chisq): 23.410425
+cv: 2
+cv check: 140.57013
+exit siman: 138.82655
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 138.61511
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 138.23803
+exit siman: 138.23803
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 138.23803
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 138.23803
+exit siman: 138.23803
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 138.23803
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 138.23803
+post opt cv check: 138.23803
+(chisq): 38.041035
+cv: 3
+cv check: 144.29978
+exit siman: 143.77058
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 143.61372
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 143.59579
+exit siman: 143.59579
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 143.59579
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 143.59579
+exit siman: 143.59579
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 143.59579
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 143.59579
+post opt cv check: 143.59579
+(chisq): 41.438535
+cv: 4
+cv check: 141.71367
+exit siman: 139.43094
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 139.33077
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 139.32259
+exit siman: 139.32259
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 139.32259
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 139.32259
+exit siman: 139.32259
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 139.32259
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 139.32259
+post opt cv check: 139.32259
+(chisq): 52.575205
+cv: 5
+cv check: 144.96006
+exit siman: 144.4068
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 144.37316
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.367
+exit siman: 144.367
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 144.367
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.367
+exit siman: 144.367
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 144.367
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.367
+post opt cv check: 144.367
+(chisq): 57.242477
+cv: 6
+cv check: 148.39471
+exit siman: 147.92976
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 147.87118
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 147.8657
+exit siman: 147.8657
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 147.8657
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 147.8657
+exit siman: 147.8657
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 147.8657
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 147.8657
+post opt cv check: 147.8657
+(chisq): 58.915852
+cv: 7
+cv check: 146.44326
+exit siman: 146.2249
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 146.18656
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 146.14889
+exit siman: 146.14889
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 146.14889
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 146.14889
+exit siman: 146.14889
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 146.14889
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 146.14889
+post opt cv check: 146.14889
+(chisq): 60.1097
+cv: 8
+cv check: 145.13231
+exit siman: 146.94519
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 144.54485
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.50682
+exit siman: 144.50689
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 144.50682
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.50682
+exit siman: 144.50682
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 144.50682
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 144.50682
+post opt cv check: 144.50682
+(chisq): 63.304292
+cv: 9
+cv check: 146.34626
+exit siman: 145.98919
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 145.98172
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 145.98059
+exit siman: 145.98059
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 145.98059
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 145.98059
+exit siman: 145.98059
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 145.98059
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 145.98059
+post opt cv check: 145.98059
+(chisq): 64.404137
+cv: 10
+chisq: (1000) 64.404137
+--------------
+numparams:90
+smoothing:100
+138.16633
+exit siman: 126.01707
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 125.76192
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 125.64839
+exit siman: 125.64847
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 125.64839
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 125.64839
+exit siman: 125.64839
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 125.64839
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 125.64839
+exit siman: 125.64839
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 125.64839
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 125.64839
+exit siman: 125.64839
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 125.64839
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 125.64839
+after opt calc: 125.64839
+curcv: 100
+cv check: 117.94887
+exit siman: 117.52536
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.49075
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.47659
+exit siman: 117.47659
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 117.47659
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.47659
+exit siman: 117.47659
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 117.47659
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.47659
+post opt cv check: 117.47659
+(chisq): 16.577034
+cv: 1
+cv check: 118.4222
+exit siman: 118.22104
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 118.16196
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 118.15321
+exit siman: 118.15328
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 118.15321
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.15321
+exit siman: 118.15321
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.15321
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.15321
+post opt cv check: 118.15321
+(chisq): 19.538447
+cv: 2
+cv check: 117.29624
+exit siman: 116.89261
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 116.71536
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 116.59605
+exit siman: 116.59605
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 116.59605
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 116.59605
+exit siman: 116.59605
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 116.59605
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 116.59605
+post opt cv check: 116.59605
+(chisq): 33.035959
+cv: 3
+cv check: 118.13823
+exit siman: 118.10081
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.95437
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.94191
+exit siman: 117.94191
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 117.94191
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 117.94191
+exit siman: 117.94191
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 117.94191
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 117.94191
+post opt cv check: 117.94191
+(chisq): 38.03385
+cv: 4
+cv check: 117.74979
+exit siman: 117.34305
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.3048
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.29949
+exit siman: 117.29949
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 117.29949
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.29949
+exit siman: 117.29949
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 117.29949
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.29949
+post opt cv check: 117.29949
+(chisq): 50.26015
+cv: 5
+cv check: 118.83529
+exit siman: 119.06726
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 118.96909
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.73339
+exit siman: 118.73339
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.73339
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 118.73339
+exit siman: 118.73339
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.73339
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.73339
+post opt cv check: 118.73339
+(chisq): 54.243733
+cv: 6
+cv check: 121.74134
+exit siman: 121.7182
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 121.6584
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 121.59669
+exit siman: 121.59674
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 121.59669
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 121.59669
+exit siman: 121.59669
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 121.59669
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 121.59669
+post opt cv check: 121.59669
+(chisq): 55.564039
+cv: 7
+cv check: 119.69818
+exit siman: 119.62358
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 119.57535
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 119.57066
+exit siman: 119.5707
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 119.57066
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 119.57066
+exit siman: 119.57066
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 119.57066
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 119.57066
+post opt cv check: 119.57066
+(chisq): 58.523044
+cv: 8
+cv check: 118.71821
+exit siman: 118.96697
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 118.50853
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 118.49074
+exit siman: 118.49074
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.49074
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.49074
+exit siman: 118.49074
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.49074
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.49074
+post opt cv check: 118.49074
+(chisq): 62.809696
+cv: 9
+cv check: 119.97199
+exit siman: 119.79655
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 119.75868
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 119.75276
+exit siman: 119.75276
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 119.75276
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 119.75276
+exit siman: 119.75276
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 119.75276
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 119.75276
+post opt cv check: 119.75276
+(chisq): 64.311939
+cv: 10
+chisq: (100) 64.311939
+--------------
+numparams:90
+smoothing:10
+119.80399
+exit siman: 118.89382
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 118.77104
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.75159
+exit siman: 118.75159
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.75159
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 118.75159
+exit siman: 118.75159
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.75159
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.75159
+exit siman: 118.75159
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 118.75159
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.75159
+exit siman: 118.75159
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 118.75159
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 118.75159
+after opt calc: 118.75159
+curcv: 10
+cv check: 111.99715
+exit siman: 112.03606
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.98369
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.94715
+exit siman: 111.94716
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.94715
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.94715
+exit siman: 111.94715
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 111.94715
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.94715
+post opt cv check: 111.94715
+(chisq): 14.414227
+cv: 1
+cv check: 111.75009
+exit siman: 112.32447
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.72849
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 111.71038
+exit siman: 111.71038
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 111.71038
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 111.71038
+exit siman: 111.71038
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 111.71038
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.71038
+post opt cv check: 111.71038
+(chisq): 17.708931
+cv: 2
+cv check: 111.31097
+exit siman: 111.61864
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.26432
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 111.21703
+exit siman: 111.21703
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 111.21703
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.21703
+exit siman: 111.21703
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 111.21703
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 111.21703
+post opt cv check: 111.21703
+(chisq): 30.931186
+cv: 3
+cv check: 111.52086
+exit siman: 112.06264
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.53662
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.49673
+exit siman: 111.49678
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.49674
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.49674
+exit siman: 111.49674
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.49673
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.49673
+post opt cv check: 111.49673
+(chisq): 36.501309
+cv: 4
+cv check: 111.47699
+exit siman: 111.52404
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.44868
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 111.42542
+exit siman: 111.42542
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 111.42542
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.42542
+exit siman: 111.42542
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 111.42542
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.42542
+post opt cv check: 111.42542
+(chisq): 49.245853
+cv: 5
+cv check: 112.07782
+exit siman: 112.34335
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.11715
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.0672
+exit siman: 112.06742
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.06723
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.0672
+exit siman: 112.0672
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.0672
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.0672
+post opt cv check: 112.0672
+(chisq): 52.90131
+cv: 6
+cv check: 114.99889
+exit siman: 115.29991
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 115.12193
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.98927
+exit siman: 114.98927
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 114.98927
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.98927
+exit siman: 114.98927
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 114.98927
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.98927
+post opt cv check: 114.98927
+(chisq): 53.653547
+cv: 7
+cv check: 112.97638
+exit siman: 113.07643
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 113.01609
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 112.95849
+exit siman: 112.95849
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 112.95849
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.95849
+exit siman: 112.95849
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 112.95849
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 112.95849
+post opt cv check: 112.95849
+(chisq): 57.546282
+cv: 8
+cv check: 112.00909
+exit siman: 112.16775
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.04956
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 111.97897
+exit siman: 111.97898
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.97897
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.97897
+exit siman: 111.97897
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.97897
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.97897
+post opt cv check: 111.97897
+(chisq): 62.152456
+cv: 9
+cv check: 113.38278
+exit siman: 114.2605
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 113.77377
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 113.35468
+exit siman: 113.35468
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 113.35468
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 113.35468
+exit siman: 113.35468
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 113.35468
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 113.35468
+post opt cv check: 113.35468
+(chisq): 63.854274
+cv: 10
+chisq: (10) 63.854274
+--------------
+numparams:90
+smoothing:1
+117.92746
+exit siman: 117.93827
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.91776
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.90938
+exit siman: 117.90978
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.90969
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.90938
+exit siman: 117.90938
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.90938
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.90938
+exit siman: 117.90938
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.90938
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.90938
+exit siman: 117.90938
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.90938
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.90938
+after opt calc: 117.90938
+curcv: 1
+cv check: 111.25184
+exit siman: 111.32991
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.26543
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.24682
+exit siman: 111.24714
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.24682
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.24682
+exit siman: 111.24682
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.24682
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.24682
+post opt cv check: 111.24682
+(chisq): 14.132134
+cv: 1
+cv check: 110.93905
+exit siman: 111.02986
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.98146
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.93491
+exit siman: 110.93491
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.93491
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.93491
+exit siman: 110.93491
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.93491
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.93491
+post opt cv check: 110.93491
+(chisq): 17.469233
+cv: 2
+cv check: 110.5802
+exit siman: 110.61169
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.58369
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.57044
+exit siman: 110.57053
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.57045
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.57044
+exit siman: 110.57044
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.57044
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.57044
+post opt cv check: 110.57044
+(chisq): 30.668179
+cv: 3
+cv check: 110.71827
+exit siman: 110.79445
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.74419
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.71579
+exit siman: 110.71579
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 110.71579
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 110.71579
+exit siman: 110.71579
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 110.71579
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 110.71579
+post opt cv check: 110.71579
+(chisq): 36.32353
+cv: 4
+cv check: 110.71181
+exit siman: 110.92365
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.74868
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.70656
+exit siman: 110.7066
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.70658
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.70656
+exit siman: 110.70656
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.70656
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.70656
+post opt cv check: 110.70656
+(chisq): 49.153694
+cv: 5
+cv check: 111.24951
+exit siman: 112.21151
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.27289
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.24845
+exit siman: 111.24847
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.24845
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.24845
+exit siman: 111.24845
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 111.24845
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.24845
+post opt cv check: 111.24845
+(chisq): 52.765262
+cv: 6
+cv check: 114.17725
+exit siman: 114.24981
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 114.22677
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 1
+after opt calc2: 114.17634
+exit siman: 114.17634
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 114.17634
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.17634
+exit siman: 114.17634
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 114.17634
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.17634
+post opt cv check: 114.17634
+(chisq): 53.48142
+cv: 7
+cv check: 112.16346
+exit siman: 112.25423
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.19829
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.1616
+exit siman: 112.1616
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 112.1616
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.1616
+exit siman: 112.1616
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 112.1616
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.1616
+post opt cv check: 112.1616
+(chisq): 57.510357
+cv: 8
+cv check: 111.18861
+exit siman: 111.30122
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.22165
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.18551
+exit siman: 111.18551
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.18551
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.18551
+exit siman: 111.18551
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.18551
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.18551
+post opt cv check: 111.18551
+(chisq): 62.147435
+cv: 9
+cv check: 112.58533
+exit siman: 113.17294
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.62541
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.58246
+exit siman: 112.58246
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 112.58246
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.58246
+exit siman: 112.58246
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 112.58246
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.58246
+post opt cv check: 112.58246
+(chisq): 63.87767
+cv: 10
+chisq: (1) 63.87767
+--------------
+numparams:90
+smoothing:0.1
+117.82329
+exit siman: 117.90267
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.85163
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.82309
+exit siman: 117.82309
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.82309
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.82309
+exit siman: 117.82309
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.82309
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.82309
+exit siman: 117.82309
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.82309
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.82309
+exit siman: 117.82309
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.82309
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.82309
+after opt calc: 117.82309
+curcv: 0.1
+cv check: 111.17526
+exit siman: 111.19862
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.18289
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.17476
+exit siman: 111.17476
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 111.17476
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.17476
+exit siman: 111.17476
+setting NLOPT : LN_SBPLX 
+result: 4
+after opt calc1: 111.17476
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.17476
+post opt cv check: 111.17476
+(chisq): 14.102817
+cv: 1
+cv check: 110.85601
+exit siman: 110.86251
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.8613
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.8556
+exit siman: 110.8556
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.8556
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.8556
+exit siman: 110.8556
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.8556
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.8556
+post opt cv check: 110.8556
+(chisq): 17.457232
+cv: 2
+cv check: 110.50534
+exit siman: 110.54704
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.5085
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.50437
+exit siman: 110.50437
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.50437
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.50437
+exit siman: 110.50437
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.50437
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.50437
+post opt cv check: 110.50437
+(chisq): 30.611062
+cv: 3
+cv check: 110.63614
+exit siman: 111.13935
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.64146
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.63589
+exit siman: 110.63591
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.6359
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.63589
+exit siman: 110.63589
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.63589
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.63589
+post opt cv check: 110.63589
+(chisq): 36.296629
+cv: 4
+cv check: 110.63345
+exit siman: 110.72498
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 110.64041
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.63292
+exit siman: 110.63292
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 110.63292
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.63292
+exit siman: 110.63292
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 110.63292
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 110.63292
+post opt cv check: 110.63292
+(chisq): 49.115436
+cv: 5
+cv check: 111.16461
+exit siman: 111.18118
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.16911
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.16451
+exit siman: 111.16451
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.16451
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.16451
+exit siman: 111.16451
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.16451
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.16451
+post opt cv check: 111.16451
+(chisq): 52.726354
+cv: 6
+cv check: 114.09309
+exit siman: 114.1217
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 114.10023
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.093
+exit siman: 114.09301
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 114.093
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.093
+exit siman: 114.093
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 114.093
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 114.093
+post opt cv check: 114.093
+(chisq): 53.445153
+cv: 7
+cv check: 112.0803
+exit siman: 112.11145
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.08253
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.08011
+exit siman: 112.08011
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.08011
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.08011
+exit siman: 112.08011
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.08011
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.08011
+post opt cv check: 112.08011
+(chisq): 57.433178
+cv: 8
+cv check: 111.10454
+exit siman: 111.29536
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.11181
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.10423
+exit siman: 111.15319
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 111.10482
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.10423
+exit siman: 111.10423
+setting NLOPT : LN_SBPLX 
+result: 3
+after opt calc1: 111.10423
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 111.10423
+post opt cv check: 111.10423
+(chisq): 62.083851
+cv: 9
+cv check: 112.50377
+exit siman: 112.51731
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.51246
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.50348
+exit siman: 112.50349
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.50348
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.50348
+exit siman: 112.50348
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 112.50348
+setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 112.50348
+post opt cv check: 112.50348
+(chisq): 63.823809
+cv: 10
+chisq: (0.1) 63.823809
+--------------
+check:117.82309
+numparams:90
+smoothing:0.1
+117.82309
+exit siman: 118.10996
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.82832
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.8231
+exit siman: 117.8231
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.8231
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.8231
+exit siman: 117.8231
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.8231
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.8231
+exit siman: 117.8231
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.8231
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.8231
+exit siman: 117.8231
+setting NLOPT : LN_SBPLX 
+result: 5
+after opt calc1: 117.8231
+setting NLOPT: LD_TNEWTON_PRECOND_RESTART
+result: 3
+after opt calc2: 117.8231
+after opt calc: 117.8231
+> 
+> 
+> 
+> phy <- read.tree("Cichlid.chronogram.tre")
+> phy$edge.length <- phy$edge.length/treePL.correction
+> 
+> #need to rescale tree to use Kolbmuller et al calibration. They said: Within the lamprologines, the inferred hybridization partners are only distantly related, as the split between the mitochondrial lineages including N. brevis/calliurus and the lineage containing L. callipterus and N. fasciatus is esti- mated as 3.80 (± 1.33) – 4.58 (± 1.60) million years before presence
+> #We take the mean of this range for our point estimate
+> #patristic.distance.of.node <- cophenetic(phy)["Lamprologus_callipterus", "Neolamprologus_calliurus"]
+> #phy$edge.length <- phy$edge.length*mean(c(3.80, 4.58)) / (0.5*patristic.distance.of.node) #divided by two as it's distance down and back up
+> 
+> 
+> ## Add validate names function
+> 
+> fishbase.names <- rfishbase::validate_names(gsub("_", " ", phy$tip.label))
+There were 15 warnings (use warnings() to see them)
+> fishbase.names <- unique(fishbase.names[!is.na(fishbase.names)])
+> 
+> #Pulled data from https://fms02.lsa.umich.edu/fmi/webd/ummz_fish for each genus. Saved as <genus>.tab
+> 
+> files.from.umich <- system("ls -1 *.tab", intern=TRUE)
+> umich.data <- read.delim(files.from.umich[1], header=FALSE, stringsAsFactors = FALSE)
+> for (i in 2:length(files.from.umich)) {
++     umich.data <- rbind(umich.data, read.delim(files.from.umich[2], header=FALSE, stringsAsFactors = FALSE))   
++ }
+> umich.clean <- data.frame(genus=umich.data$V9, species=umich.data$V18, length=umich.data$V17, stringsAsFactors = FALSE)
+> umich.clean <- umich.clean[which(nchar(umich.clean$length)>0),]
+> umich.clean$length <- gsub(" mm SL", "", umich.clean$length)
+> umich.clean$length <- gsub(" mmS L", "", umich.clean$length) #human typos
+> umich.clean$min <- NA
+> umich.clean$max <- NA
+> for (i in sequence(nrow(umich.clean))) {
++     if(grepl("-", umich.clean$length[i])) {
++         lengths <- strsplit(umich.clean$length[i], "-")[[1]]   
++         umich.clean$min[i] <- lengths[1]
++         umich.clean$max[i] <- lengths[2]
++     } else {
++         if(grepl(",", umich.clean$length[i])) {
++           lengths <- strsplit(umich.clean$length[i], ", ")[[1]]   
++            umich.clean$min[i] <- lengths[1]
++            umich.clean$max[i] <- lengths[2]
++         } else {
++             umich.clean$max[i] <- umich.clean$length[i]
++             umich.clean$min[i] <- umich.clean$length[i]
++         }
++     }
++ }
+> umich.clean$min <- as.numeric(umich.clean$min)/10 #divided by 10 b/c fishbase is in cm, not mm. Note that this is also SL, whereas fishbase is TL, but still rough idea
+> umich.clean$max <- as.numeric(umich.clean$max)/10
+> umich.clean$range <- umich.clean$max - umich.clean$min
+> umich.clean$guess.at.sd <- sqrt((umich.clean$range))/2
+> umich.no.zero.range <- umich.clean[which(umich.clean$range>0),]
+> umich.for.prediction <- umich.no.zero.range[which(umich.no.zero.range$min>0.5*umich.no.zero.range$max),] #advice from borstein to toss those where there are probably subadults included
+> umich.for.prediction$guess <- (umich.for.prediction$guess.at.sd)
+> umich.for.prediction$log.max <- log(umich.for.prediction$max)
+> regression.result <- lm(guess ~ log.max, data=umich.for.prediction)
+> plot(umich.for.prediction$log.max, umich.for.prediction$guess)
+> abline(regression.result)
+> 
+> 
+> fish.data<- species(fishbase.names)
+> traits <- log(fish.data$Length)
+> names(traits) <- gsub(" ", "_", fish.data$sciname)
+> pruned<-treedata(phy, traits, sort=TRUE)
+Warning message:
+In treedata(phy, traits, sort = TRUE) :
+  The following tips were not found in 'data' and were dropped from 'phy':
+	Altolamprologus_sp._shell
+	Lamprologus_callipterus_x_Neolamprologus_calliurus
+	Neolamprologus_calliurus
+	Neolamprologus_cf._meeli/boulengeri
+	Neolamprologus_fasciatus_x_Neolamprologus_calliurus
+> 
+> final.data <- pruned$data
+> data.to.fit <- (data.frame(log.max=final.data[,1]))
+> final.se <- (predict(regression.result, data.to.fit))
+> final.data <- cbind(final.data, final.se)
+> 
+> 
+> 
+> 
+> write.tree(pruned$phy, file="Cichlid.phy")
+> write.csv(final.data, "Cichlid.csv")
+> 
+> proc.time()
+   user  system elapsed 
+ 67.578   0.712  79.606 

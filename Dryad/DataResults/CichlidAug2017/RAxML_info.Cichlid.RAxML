@@ -1,0 +1,82 @@
+
+
+IMPORTANT WARNING: Sequences Lamprologus_callipterus_x_Neolamprologus_calliurus and Neolamprologus_fasciatus_x_Neolamprologus_calliurus are exactly identical
+
+IMPORTANT WARNING
+Found 1 sequence that is exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with 
+sequence duplicates removed is printed to file Cichlid.for.raxml.txt.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+
+This is RAxML version 8.2.9 released by Alexandros Stamatakis on July 20 2016.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 311 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.30%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 user-specified trees
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heteorgeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 311
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxml -s Cichlid.for.raxml.txt -g Cichlid.Constraint.phy -f d -m GTRGAMMA -p 12345 -n Cichlid.RAxML 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.257 0.358 0.117 0.268 
+
+Inference[0]: Time 1.274632 GAMMA-based likelihood -5383.308034, best rearrangement setting 10
+alpha[0]: 0.225061 rates[0] ac ag at cg ct gt: 0.848903 11.441002 0.416393 1.012108 4.143563 1.000000 
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -5383.307827 tree written to file /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Cichlid/RAxML_result.Cichlid.RAxML
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -5383.307827 .... 
+
+Final GAMMA-based Score of best tree -5383.307827
+
+Program execution info written to /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Cichlid/RAxML_info.Cichlid.RAxML
+Best-scoring ML tree written to: /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Cichlid/RAxML_bestTree.Cichlid.RAxML
+
+Overall execution time: 1.512418 secs or 0.000420 hours or 0.000018 days
+
