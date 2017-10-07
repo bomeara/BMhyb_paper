@@ -7,5 +7,3 @@ FigureAndTable: the code used to make the plots and tables in the paper.
 Simulation: the codes used to run and process the simulations analyses, the raw results and summaries of these results in in RData file.
 
 The main software, BMhyb, is GPL (open source), but Dryad will not allow it given its licensing. It is available on Github https://github.com/bomeara/BMhyb and CRAN https://cran.r-project.org/web/packages/BMhyb/index.html
-
-

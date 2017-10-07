@@ -1,0 +1,4 @@
+load("/Users/djhwueng/GitHub/BMhyb_paper/Simulations/SimulationResults.RData")
+ls()
+head(all.results)
+dim(all.results)
