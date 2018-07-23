@@ -1,5 +1,5 @@
 rm(list=ls())
-setwd("/Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017")
+setwd("/Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidDraft3_March2018/")
 library(BMhyb)
 library(geiger)
 library(ape)
@@ -68,7 +68,7 @@ all.results <- rbind(results.cichlid.no.measurement.error$results, results.cichl
 all.results$deltaAICc <- all.results$AICc - min(all.results$AICc)
 all.results$AkaikeWeight <- AkaikeWeight(all.results$deltaAICc)
 all.sims <- rbind(results.cichlid.no.measurement.error$sims, results.cichlid.known_nonzero.measurement.error$sims, results.cichlid.inferrederror$sims)
-setwd("/Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidAug2017")
+setwd("/Users/bomeara/Documents/MyDocuments/GitClones/BMhyb_paper/CichlidDraft3_March2018/")
 save(all.results, all.sims, file="CichlidResults_AllCombined.RData")
 save(list=ls(), file="CichlidResults_DumpOfEverything.RData")
 
