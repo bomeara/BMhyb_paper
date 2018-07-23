@@ -1,4 +1,4 @@
-#devtools::install_github("bomeara/BMhyb")
+devtools::install_github("bomeara/BMhyb")
 
 n.cores=parallel::detectCores()
 for (core.index in sequence(n.cores)) {
