@@ -93,20 +93,26 @@ for (j in sequence(dim(possible.sets)[1])) {
 						#print(local.results[,1:13])
 					}
 
-					local.average <- rep(NA, 10)
-					names(local.average) <- colnames(local.results)[1:10]
-					for (i in 1:10) {
-						local.average[i] <- weighted.mean(local.results[,i], w=local.results$AkaikeWeight)
-					}
 					try(local.results <- cbind(local.results, possible.sets.renamed[local.results$combo[1],]))
 					local.results$origin.type.true <- as.character(local.results$origin.type.true)
 					#local.average <- cbind(data.frame(local.average, stringsAsFactors=FALSE), local.results[1,c((length(local.average)+1):dim(local.results)[2])])
 					counts.of.results[as.numeric(id)] <- counts.of.results[as.numeric(id)]+1
 					try(counts.per.condition <- cbind(counts.of.results, possible.sets))
 
+					local.average <- rep(NA, ncol(local.results))
+					names(local.average) <- colnames(local.results)
+					local.average <- local.results[1,]
+					for (i in sequence(ncol(local.results))) {
+					#	print(colnames(local.results)[i])
+						if(!any(grepl("[A-z]", local.results[,i]))) {
+						 	local.average[i]<- weighted.mean(local.results[,i], w=local.results$AkaikeWeight)
+					 	}
+					}
+
+
 					free.parameters<-rep(TRUE, 5)
 					names(free.parameters) <- c("sigma.sq", "mu", "bt", "vh", "SE")
-					estimated.params <- local.average[c("sigma.sq", "mu", "bt", "vh", "SE")]
+					estimated.params <- unlist(local.average[c("sigma.sq", "mu", "bt", "vh", "SE")])
 
 					best.params <- c(local.results$sigma.sq[which.min(local.results$deltaAICc)], local.results$mu[which.min(local.results$deltaAICc)], local.results$bt[which.min(local.results$deltaAICc)], local.results$vh[which.min(local.results$deltaAICc)], local.results$SE[which.min(local.results$deltaAICc)])
 					names(best.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
@@ -142,7 +148,11 @@ for (j in sequence(dim(possible.sets)[1])) {
 					best.min.eigen <- min(eigen(best.VCV)$values)
 					phy.only.min.eigen <- min(eigen(ape::vcv(network$phy))$values)
 
-
+					local.average$sigma.sq.true = local.results$sigma.sq.true[1]
+					local.average$mu.true = local.results$mu.true[1]
+					local.average$bt.true = local.results$bt.true[1]
+					local.average$vh.true = local.results$vh.true[1]
+					local.average$SE.true = local.results$SE.true[1]
 					local.average$true.min.eigen = true.min.eigen
 					local.average$estimated.min.eigen = estimated.min.eigen
 					local.results$true.min.eigen = true.min.eigen
