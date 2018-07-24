@@ -1,0 +1,5 @@
+tabacum: it connects to tomentosiformis in its current position. sylvestris branch goes from 0.022434 in length to 0.022434 - 0.000524 = 0.02191 from its ancestor to where it hybridizes to form tabacum (the bottom part of the sylvestris branch), and it then evolves for 0.000524 more.
+
+rustica: it attaches to undulata at a node 0.001893 in the past, same for its connection with paniculata (which must have its branch length shortened from 0.006816 to 0.006816 - 0.001893 = 0.004923 in consequence. Also, move rustica from its connection with knightiana and merge the two resulting edges leading to knightiana
+
+arentsii: it attaches to undulata at a node 0.001893 in the past, same for its connection with wigandiodes (which must have its branch length shortened from 0.010213 to 0.010213 - 0.001893 = 0.00832 in consequence.

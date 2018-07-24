@@ -1,0 +1,13 @@
+treefile = treePL.input.tre
+smooth = 100
+numsites = 805
+mrca = FROMPAPER Symonanthus_bancroftii Nicotiana_undulata
+min = FROMPAPER 1530
+max = FROMPAPER 1530
+outfile = nicotiana.chronogram.tre
+opt = 5
+optad = 2
+moredetailad
+optcvad = 2
+moredetailcvad
+randomcv

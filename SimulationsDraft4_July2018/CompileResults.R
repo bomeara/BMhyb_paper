@@ -69,7 +69,7 @@ for (j in sequence(dim(possible.sets)[1])) {
 					#try(local.results <- rbind(local.results, result.best.with.measurement.error))
 					local.results$combo = as.numeric(id)
 					local.results$computer = file.split[1]
-					local.results$pid = as.numeric(gsub("GRID","",gsub("PID", "", gsub("SUCCESS", "", file.split[4]))))
+					local.results$pid = as.numeric(gsub("OPT", "", gsub("GRID","",gsub("PID", "", gsub("SUCCESS", "", file.split[4])))))
 					#print(local.results)
 					local.results <- local.results[,-(which(grepl("lower", colnames(local.results))))]
 					local.results <- local.results[,-(which(grepl("upper", colnames(local.results))))]
@@ -92,23 +92,30 @@ for (j in sequence(dim(possible.sets)[1])) {
 						#print("possible lack of convergence")
 						#print(local.results[,1:13])
 					}
-					local.average <- local.results[-(2:4),]
+
+					local.average <- rep(NA, 10)
+					names(local.average) <- colnames(local.results)[1:10]
 					for (i in 1:10) {
-						local.average[1,i] <- weighted.mean(local.results[,i], w=local.results$AkaikeWeight)
+						local.average[i] <- weighted.mean(local.results[,i], w=local.results$AkaikeWeight)
 					}
 					try(local.results <- cbind(local.results, possible.sets.renamed[local.results$combo[1],]))
 					local.results$origin.type.true <- as.character(local.results$origin.type.true)
-					local.average <- cbind(data.frame(local.average, stringsAsFactors=FALSE), local.results[1,c((length(local.average)+1):dim(local.results)[2])])
+					#local.average <- cbind(data.frame(local.average, stringsAsFactors=FALSE), local.results[1,c((length(local.average)+1):dim(local.results)[2])])
 					counts.of.results[as.numeric(id)] <- counts.of.results[as.numeric(id)]+1
 					try(counts.per.condition <- cbind(counts.of.results, possible.sets))
 
 					free.parameters<-rep(TRUE, 5)
 					names(free.parameters) <- c("sigma.sq", "mu", "bt", "vh", "SE")
-					estimated.params <- c(local.average$sigma.sq, local.average$mu, local.average$bt, local.average$vh, local.average$SE)
-					names(estimated.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
+					estimated.params <- local.average[c("sigma.sq", "mu", "bt", "vh", "SE")]
 
 					best.params <- c(local.results$sigma.sq[which.min(local.results$deltaAICc)], local.results$mu[which.min(local.results$deltaAICc)], local.results$bt[which.min(local.results$deltaAICc)], local.results$vh[which.min(local.results$deltaAICc)], local.results$SE[which.min(local.results$deltaAICc)])
 					names(best.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
+
+					local.results$re.estimated.likelihood <- NA
+					for (result.index in sequence(nrow(local.results))) {
+						try(local.results$re.estimated.likelihood[result.index] <- CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu", "bt", "vh", "SE")][result.index,]), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
+					}
+
 
 					estimated.VCV <- GetVModified(estimated.params, network$phy, network$flow, actual.params= free.parameters)
 					estimated.means <- GetMeansModified(estimated.params, network$phy, network$flow, actual.params= free.parameters)
@@ -121,12 +128,13 @@ for (j in sequence(dim(possible.sets)[1])) {
 					try(best.likelihood <- CalculateLikelihood((best.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b= c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
 
 
-					true.params <- c(local.average$sigma.sq.true, local.average$mu.true, local.average$bt.true, local.average$vh.true, local.average$SE.true)
+					true.params <- c(local.results$sigma.sq.true[1], local.results$mu.true[1], local.results$bt.true[1], local.results$vh.true[1], local.results$SE.true[1])
 					names(true.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
 					true.VCV <- GetVModified(true.params, network$phy, network$flow, actual.params= free.parameters)
 					true.means <- GetMeansModified(true.params, network$phy, network$flow, actual.params= free.parameters)
 					true.likelihood <- NA
 					try(true.likelihood <- CalculateLikelihood((true.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
+
 
 
 					true.min.eigen <- min(eigen(true.VCV)$values)
