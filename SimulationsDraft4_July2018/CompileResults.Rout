@@ -140,27 +140,27 @@ Type 'q()' to quit R.
 + 
 + 					local.results$re.estimated.likelihood <- NA
 + 					for (result.index in sequence(nrow(local.results))) {
-+ 						try(local.results$re.estimated.likelihood[result.index] <- CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu", "bt", "vh", "SE")][result.index,]), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
++ 						try(local.results$re.estimated.likelihood[result.index] <- CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu", "bt", "vh", "SE")][result.index,]), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 + 					}
 + 
 + 
-+ 					estimated.VCV <- GetVModified(estimated.params, network$phy, network$flow, actual.params= free.parameters)
++ 					estimated.VCV <- GetVModified(estimated.params, network$phy, network$flow, actual.params= free.parameters, measurement.error=0)
 + 					estimated.means <- GetMeansModified(estimated.params, network$phy, network$flow, actual.params= free.parameters)
 + 					estimated.likelihood <- NA
-+ 					try(estimated.likelihood <- CalculateLikelihood((estimated.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
++ 					try(estimated.likelihood <- CalculateLikelihood((estimated.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 + 
-+ 					best.VCV <- GetVModified(best.params, network$phy, network$flow, actual.params= free.parameters)
++ 					best.VCV <- GetVModified(best.params, network$phy, network$flow, actual.params= free.parameters, measurement.error=0)
 + 					best.means <- GetMeansModified(best.params, network$phy, network$flow, actual.params= free.parameters)
 + 					best.likelihood <- NA
-+ 					try(best.likelihood <- CalculateLikelihood((best.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b= c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
++ 					try(best.likelihood <- CalculateLikelihood((best.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b= c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 + 
 + 
 + 					true.params <- c(local.results$sigma.sq.true[1], local.results$mu.true[1], local.results$bt.true[1], local.results$vh.true[1], local.results$SE.true[1])
 + 					names(true.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
-+ 					true.VCV <- GetVModified(true.params, network$phy, network$flow, actual.params= free.parameters)
++ 					true.VCV <- GetVModified(true.params, network$phy, network$flow, actual.params= free.parameters, measurement.error=0)
 + 					true.means <- GetMeansModified(true.params, network$phy, network$flow, actual.params= free.parameters)
 + 					true.likelihood <- NA
-+ 					try(true.likelihood <- CalculateLikelihood((true.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
++ 					try(true.likelihood <- CalculateLikelihood((true.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 + 
 + 
 + 
@@ -212,33 +212,31 @@ Type 'q()' to quit R.
 + 		}
 + 	}
 + }
+[1] "omearalab13_Try9_ParamCombo3.PID19513OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo5.PID19324OPT_and_GRID.RData"
 [1] "omearalab13_Try9_ParamCombo13.PID19444OPT_and_GRID.RData"
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-In addition: Warning messages:
-1: In rm(result1) : object 'result1' not found
-2: In rm(result2) : object 'result2' not found
-3: In rm(result3) : object 'result3' not found
-4: In rm(result4) : object 'result4' not found
-5: In rm(result.grid) : object 'result.grid' not found
-6: In rm(result.grid.from.starting) :
-  object 'result.grid.from.starting' not found
-7: In data.frame(..., check.names = FALSE) :
-  row names were found from a short variable and have been discarded
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
-  argument "measurement.error" is missing, with no default
-Error in GetVModified(estimated.params, network$phy, network$flow, actual.params = free.parameters) : 
-  argument "measurement.error" is missing, with no default
-Execution halted
+[1] "omearalab13_Try9_ParamCombo15.PID19228OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo23.PID19687OPT_and_GRID.RData"
+[1] "Done 5 of 14 files to do"
+[1] "omearalab13_Try9_ParamCombo29.PID19154OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo63.PID19252OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo63.PID19567OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo65.PID19372OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo65.PID19462OPT_and_GRID.RData"
+[1] "Done 10 of 14 files to do"
+[1] "omearalab13_Try9_ParamCombo67.PID19348OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo67.PID19420OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo67.PID19591OPT_and_GRID.RData"
+[1] "omearalab13_Try9_ParamCombo67.PID19711OPT_and_GRID.RData"
+There were 50 or more warnings (use warnings() to see the first 50)
+> 
+> 
+> best.results <- subset(all.results, deltaAICc==0)
+> save(all.results, best.results, average.results, counts.of.results, counts.per.condition, possible.sets.renamed, possible.sets, file="SimulationResults.RData")
+> 
+> #print(table(all.results$flag.as.weird)/dim(all.results)[1])
+> #print(table(all.results$convergence.possible.fail)/dim(all.results)[1])
+> 
+> proc.time()
+   user  system elapsed 
+  5.454   0.437   6.230 
