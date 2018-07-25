@@ -119,27 +119,27 @@ for (j in sequence(dim(possible.sets)[1])) {
 
 					local.results$re.estimated.likelihood <- NA
 					for (result.index in sequence(nrow(local.results))) {
-						try(local.results$re.estimated.likelihood[result.index] <- CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu", "bt", "vh", "SE")][result.index,]), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
+						try(local.results$re.estimated.likelihood[result.index] <- CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu", "bt", "vh", "SE")][result.index,]), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 					}
 
 
-					estimated.VCV <- GetVModified(estimated.params, network$phy, network$flow, actual.params= free.parameters)
+					estimated.VCV <- GetVModified(estimated.params, network$phy, network$flow, actual.params= free.parameters, measurement.error=0)
 					estimated.means <- GetMeansModified(estimated.params, network$phy, network$flow, actual.params= free.parameters)
 					estimated.likelihood <- NA
-					try(estimated.likelihood <- CalculateLikelihood((estimated.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
+					try(estimated.likelihood <- CalculateLikelihood((estimated.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 
-					best.VCV <- GetVModified(best.params, network$phy, network$flow, actual.params= free.parameters)
+					best.VCV <- GetVModified(best.params, network$phy, network$flow, actual.params= free.parameters, measurement.error=0)
 					best.means <- GetMeansModified(best.params, network$phy, network$flow, actual.params= free.parameters)
 					best.likelihood <- NA
-					try(best.likelihood <- CalculateLikelihood((best.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b= c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
+					try(best.likelihood <- CalculateLikelihood((best.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b= c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 
 
 					true.params <- c(local.results$sigma.sq.true[1], local.results$mu.true[1], local.results$bt.true[1], local.results$vh.true[1], local.results$SE.true[1])
 					names(true.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
-					true.VCV <- GetVModified(true.params, network$phy, network$flow, actual.params= free.parameters)
+					true.VCV <- GetVModified(true.params, network$phy, network$flow, actual.params= free.parameters, measurement.error=0)
 					true.means <- GetMeansModified(true.params, network$phy, network$flow, actual.params= free.parameters)
 					true.likelihood <- NA
-					try(true.likelihood <- CalculateLikelihood((true.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
+					try(true.likelihood <- CalculateLikelihood((true.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b = c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params], measurement.error=0))
 
 
 

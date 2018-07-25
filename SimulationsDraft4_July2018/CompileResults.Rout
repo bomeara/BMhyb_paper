@@ -114,20 +114,26 @@ Type 'q()' to quit R.
 + 						#print(local.results[,1:13])
 + 					}
 + 
-+ 					local.average <- rep(NA, 10)
-+ 					names(local.average) <- colnames(local.results)[1:10]
-+ 					for (i in 1:10) {
-+ 						local.average[i] <- weighted.mean(local.results[,i], w=local.results$AkaikeWeight)
-+ 					}
 + 					try(local.results <- cbind(local.results, possible.sets.renamed[local.results$combo[1],]))
 + 					local.results$origin.type.true <- as.character(local.results$origin.type.true)
 + 					#local.average <- cbind(data.frame(local.average, stringsAsFactors=FALSE), local.results[1,c((length(local.average)+1):dim(local.results)[2])])
 + 					counts.of.results[as.numeric(id)] <- counts.of.results[as.numeric(id)]+1
 + 					try(counts.per.condition <- cbind(counts.of.results, possible.sets))
 + 
++ 					local.average <- rep(NA, ncol(local.results))
++ 					names(local.average) <- colnames(local.results)
++ 					local.average <- local.results[1,]
++ 					for (i in sequence(ncol(local.results))) {
++ 					#	print(colnames(local.results)[i])
++ 						if(!any(grepl("[A-z]", local.results[,i]))) {
++ 						 	local.average[i]<- weighted.mean(local.results[,i], w=local.results$AkaikeWeight)
++ 					 	}
++ 					}
++ 
++ 
 + 					free.parameters<-rep(TRUE, 5)
 + 					names(free.parameters) <- c("sigma.sq", "mu", "bt", "vh", "SE")
-+ 					estimated.params <- local.average[c("sigma.sq", "mu", "bt", "vh", "SE")]
++ 					estimated.params <- unlist(local.average[c("sigma.sq", "mu", "bt", "vh", "SE")])
 + 
 + 					best.params <- c(local.results$sigma.sq[which.min(local.results$deltaAICc)], local.results$mu[which.min(local.results$deltaAICc)], local.results$bt[which.min(local.results$deltaAICc)], local.results$vh[which.min(local.results$deltaAICc)], local.results$SE[which.min(local.results$deltaAICc)])
 + 					names(best.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
@@ -149,7 +155,7 @@ Type 'q()' to quit R.
 + 					try(best.likelihood <- CalculateLikelihood((best.params), tips, network$phy, network$flow, actual.params= free.parameters, lower.b= c(0, -Inf, 0.000001, 0, 0)[actual.params], upper.b=c(10,Inf,100,100,100)[actual.params]))
 + 
 + 
-+ 					true.params <- c(local.average$sigma.sq.true, local.average$mu.true, local.average$bt.true, local.average$vh.true, local.average$SE.true)
++ 					true.params <- c(local.results$sigma.sq.true[1], local.results$mu.true[1], local.results$bt.true[1], local.results$vh.true[1], local.results$SE.true[1])
 + 					names(true.params) <- c("sigma.sq", "mu", "bt", "vh", "SE")
 + 					true.VCV <- GetVModified(true.params, network$phy, network$flow, actual.params= free.parameters)
 + 					true.means <- GetMeansModified(true.params, network$phy, network$flow, actual.params= free.parameters)
@@ -163,7 +169,11 @@ Type 'q()' to quit R.
 + 					best.min.eigen <- min(eigen(best.VCV)$values)
 + 					phy.only.min.eigen <- min(eigen(ape::vcv(network$phy))$values)
 + 
-+ 
++ 					local.average$sigma.sq.true = local.results$sigma.sq.true[1]
++ 					local.average$mu.true = local.results$mu.true[1]
++ 					local.average$bt.true = local.results$bt.true[1]
++ 					local.average$vh.true = local.results$vh.true[1]
++ 					local.average$SE.true = local.results$SE.true[1]
 + 					local.average$true.min.eigen = true.min.eigen
 + 					local.average$estimated.min.eigen = estimated.min.eigen
 + 					local.results$true.min.eigen = true.min.eigen
@@ -202,7 +212,33 @@ Type 'q()' to quit R.
 + 		}
 + 	}
 + }
-[1] "omearalab13_Try9_ParamCombo1.PID4052616OPT_and_GRID.RData"
-Error: $ operator is invalid for atomic vectors
-In addition: There were 17 warnings (use warnings() to see them)
+[1] "omearalab13_Try9_ParamCombo13.PID19444OPT_and_GRID.RData"
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+In addition: Warning messages:
+1: In rm(result1) : object 'result1' not found
+2: In rm(result2) : object 'result2' not found
+3: In rm(result3) : object 'result3' not found
+4: In rm(result4) : object 'result4' not found
+5: In rm(result.grid) : object 'result.grid' not found
+6: In rm(result.grid.from.starting) :
+  object 'result.grid.from.starting' not found
+7: In data.frame(..., check.names = FALSE) :
+  row names were found from a short variable and have been discarded
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+Error in CalculateLikelihood(unlist(local.results[, c("sigma.sq", "mu",  : 
+  argument "measurement.error" is missing, with no default
+Error in GetVModified(estimated.params, network$phy, network$flow, actual.params = free.parameters) : 
+  argument "measurement.error" is missing, with no default
 Execution halted
