@@ -1,463 +1,0 @@
-
-R version 3.2.3 (2015-12-10) -- "Wooden Christmas-Tree"
-Copyright (C) 2015 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin13.4.0 (64-bit)
-
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under certain conditions.
-Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
-
-R is a collaborative project with many contributors.
-Type 'contributors()' for more information and
-'citation()' on how to cite R or R packages in publications.
-
-Type 'demo()' for some demos, 'help()' for on-line help, or
-'help.start()' for an HTML browser interface to help.
-Type 'q()' to quit R.
-
-> rm(list=ls())
-> library(ape)
-Warning message:
-package ‘ape’ was built under R version 3.2.5 
-> library(geiger)
-> library(taxize)
-> setwd("/Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana")
-> accessions <- read.delim(file="Accessions.txt", header=FALSE)
-> seq <- read.GenBank(accessions[,1])
-> seq2<-seq
-> names(seq2) <- attr(seq, "species")
-> write.dna(seq2, file="nicotiana.fasta", format="fasta", nbcol=-1, append=FALSE, colsep = "")
-> system("mafft --auto nicotiana.fasta > nicotiana.aln.fasta")
-
-##### atgcfreq = 0.999773
-generating a scoring matrix for nucleotide (dist=200) ... done
-All-to-all alignment.
-    0 / 79    1 / 79    2 / 79    3 / 79    4 / 79    5 / 79    6 / 79    7 / 79    8 / 79    9 / 79   10 / 79   11 / 79   12 / 79   13 / 79   14 / 79   15 / 79   16 / 79   17 / 79   18 / 79   19 / 79   20 / 79   21 / 79   22 / 79   23 / 79   24 / 79   25 / 79   26 / 79   27 / 79   28 / 79   29 / 79   30 / 79   31 / 79   32 / 79   33 / 79   34 / 79   35 / 79   36 / 79   37 / 79   38 / 79   39 / 79   40 / 79   41 / 79   42 / 79   43 / 79   44 / 79   45 / 79   46 / 79   47 / 79   48 / 79   49 / 79   50 / 79   51 / 79   52 / 79   53 / 79   54 / 79   55 / 79   56 / 79   57 / 79   58 / 79   59 / 79   60 / 79   61 / 79   62 / 79   63 / 79   64 / 79   65 / 79   66 / 79   67 / 79   68 / 79   69 / 79   70 / 79   71 / 79   72 / 79   73 / 79   74 / 79   75 / 79   76 / 79   77 / 79tbfast-pair (nuc) Version 7.300b alg=L, model=DNA200 (2), 2.00 (6.00), -0.10 (-0.30), noshift, amax=0.0
-0 thread(s)
-
-Loading 'hat3.seed' ... 
-done.
-Writing hat3 for iterative refinement
-generating a scoring matrix for nucleotide (dist=200) ... done
-Gap Penalty = -1.53, +0.00, +0.00
-Constructing a UPGMA tree ... 
-    0 / 79   10 / 79   20 / 79   30 / 79   40 / 79   50 / 79   60 / 79   70 / 79
-done.
-
-Progressive alignment ... 
-STEP     1 /78 cSTEP     2 /78 cSTEP     3 /78 cSTEP     4 /78 cSTEP     5 /78 cSTEP     6 /78 cSTEP     7 /78 cSTEP     8 /78 cSTEP     9 /78 cSTEP    10 /78 cSTEP    11 /78 cSTEP    12 /78 cSTEP    13 /78 cSTEP    14 /78 cSTEP    15 /78 cSTEP    16 /78 cSTEP    17 /78 cSTEP    18 /78 cSTEP    19 /78 cSTEP    20 /78 cSTEP    21 /78 cSTEP    22 /78 cSTEP    23 /78 cSTEP    24 /78 cSTEP    25 /78 cSTEP    26 /78 cSTEP    27 /78 cSTEP    28 /78 cSTEP    29 /78 cSTEP    30 /78 cSTEP    31 /78 cSTEP    32 /78 cSTEP    33 /78 cSTEP    34 /78 cSTEP    35 /78 cSTEP    36 /78 cSTEP    37 /78 cSTEP    38 /78 cSTEP    39 /78 cSTEP    40 /78 cSTEP    41 /78 cSTEP    42 /78 cSTEP    43 /78 cSTEP    44 /78 cSTEP    45 /78 cSTEP    46 /78 cSTEP    47 /78 cSTEP    48 /78 cSTEP    49 /78 cSTEP    50 /78 cSTEP    51 /78 cSTEP    52 /78 cSTEP    53 /78 cSTEP    54 /78 cSTEP    55 /78 cSTEP    56 /78 cSTEP    57 /78 cSTEP    58 /78 cSTEP    59 /78 cSTEP    60 /78 cSTEP    61 /78 cSTEP    62 /78 cSTEP    63 /78 c
-Reallocating..done. *alloclen = 2572
-STEP    64 /78 cSTEP    65 /78 cSTEP    66 /78 cSTEP    67 /78 cSTEP    68 /78 cSTEP    69 /78 cSTEP    70 /78 cSTEP    71 /78 cSTEP    72 /78 cSTEP    73 /78 cSTEP    74 /78 cSTEP    75 /78 cSTEP    76 /78 cSTEP    77 /78 cSTEP    78 /78 c
-done.
-tbfast (nuc) Version 7.300b alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
-0 thread(s)
-
-minimumweight = 0.000010
-autosubalignment = 0.000000
-nthread = 0
-randomseed = 0
-blosum 62 / kimura 200
-poffset = 0
-niter = 16
-sueff_global = 0.100000
-Loading 'hat3' ... done.
-generating a scoring matrix for nucleotide (dist=200) ... done
-
-    0 / 79   10 / 79   20 / 79   30 / 79   40 / 79   50 / 79   60 / 79   70 / 79
-Segment   1/  1    1- 808
-STEP 001-001-0  identical.   STEP 001-001-1  identical.   STEP 001-002-0  identical.   STEP 001-002-1  identical.   STEP 001-003-0  identical.   STEP 001-003-1  identical.   STEP 001-004-0  identical.   STEP 001-004-1  identical.   STEP 001-005-0  identical.   STEP 001-005-1  identical.   STEP 001-006-0  identical.   STEP 001-006-1  identical.   STEP 001-007-0  identical.   STEP 001-007-1  identical.   STEP 001-008-0  identical.   STEP 001-008-1  identical.   STEP 001-009-0  identical.   STEP 001-009-1  identical.   STEP 001-010-0  identical.   STEP 001-010-1  identical.   STEP 001-011-0  identical.   STEP 001-011-1  identical.   STEP 001-012-0  identical.   STEP 001-012-1  identical.   STEP 001-013-0  identical.   STEP 001-013-1  identical.   STEP 001-014-0  identical.   STEP 001-014-1  identical.   STEP 001-015-0  identical.   STEP 001-015-1  identical.   STEP 001-016-0  identical.   STEP 001-016-1  identical.   STEP 001-017-0  identical.   STEP 001-017-1  identical.   STEP 001-018-0  identical.   STEP 001-018-1  identical.   STEP 001-019-0  identical.   STEP 001-019-1  identical.   STEP 001-020-0  identical.   STEP 001-020-1  identical.   STEP 001-021-0  identical.   STEP 001-021-1  identical.   STEP 001-022-0  identical.   STEP 001-022-1  identical.   STEP 001-023-0  identical.   STEP 001-023-1  identical.   STEP 001-024-0  identical.   STEP 001-024-1  identical.   STEP 001-025-0  rejected.STEP 001-025-1  rejected.STEP 001-026-0  identical.   STEP 001-026-1  identical.   STEP 001-027-0  identical.   STEP 001-027-1  identical.   STEP 001-028-0  identical.   STEP 001-028-1  identical.   STEP 001-029-0  identical.   STEP 001-029-1  identical.   STEP 001-030-0  identical.   STEP 001-030-1  identical.   STEP 001-031-0  identical.   STEP 001-031-1  identical.   STEP 001-032-0  identical.   STEP 001-032-1  identical.   STEP 001-033-0  identical.   STEP 001-033-1  identical.   STEP 001-034-0  identical.   STEP 001-034-1  identical.   STEP 001-035-0  identical.   STEP 001-035-1  identical.   STEP 001-036-0  identical.   STEP 001-036-1  identical.   STEP 001-037-0  identical.   STEP 001-037-1  identical.   STEP 001-038-0  identical.   STEP 001-038-1  identical.   STEP 001-039-0  identical.   STEP 001-039-1  identical.   STEP 001-040-0  identical.   STEP 001-040-1  identical.   STEP 001-041-0  identical.   STEP 001-041-1  identical.   STEP 001-042-0  identical.   STEP 001-042-1  identical.   STEP 001-043-0  identical.   STEP 001-043-1  identical.   STEP 001-044-0  identical.   STEP 001-044-1  identical.   STEP 001-045-0  rejected.STEP 001-045-1  rejected.STEP 001-046-0  identical.   STEP 001-046-1  rejected.STEP 001-047-0  identical.   STEP 001-047-1  rejected.STEP 001-048-0  identical.   STEP 001-048-1  identical.   STEP 001-049-0  identical.   STEP 001-049-1  rejected.STEP 001-050-0  identical.   STEP 001-050-1  identical.   STEP 001-051-0  rejected.STEP 001-051-1  accepted.STEP 001-052-0  identical.   STEP 001-052-1  rejected.STEP 001-053-0  identical.   STEP 001-053-1  identical.   STEP 001-054-0  identical.   STEP 001-054-1  identical.   STEP 001-055-0  identical.   STEP 001-055-1  identical.   STEP 001-056-0  identical.   STEP 001-056-1  identical.   STEP 001-057-0  identical.   STEP 001-057-1  identical.   STEP 001-058-0  identical.   STEP 001-058-1  identical.   STEP 001-059-0  identical.   STEP 001-059-1  identical.   STEP 001-060-0  identical.   STEP 001-060-1  identical.   STEP 001-061-0  identical.   STEP 001-061-1  rejected.STEP 001-062-0  identical.   STEP 001-062-1  rejected.STEP 001-063-0  identical.   STEP 001-063-1  accepted.STEP 001-064-0  identical.   STEP 001-064-1  identical.   STEP 001-065-0  identical.   STEP 001-065-1  identical.   STEP 001-066-0  identical.   STEP 001-066-1  identical.   STEP 001-067-0  identical.   STEP 001-067-1  identical.   STEP 001-068-0  identical.   STEP 001-068-1  identical.   STEP 001-069-0  identical.   STEP 001-069-1  identical.   STEP 001-070-0  rejected.STEP 001-070-1  accepted.STEP 001-071-0  identical.   STEP 001-071-1  identical.   STEP 001-072-0  accepted.STEP 001-072-1  accepted.STEP 001-073-0  identical.   STEP 001-073-1  rejected.STEP 001-074-0  identical.   STEP 001-074-1  identical.   STEP 001-075-0  identical.   STEP 001-075-1  identical.   STEP 001-076-0  identical.   STEP 001-076-1  accepted.STEP 001-077-0  accepted.STEP 001-077-1  identical.   STEP 001-078-1  accepted.STEP 002-078-1  identical.   STEP 002-077-0  identical.   STEP 002-077-1  identical.   STEP 002-076-0  identical.   STEP 002-076-1  identical.   STEP 002-075-0  identical.   STEP 002-075-1  identical.   STEP 002-074-0  identical.   STEP 002-074-1  identical.   STEP 002-073-0  identical.   STEP 002-073-1  rejected.STEP 002-072-0  identical.   STEP 002-072-1  identical.   STEP 002-071-0  identical.   STEP 002-071-1  identical.   STEP 002-070-0  rejected.STEP 002-070-1  identical.   STEP 002-069-0  identical.   STEP 002-069-1  identical.   STEP 002-068-0  identical.   STEP 002-068-1  identical.   STEP 002-067-0  identical.   STEP 002-067-1  identical.   STEP 002-066-0  identical.   STEP 002-066-1  identical.   STEP 002-065-0  identical.   STEP 002-065-1  identical.   STEP 002-064-0  identical.   STEP 002-064-1  identical.   STEP 002-063-0  identical.   STEP 002-063-1  identical.   STEP 002-062-0  identical.   STEP 002-062-1  rejected.STEP 002-061-0  identical.   STEP 002-061-1  rejected.STEP 002-060-0  identical.   STEP 002-060-1  identical.   STEP 002-059-0  identical.   STEP 002-059-1  identical.   STEP 002-058-0  identical.   STEP 002-058-1  identical.   STEP 002-057-0  identical.   STEP 002-057-1  identical.   STEP 002-056-0  identical.   STEP 002-056-1  identical.   STEP 002-055-0  identical.   STEP 002-055-1  identical.   STEP 002-054-0  identical.   STEP 002-054-1  identical.   STEP 002-053-0  identical.   STEP 002-053-1  identical.   STEP 002-052-0  identical.   STEP 002-052-1  rejected.STEP 002-051-0  accepted.STEP 002-051-1  identical.   STEP 002-050-0  identical.   STEP 002-050-1  identical.   STEP 002-049-0  identical.   STEP 002-049-1  rejected.STEP 002-048-0  identical.   STEP 002-048-1  identical.   STEP 002-047-0  identical.   STEP 002-047-1  accepted.STEP 002-046-0  identical.   STEP 002-046-1  accepted.STEP 002-045-0  identical.   STEP 002-045-1  identical.   STEP 002-044-0  identical.   STEP 002-044-1  identical.   STEP 002-043-0  identical.   STEP 002-043-1  identical.   STEP 002-042-0  identical.   STEP 002-042-1  identical.   STEP 002-041-0  identical.   STEP 002-041-1  identical.   STEP 002-040-0  identical.   STEP 002-040-1  identical.   STEP 002-039-0  identical.   STEP 002-039-1  identical.   STEP 002-038-0  identical.   STEP 002-038-1  identical.   STEP 002-037-0  identical.   STEP 002-037-1  identical.   STEP 002-036-0  identical.   STEP 002-036-1  identical.   STEP 002-035-0  identical.   STEP 002-035-1  identical.   STEP 002-034-0  identical.   STEP 002-034-1  identical.   STEP 002-033-0  identical.   STEP 002-033-1  identical.   STEP 002-032-0  identical.   STEP 002-032-1  identical.   STEP 002-031-0  identical.   STEP 002-031-1  identical.   STEP 002-030-0  identical.   STEP 002-030-1  identical.   STEP 002-029-0  identical.   STEP 002-029-1  identical.   STEP 002-028-0  identical.   STEP 002-028-1  identical.   STEP 002-027-0  identical.   STEP 002-027-1  identical.   STEP 002-026-0  identical.   STEP 002-026-1  identical.   STEP 002-025-0  identical.   STEP 002-025-1  identical.   STEP 002-024-0  identical.   STEP 002-024-1  identical.   STEP 002-023-0  identical.   STEP 002-023-1  identical.   STEP 002-022-0  identical.   STEP 002-022-1  identical.   STEP 002-021-0  identical.   STEP 002-021-1  identical.   STEP 002-020-0  identical.   STEP 002-020-1  identical.   STEP 002-019-0  identical.   STEP 002-019-1  identical.   STEP 002-018-0  identical.   STEP 002-018-1  identical.   STEP 002-017-0  identical.   STEP 002-017-1  identical.   STEP 002-016-0  identical.   STEP 002-016-1  identical.   STEP 002-015-0  identical.   STEP 002-015-1  identical.   STEP 002-014-0  identical.   STEP 002-014-1  identical.   STEP 002-013-0  identical.   STEP 002-013-1  identical.   STEP 002-012-0  identical.   STEP 002-012-1  identical.   STEP 002-011-0  identical.   STEP 002-011-1  identical.   STEP 002-010-0  identical.   STEP 002-010-1  identical.   STEP 002-009-0  identical.   STEP 002-009-1  identical.   STEP 002-008-0  identical.   STEP 002-008-1  identical.   STEP 002-007-0  identical.   STEP 002-007-1  identical.   STEP 002-006-0  identical.   STEP 002-006-1  identical.   STEP 002-005-0  identical.   STEP 002-005-1  identical.   STEP 002-004-0  identical.   STEP 002-004-1  identical.   STEP 002-003-0  identical.   STEP 002-003-1  identical.   STEP 002-002-0  identical.   STEP 002-002-1  identical.   STEP 002-001-0  identical.   STEP 002-001-1  identical.   STEP 003-001-0  identical.   STEP 003-001-1  identical.   STEP 003-002-0  identical.   STEP 003-002-1  identical.   STEP 003-003-0  identical.   STEP 003-003-1  identical.   STEP 003-004-0  identical.   STEP 003-004-1  identical.   STEP 003-005-0  identical.   STEP 003-005-1  identical.   STEP 003-006-0  identical.   STEP 003-006-1  identical.   STEP 003-007-0  identical.   STEP 003-007-1  identical.   STEP 003-008-0  identical.   STEP 003-008-1  identical.   STEP 003-009-0  identical.   STEP 003-009-1  identical.   STEP 003-010-0  identical.   STEP 003-010-1  identical.   STEP 003-011-0  identical.   STEP 003-011-1  identical.   STEP 003-012-0  identical.   STEP 003-012-1  identical.   STEP 003-013-0  identical.   STEP 003-013-1  identical.   STEP 003-014-0  identical.   STEP 003-014-1  identical.   STEP 003-015-0  identical.   STEP 003-015-1  identical.   STEP 003-016-0  identical.   STEP 003-016-1  identical.   STEP 003-017-0  identical.   STEP 003-017-1  identical.   STEP 003-018-0  identical.   STEP 003-018-1  identical.   STEP 003-019-0  identical.   STEP 003-019-1  identical.   STEP 003-020-0  identical.   STEP 003-020-1  identical.   STEP 003-021-0  identical.   STEP 003-021-1  identical.   STEP 003-022-0  identical.   STEP 003-022-1  identical.   STEP 003-023-0  identical.   STEP 003-023-1  identical.   STEP 003-024-0  identical.   STEP 003-024-1  identical.   STEP 003-025-0  identical.   STEP 003-025-1  identical.   STEP 003-026-0  identical.   STEP 003-026-1  identical.   STEP 003-027-0  identical.   STEP 003-027-1  identical.   STEP 003-028-0  identical.   STEP 003-028-1  identical.   STEP 003-029-0  identical.   STEP 003-029-1  identical.   STEP 003-030-0  identical.   STEP 003-030-1  identical.   STEP 003-031-0  identical.   STEP 003-031-1  identical.   STEP 003-032-0  identical.   STEP 003-032-1  identical.   STEP 003-033-0  identical.   STEP 003-033-1  identical.   STEP 003-034-0  identical.   STEP 003-034-1  identical.   
-Converged.
-
-done
-dvtditr (nuc) Version 7.300b alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
-0 thread(s)
-
-
-Strategy:
- L-INS-i (Probably most accurate, very slow)
- Iterative refinement method (<16) with LOCAL pairwise alignment information
-
-If unsure which option to use, try 'mafft --auto input > output'.
-For more information, see 'mafft --help', 'mafft --man' and the mafft page.
-
-The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
-It tends to insert more gaps into gap-rich regions than previous versions.
-To disable this change, add the --leavegappyregion option.
-
-> seq3 <- read.FASTA("nicotiana.aln.fasta")
-> names(seq3) <- gsub("'", "", names(seq3))
-> seq4 <- as.character(seq3)
-> seq4<-seq3[!duplicated(names(seq3))]
-> write.dna(seq4, file="nicotiana.for.raxml.txt")
-> system("raxml -s nicotiana.for.raxml.txt -f d -m GTRGAMMA -p 12345 -n nicotiana.GTRGAMMA")
-
-
-IMPORTANT WARNING: Sequences Nicotiana_stocktonii and Nicotiana_nesophila are exactly identical
-
-IMPORTANT WARNING
-Found 1 sequence that is exactly identical to other sequences in the alignment.
-Normally they should be excluded from the analysis.
-
-Just in case you might need it, an alignment file with 
-sequence duplicates removed is printed to file nicotiana.for.raxml.txt.reduced
-
-
-Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
-
-
-
-This is RAxML version 8.2.9 released by Alexandros Stamatakis on July 20 2016.
-
-With greatly appreciated code contributions by:
-Andre Aberer      (HITS)
-Simon Berger      (HITS)
-Alexey Kozlov     (HITS)
-Kassian Kobert    (HITS)
-David Dao         (KIT and HITS)
-Sarah Lutteropp   (KIT and HITS)
-Nick Pattengale   (Sandia)
-Wayne Pfeiffer    (SDSC)
-Akifumi S. Tanabe (NRIFS)
-Charlie Taylor    (UF)
-
-
-Alignment has 367 distinct alignment patterns
-
-Proportion of gaps and completely undetermined characters in this alignment: 10.20%
-
-RAxML rapid hill-climbing mode
-
-Using 1 distinct models/data partitions with joint branch length optimization
-
-
-Executing 1 inferences on the original alignment using 1 distinct randomized MP trees
-
-All free model parameters will be estimated by RAxML
-GAMMA model of rate heteorgeneity, ML estimate of alpha-parameter
-
-GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
-
-Partition: 0
-Alignment Patterns: 367
-Name: No Name Provided
-DataType: DNA
-Substitution Matrix: GTR
-
-
-
-
-RAxML was called as follows:
-
-raxml -s nicotiana.for.raxml.txt -f d -m GTRGAMMA -p 12345 -n nicotiana.GTRGAMMA 
-
-
-Partition: 0 with name: No Name Provided
-Base frequencies: 0.200 0.305 0.300 0.194 
-
-Inference[0]: Time 19.520825 GAMMA-based likelihood -6006.156407, best rearrangement setting 5
-
-
-Conducting final model optimizations on all 1 trees under GAMMA-based models ....
-
-Inference[0] final GAMMA-based Likelihood: -6006.113082 tree written to file /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana/RAxML_result.nicotiana.GTRGAMMA
-
-
-Starting final GAMMA-based thorough Optimization on tree 0 likelihood -6006.113082 .... 
-
-Final GAMMA-based Score of best tree -6006.113082
-
-Program execution info written to /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana/RAxML_info.nicotiana.GTRGAMMA
-Best-scoring ML tree written to: /Users/bomeara/Dropbox/CollabJhwuengOMeara/ReReSubmission/Nicotiana/RAxML_bestTree.nicotiana.GTRGAMMA
-
-Overall execution time: 27.137387 secs or 0.007538 hours or 0.000314 days
-
-> raxml.tree <- read.tree("RAxML_bestTree.nicotiana.GTRGAMMA")
-> raxml.tree <- reorder(root(raxml.tree, outgroup="Petunia_axillaris", resolve.root=TRUE))
-> write.tree(raxml.tree, file="treePL.input.tre")
-> treePL.correction = 100
-> #The genera Nicotiana and Symonanthus (tribe Anthocercideae) are sister groups (Clarkson et al., 2004) that split approx. 15.3 Myr ago 
-> cat(paste("treefile = treePL.input.tre\nsmooth = 100\nnumsites = ", dim(as.matrix(seq3))[2], "\nmrca = FROMPAPER Symonanthus_bancroftii Nicotiana_undulata\nmin = FROMPAPER ", treePL.correction*15.3, "\nmax = FROMPAPER ", treePL.correction*15.3,"\noutfile = nicotiana.chronogram.tre\nthorough\nprime",sep=""), file="batch.treePL")
-> system("treePL batch.treePL")
-outfile: nicotiana.chronogram.tre
-set thorough: true (MAY TAKE A WHILE)
-PRIMING the optimization parameters and then exiting
-finished reading config file
-tiny branch length at Nicotiana_nesophila. setting to 0.001242236
-tiny branch length at Nicotiana_stocktonii. setting to 0.001242236
-tiny branch length at Nicotiana_acuminata. setting to 0.001242236
-tiny branch length at Nicotiana_pauciflora. setting to 0.001242236
-tiny branch length at Nicotiana_suaveolens. setting to 0.001242236
-tiny branch length at Nicotiana_petunioides. setting to 0.001242236
-tiny branch length at Nicotiana_tabacum. setting to 0.001242236
-tiny branch length at Nicotiana_tomentosiformis. setting to 0.001242236
-tiny branch length at Nicotiana_obtusifolia. setting to 0.001242236
-tiny branch length at Nicotiana_palmeri. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-setting FROMPAPER min: 1530
-setting FROMPAPER max: 1530
-preorder prep
-calculating character durations
-setting min and max
-setting up all constraints
-getting feasible start dates
-start rate 4.836294e-05
-numparams:75
-initial calc: 7889.1855
-LF SIM
-exit siman: 544.09632
-now priming regular
-nfeval: 5 rc: Unable to progress
- final: 544.09632 diff: 2.2737368e-13
-setting NLOPT: LD_LBFGS 
-result: -1
- final: 544.08606 diff: 0.01026185
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: -1
- final: 544.08606 diff: 0.0102619
-setting NLOPT: LD_MMA
-result: 4
- final: 544.08606 diff: 0.010260707
-setting NLOPT: LD_VAR2 
-result: -1
- final: 544.08606 diff: 0.01026185
-setting NLOPT : LN_SBPLX 
-result: 5
- final: 506.65417 diff: 37.442152
-----
-now priming AD
-nfeval: 3 rc: Unable to progress
- final: 544.09632 diff: 0
-setting NLOPT: LD_LBFGS 
-result: 3
- final: 543.8094 diff: 0.28691624
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 3
- final: 455.48377 diff: 88.612547
-setting NLOPT: LD_MMA
-result: 3
- final: 544.08605 diff: 0.010265128
-setting NLOPT: LD_VAR2 
-result: 3
- final: 544.08603 diff: 0.010286669
-setting NLOPT : LN_SBPLX 
-result: 5
- final: 506.65417 diff: 37.442152
-----
-now priming CV (AD)
-nfeval: 123 rc: Unable to progress
- final: 485.36535 diff: 58.730971
-setting NLOPT parallel : LD_LBFGS 
-result: -1
- final: 448.41689 diff: 95.679433
-setting NLOPT parallel : LD_TNEWTON_PRECOND_RESTART
-result: 5
- final: 238.47932 diff: 305.617
-setting NLOPT parallel : LD_MMA
-result: 3
- final: 238.50464 diff: 305.59168
-setting NLOPT parallel : LD_VAR2 
-result: -1
- final: 459.82014 diff: 84.276183
-setting NLOPT parallel : LN_SBPLX 
-result: 5
- final: 238.50662 diff: 305.58969
-best: 5(0) bestad: 2 (1) bestcv: 2 (0)
-PLACE THE LINES BELOW IN THE CONFIGURATION FILE
-opt = 5
-optad = 2
-moredetailad
-optcvad = 2
-> system("rm nicotiana.chronogram.tre")
-> #manually got the optimal parameters from first run. Ran again.
-> 
-> 
-> cat(paste("treefile = treePL.input.tre\nsmooth = 100\nnumsites = ", dim(as.matrix(seq3))[2], "\nmrca = FROMPAPER Symonanthus_bancroftii Nicotiana_undulata\nmin = FROMPAPER ", treePL.correction*15.3, "\nmax = FROMPAPER ", treePL.correction*15.3,"\noutfile = nicotiana.chronogram.tre
-+ opt = 5
-+ optad = 2
-+ moredetailad
-+ optcvad = 2
-+ moredetailcvad
-+ randomcv
-+ ",sep=""), file="batch.treePL")
-> 
-> system("treePL batch.treePL")
-outfile: nicotiana.chronogram.tre
-setting opt: 5
-setting optad: 2
-setting optcvad: 2
-finished reading config file
-tiny branch length at Nicotiana_nesophila. setting to 0.001242236
-tiny branch length at Nicotiana_stocktonii. setting to 0.001242236
-tiny branch length at Nicotiana_acuminata. setting to 0.001242236
-tiny branch length at Nicotiana_pauciflora. setting to 0.001242236
-tiny branch length at Nicotiana_suaveolens. setting to 0.001242236
-tiny branch length at Nicotiana_petunioides. setting to 0.001242236
-tiny branch length at Nicotiana_tabacum. setting to 0.001242236
-tiny branch length at Nicotiana_tomentosiformis. setting to 0.001242236
-tiny branch length at Nicotiana_obtusifolia. setting to 0.001242236
-tiny branch length at Nicotiana_palmeri. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-tiny branch length at internal node. setting to 0.001242236
-setting FROMPAPER min: 1530
-setting FROMPAPER max: 1530
-preorder prep
-calculating character durations
-setting min and max
-setting up all constraints
-getting feasible start dates
-start rate 5.2672865e-05
-numparams:75
-initial calc: 8046.2891
-LF SIM
-exit siman: 539.60201
-setting NLOPT : LN_SBPLX 
-result: 5
-after opt calc1: 488.52699
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 1
-after opt calc2: 455.48377
-LF SIM
-exit siman: 455.48377
-setting NLOPT : LN_SBPLX 
-result: 3
-after opt calc1: 455.48377
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 1
-after opt calc2: 455.48377
-LF SIM
-exit siman: 455.48377
-setting NLOPT : LN_SBPLX 
-result: 3
-after opt calc1: 455.48377
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 1
-after opt calc2: 455.48377
-exited lf converged :1
-lf calc: 455.48377
-numparams:224
-smoothing:100
-455.48377
-exit siman: 248.65802
-setting NLOPT : LN_SBPLX 
-result: 5
-after opt calc1: 247.1101
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 5
-after opt calc2: 243.43466
-exit siman: 243.42569
-setting NLOPT : LN_SBPLX 
-result: 5
-after opt calc1: 243.40764
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 5
-after opt calc2: 242.97717
-exit siman: 242.97543
-setting NLOPT : LN_SBPLX 
-result: 5
-after opt calc1: 242.96859
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 5
-after opt calc2: 242.83156
-exit siman: 242.8312
-setting NLOPT : LN_SBPLX 
-result: 5
-after opt calc1: 242.82997
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 5
-after opt calc2: 242.78335
-exit siman: 242.78312
-setting NLOPT : LN_SBPLX 
-result: 5
-after opt calc1: 242.782
-setting NLOPT: LD_TNEWTON_PRECOND_RESTART
-result: 5
-after opt calc2: 242.76561
-after opt calc: 242.76561
-> 
-> 
-> 
-> phy <- read.tree("nicotiana.chronogram.tre")
-> phy$edge.length <- phy$edge.length/treePL.correction
-> 
-> new.names <- rep(NA, length(phy$tip.label))
-> for (i in sequence(length(phy$tip.label))) {
-+ 	new.names[i] <- gnr_resolve(phy$tip.label[i], best_match_only=TRUE, data_source_ids= gnr_datasources()$id[which(gnr_datasources()$title=="NCBI")])$matched_name
-+ 
-+ }
-> 
-> phy$tip.label <- gsub(" ", "_", new.names)
-> 
-> traits<-read.csv("KomoriEtAlTable2.csv", stringsAsFactors=FALSE)
-> trait.names <- paste("Nicotiana ", traits$Species, sep="")
-> trait.names.resolved <- rep(NA, length(trait.names))
-> for (i in sequence(length(trait.names))) {
-+ 	trait.names.resolved[i] <- gsub(" ", "_",gnr_resolve(trait.names[i], best_match_only=TRUE, data_source_ids= gnr_datasources()$id[which(gnr_datasources()$title=="NCBI")])$matched_name)
-+ 
-+ }
-> 
-> traits.focal <- log(traits$Mannitol)
-> names(traits.focal) <- trait.names.resolved
-> 
-> 
-> pruned<-treedata(phy, traits.focal, sort=TRUE)
-Warning messages:
-1: In treedata(phy, traits.focal, sort = TRUE) :
-  The following tips were not found in 'data' and were dropped from 'phy':
-	Anthocercis_gracilis
-	Anthocercis_myosotidea
-	Anthotroche_pannosa
-	Cestrum_elegans
-	Nicotiana_acaulis
-	Nicotiana_corymbosa
-	Nicotiana_didepta
-	Nicotiana_digluta
-	Nicotiana_eastii
-	Nicotiana_linearis
-	Nicotiana_obtusifolia
-	Nicotiana_occidentalis_subsp._hesperis
-	Nicotiana_palmeri
-	Nicotiana_picilla
-	Nicotiana_quadrivalvis_var._bigelovii
-	Nicotiana_rosulata_subsp._ingulba
-	Nicotiana_x_sanderae
-	Petunia_axillaris
-	Symonanthus_bancroftii
-2: In treedata(phy, traits.focal, sort = TRUE) :
-  The following tips were not found in 'phy' and were dropped from 'data':
-	Nicotiana
-	Nicotiana
-	Nicotiana_trigonophylla
-> 
-> 
-> 
-> write.tree(pruned$phy, file="nicotiana.phy")
-> write.csv(pruned$data, "nicotiana.csv")
-> 
-> proc.time()
-   user  system elapsed 
- 70.566  32.462 126.630 
